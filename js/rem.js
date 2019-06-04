@@ -5,7 +5,7 @@
         var w = document.documentElement.getBoundingClientRect().width; //如果用window.innerwidth的话，改变窗口大小，不能够及时获取窗口大小
         // console.log(w);
         // 2.根据屏幕宽度计算html font-size大小, 7.5指的是设计稿的宽度为750，如果在公司中设计稿的尺寸为720，那么应该除以7.2
-        var f = w/7.5;
+        var f = w/12.42;
         // 3.设置html 的font-szie
         document.documentElement.style.fontSize=f+"px";
     }
