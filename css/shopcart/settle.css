@@ -1,0 +1,214 @@
+body {
+    font-size: 12px;
+    background: #f4f4f4;
+}
+i {
+    display: inline-block;
+}
+.mui-bar{
+    height:1.44rem;
+    background-color: #fff;
+    text-align: center;
+}
+.mui-title{
+    font-size: 0.5rem;
+    line-height: 1.44rem;
+}
+.settle_wrap{
+    width:100%;
+    height:100%;
+    padding: 0 0 1.66rem;
+    margin-top: 1.6rem;
+}
+/* 用户信息 地址 */
+.user_info{
+    position: relative;
+    margin-bottom: .3rem;
+    /* padding: .6rem .25rem .2rem; */
+    background: url(../../images/settle/dot.png) no-repeat#fff;;
+    background-size: 100%;
+    background-position-y: 100%;
+}
+
+.address{
+    height: 2.7rem;
+    line-height: 2.7rem;
+    padding: 0 .8rem 0 .71rem;
+}
+.address i{
+    width: .8rem;
+    height: .8rem;
+    background: url(../../images/settle/add4.png) no-repeat;
+    background-size: 100%;
+    vertical-align: middle;
+    margin-right: .33rem;
+}
+.address .text{
+    display: inline-block;
+    font-size: .46rem;
+    color: #333;
+    line-height: 2.7rem;
+}
+.address .arrow{
+    position: absolute;
+    right: .5rem;
+    top: 50%;
+    margin-top: -.235rem;
+    display: inline-block;
+    width: .24rem;
+    height: .47rem;
+    background: url(../../images/settle/arrow.png) no-repeat;
+    background-size: 100%;
+}
+/* 购买的商品 */
+.commodity{
+    position: relative;
+    margin-bottom: .3rem;
+    background: #fff;
+}
+.commodity .num_title{
+    font-size: .46rem;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    color: #000;
+    position: relative;
+    border-bottom:1px solid #ddd;
+}
+.num_title p{
+    display: inline-block;
+    padding-left: .3rem;
+    font-size: 0.46rem;
+    color:black;
+}
+.commodity .num{
+    color: #ff6353;
+}
+.commodity_show{
+    height: 3rem;
+    overflow: hidden;
+}
+.list{
+    padding: .4rem .3rem;
+    height: 3rem;
+    overflow-x: scroll;
+    box-sizing: border-box;
+    display: flex;
+}
+.list li{
+    width:2.2rem;
+    height: 2.2rem;
+    margin: 0 .05rem;
+}
+
+.list li img{
+    width: 2.2rem;
+    height: 2.2rem;
+}
+/* 购买时可选的信息 */
+.choose_info{
+    /* position: relative; */
+    margin-bottom: .3rem;
+    background: #fff;
+}
+/* 配送日期 */
+.date{
+    position: relative;
+    height: 2.06rem;
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+.date>div:nth-child(1){
+    padding: .4rem 0 .4rem .3rem;
+    width: 40%;
+}
+.date>div:nth-child(1) span{
+    font-size: .46rem;
+    color: #333;
+    height: 1.26rem;
+    line-height: 1.26rem;
+}
+.date>div:nth-child(2){
+    width: 50%;
+    margin-left: 2.6rem;
+}
+.date>div:nth-child(2) span{
+    font-size: .46rem;
+    text-align: right;
+    padding-right: 1.2rem;
+    line-height: 2.06rem;
+}
+.date>i,.bill>i,.coupon>i{
+    top: 50%;
+    position: absolute;
+    right: .5rem;
+    width: .24rem;
+    height: .47rem;
+    background: url(../../images/settle/arrow.png) no-repeat center;
+    background-size: 100%;
+    margin-top: -.23rem;
+    pointer-events: none;
+}
+/* 发票信息 */
+.bill{
+    position: relative;
+    padding: .4rem 1.2rem .4rem .3rem;
+    height: 1.16rem;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+.bill>div{
+    font-size: .46rem;
+    height: 0.36rem;
+    line-height: 0.36rem;
+}
+.bill>div:nth-child(2){
+    margin-left: 6.7rem;
+}
+/* 留言 */
+.message{
+    padding: 0rem .37rem 0rem .3rem;
+    font-size: .46rem;
+    height: 1.3rem;
+    display:flex;
+}
+.message span{
+    display: inline-block;
+    width: 1.76rem;
+    height: 1.3rem;
+    line-height: 1.3rem;
+}
+.message input{
+    width: 9.9rem;
+    height: 1.3rem;
+    border:0 none;
+    outline:none;
+    font-size: .46rem;
+    line-height: 1.3rem;
+    padding: .3rem 0;
+}
+/* 优惠券 */
+.coupon{
+    position: relative;
+    padding: .4rem 1.2rem .4rem .3rem;
+    background: #fff;
+    margin-bottom: .3rem;
+}
+.coupon span{
+    line-height: .6rem;
+    display: inline-block;
+    font-size: .46rem;
+}
+.coupon_num{
+    font-size: .3rem;
+    line-height: .3rem;
+    background: #ff6353;
+    padding: .1rem .25rem;
+    text-align: center;
+    border-radius: 10px;
+    color: #fff;
+    font-style: normal;
+    margin-left: .3rem;
+    vertical-align: middle;
+}

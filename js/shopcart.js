@@ -99,7 +99,7 @@ $(function () {
     function login() {
         $(".total_cart .btn a").on("click", function () { //选购商品，进行结算时，要先判断用户是否登录
             if (userLogin) {
-                location.href = ""; //已登录跳转到下一个页面
+                location.href = "settle.html"; //已登录跳转到下一个页面
             } else {
                 location.href = "../../html/login/login.html"; //未登录，跳转到登录页面
             }
