@@ -10,7 +10,15 @@ i {
 .mui-bar {
     height: 1.44rem;
     background-color: #fff;
-    text-align: center;
+}
+
+.mui-icon {
+    display: inline-block;
+    width: .25rem;
+    height: .48rem;
+    position: absolute;
+    left: .45rem;
+    top: .48rem;
 }
 
 .mui-title {
@@ -31,9 +39,7 @@ i {
 .user_info {
     position: relative;
     margin-bottom: .3rem;
-    /* padding: .6rem .25rem .2rem; */
     background: url(../../images/settle/dot.png) no-repeat#fff;
-    ;
     background-size: 100%;
     background-position-y: 100%;
 }
@@ -129,7 +135,6 @@ i {
 /* 购买时可选的信息 */
 
 .choose_info {
-    /* position: relative; */
     margin-bottom: .3rem;
     background: #fff;
 }
@@ -170,7 +175,8 @@ i {
 
 .date>i,
 .bill>i,
-.coupon>i {
+.coupon>i,
+.cash_coupon i {
     top: 50%;
     position: absolute;
     right: .5rem;
@@ -379,4 +385,145 @@ i {
     height: 1.17rem;
     background: url(../../images/settle/disable.png) no-repeat;
     background-size: 100%;
+}
+
+
+/* 现金券 */
+
+.cash_coupon {
+    position: relative;
+    padding: .4rem 1.2rem .4rem .3rem;
+    background: #fff;
+    margin-bottom: .3rem;
+    overflow: hidden;
+}
+
+.title {
+    float: left;
+    line-height: .6rem;
+    display: block;
+    font-size: .46rem;
+}
+
+.txt {
+    float: right;
+    width: 8rem;
+    display: block;
+    line-height: .6rem;
+    font-size: .38rem;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* 底部 应付金额 */
+
+.bottom {
+    width: 100%;
+    height: 1.66rem;
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    background: #fff;
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+
+.price_text {
+    width: 70%;
+    text-align: right;
+    line-height: 1.66rem;
+    font-size: .42rem;
+    color: #333;
+    padding-right: .7rem;
+    box-sizing: border-box;
+}
+
+.total_pay {
+    font-size: .5rem;
+    color: #fb3d3d;
+}
+
+.settle_btn {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 30%;
+    text-align: center;
+    line-height: 1.66rem;
+    font-size: .54rem;
+    background: #fb3d3d;
+    border: 0;
+    color: #fff;
+}
+
+
+/* 遮罩 */
+
+.mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, .5);
+    transition: all 2s;
+    display: none;
+}
+
+.rules {
+    position: relative;
+    margin-top: -5.1rem;
+    height: 11rem;
+    top: 50%;
+    left: 50%;
+    width: 11rem;
+    margin-left: -5.5rem;
+    border-radius: .4rem;
+    background-color: #fff;
+}
+
+
+/* .rules_text {} */
+
+.how_to_use {
+    height: 1.85rem;
+    line-height: 1.85rem;
+    font-size: .54rem;
+    color: #333;
+    position: relative;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-top-left-radius: .4rem;
+    border-top-right-radius: .4rem;
+}
+
+.rules_text ul {
+    padding: .8rem .8rem .3rem;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.rules_text ul li {
+    font-size: .42rem;
+    color: #808080;
+    position: relative;
+    margin-bottom: .4rem;
+}
+
+.know_btn a {
+    display: block;
+    width: 9.5rem;
+    height: 1.2rem;
+    font-size: .5rem;
+    color: #fff;
+    background: #11b57c;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.2rem;
+    border-radius: 3px;
 }

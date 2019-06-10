@@ -15,7 +15,7 @@
 <body>
     <header class="mui-bar mui-bar-nav">
         <!-- mui-icon-arrowleft 返回按钮< -->
-        <a class="mui-icon" style="color:black;" href="../index.html"></a>
+        <!-- <a href="../shopcart/shopcart.html" class="mui-icon mui-icon-arrowleft" style="color:black;"></a> -->
         <h1 class="mui-title">结算</h1>
     </header>
 
@@ -112,11 +112,42 @@
             <span class="fr">当前无u币可用</span>
             <i class="Ub_btn"></i>
         </div>
+        <!-- 现金券 -->
+        <div class="cash_coupon">
+            <span class="title">现金券</span>
+            <span class="txt"></span>
+            <i></i>
+        </div>
+        <!-- 底部 应付金额 -->
+        <div class="bottom">
+            <div class="price_text">应付金额:<span class="total_pay"><span>￥</span>123.00</span>
+            </div>
+            <a href="javascript:;" class="settle_btn">结算</a>
+        </div>
+        <!-- 遮罩 -->
+        <div class="mask">
+            <div class="rules">
+                <div class="rules_text">
+                    <div class="how_to_use">U币使用规则说明</div>
+                    <ul>
+                        <li>1.100U币抵1元；</li>
+                        <li>2.订单的实付金额>=10元；</li>
+                        <li>3.U币抵扣不超过每笔订单应付金额的10%；</li>
+                        <li>4.U币抵扣金额每笔订单上限￥20；</li>
+                        <li>5.U币每次抵扣金额为100的整数倍；</li>
+                        <li>6.购买礼卡礼券和充值不能使用U币。</li>
+                    </ul>
+                </div>
+                <div class="know_btn">
+                    <a href="javascript:;">知道了</a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="../../js/jquery/jquery-1.12.1.js"></script>
     <script src="../../js/mui.min.js"></script>
-    <script src="../../js/settle.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../js/settle.js"></script>
 </body>
 
 </html>
