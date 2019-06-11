@@ -1,0 +1,73 @@
+body {
+    font-size: 12px;
+    background: #f4f4f4;
+}
+
+i {
+    display: inline-block;
+}
+
+.mui-bar {
+    height: 1.44rem;
+    background-color: #fff;
+}
+
+.mui-title {
+    font-size: 0.5rem;
+    line-height: 1.44rem;
+}
+
+
+/* .addressList {} */
+
+.error {
+    position: fixed;
+    padding-top: 2.4rem;
+    width: 100%;
+    text-align: center;
+}
+
+.bg {
+    margin: 0 auto;
+    width: 3.6rem;
+    height: 3.6rem;
+    background: url(../../images/addressList/img_coupon.png) no-repeat center;
+    background-size: 100%;
+}
+
+.txt {
+    font-size: .47rem;
+    color: #808080;
+    line-height: .4rem;
+    margin-top: .8rem;
+}
+
+.footer {
+    height: 1.47rem;
+    line-height: 1.47rem;
+    position: fixed;
+    background-color: #11b57c;
+    font-size: .46rem;
+    color: #fff;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+}
+
+a {
+    color: white;
+}
+
+a:active {
+    color: white;
+}
+
+.add_logo {
+    position: absolute;
+    left: 4.3rem;
+    top: 0.55rem;
+    width: .36rem;
+    height: .37rem;
+    background: url(../../images/addressList/add3.png) no-repeat;
+    background-size: 100% 100%;
+}

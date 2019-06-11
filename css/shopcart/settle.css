@@ -12,14 +12,15 @@ i {
     background-color: #fff;
 }
 
-.mui-icon {
+
+/* .mui-icon {
     display: inline-block;
     width: .25rem;
     height: .48rem;
     position: absolute;
     left: .45rem;
     top: .48rem;
-}
+} */
 
 .mui-title {
     font-size: 0.5rem;
