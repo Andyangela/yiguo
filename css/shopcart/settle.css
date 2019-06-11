@@ -513,7 +513,12 @@ i {
     font-size: .42rem;
     color: #808080;
     position: relative;
-    margin-bottom: .4rem;
+    margin-bottom: .2rem;
+}
+@media (min-width:768px){
+    .rules_text ul li {
+        margin-bottom: .6rem;
+    }
 }
 
 .know_btn a {

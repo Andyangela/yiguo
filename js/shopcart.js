@@ -47,6 +47,7 @@ $(function() {
                 total_price(); //总商品和总价格
                 $(".total_cart .btn").on("click", function() {
                     localStorage.setItem("count", $(".total_num").html()); //购买总数量
+                    localStorage.setItem("price",$(".allPrice").html());
                     var arr = [];
                     $(".list_check i").each(function() {
                         if ($(this).hasClass("active")) {
@@ -113,7 +114,7 @@ $(function() {
             if (userLogin) {
                 location.href = "settle.html"; //已登录跳转到下一个页面
             } else {
-                // location.href = "../../html/login/login.html"; //未登录，跳转到登录页面
+                location.href = "../../html/login.html"; //未登录，跳转到登录页面
             }
         })
     };

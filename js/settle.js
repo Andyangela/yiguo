@@ -20,6 +20,10 @@ $(function() {
         $(".list").html(html);
     }
     lists_img();
+    // 渲染价格
+    var price =localStorage.getItem("price");
+    $(".payfor").html(price);
+    $(".total_pay").html(price);
     // U币使用规则-遮罩层
     $(".warn").on("click", function() {
         $(".mask").show();
