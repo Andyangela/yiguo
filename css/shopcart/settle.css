@@ -515,7 +515,8 @@ i {
     position: relative;
     margin-bottom: .2rem;
 }
-@media (min-width:768px){
+
+@media (min-width:768px) {
     .rules_text ul li {
         margin-bottom: .6rem;
     }
@@ -532,4 +533,23 @@ i {
     text-align: center;
     line-height: 1.2rem;
     border-radius: 3px;
+}
+
+
+/* 当前暂无U币可用 */
+
+.no_UB {
+    width: 4rem;
+    height: 1.3rem;
+    margin-left: -2rem;
+    margin-top: -0.65rem;
+    line-height: 1.3rem;
+    text-align: center;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    color: white;
+    border-radius: 5px;
+    display: none;
 }

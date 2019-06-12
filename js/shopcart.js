@@ -1,5 +1,6 @@
 $(function() {
     // ======判断用户是否登录======
+    localStorage.setItem("username", 111);
     var userLogin = localStorage.getItem("username");
     if (userLogin) { //已登录
         $("header").show();
@@ -47,7 +48,7 @@ $(function() {
                 total_price(); //总商品和总价格
                 $(".total_cart .btn").on("click", function() {
                     localStorage.setItem("count", $(".total_num").html()); //购买总数量
-                    localStorage.setItem("price",$(".allPrice").html());
+                    localStorage.setItem("price", $(".allPrice").html());
                     var arr = [];
                     $(".list_check i").each(function() {
                         if ($(this).hasClass("active")) {

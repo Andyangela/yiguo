@@ -21,7 +21,7 @@ $(function() {
     }
     lists_img();
     // 渲染价格
-    var price =localStorage.getItem("price");
+    var price = localStorage.getItem("price");
     $(".payfor").html(price);
     $(".total_pay").html(price);
     // U币使用规则-遮罩层
@@ -30,5 +30,11 @@ $(function() {
     });
     $(".know_btn a").on("click", function() {
         $(".mask").hide();
+    });
+    // u币按钮
+    $(".Ub_btn").on("click", function() {
+        $(".no_UB").fadeIn(1000, function() {
+            $(".no_UB").fadeOut(500)
+        })
     })
 })
