@@ -1,6 +1,6 @@
 $(function() {
     // 添加收货地址
-    $(".address").on("click", function() {
+    $(".user_info").on("click", function() {
         location.href = "./addressList.html"
     });
     //计算共多少件商品
