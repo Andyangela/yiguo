@@ -8,7 +8,6 @@
     <title>添加收货地址</title>
     <script src="../../js/rem.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" href="../../css/reset.css">
-    <!-- <link href="../../css/mui.min.css" rel="stylesheet" /> -->
     <link rel="stylesheet" type="text/css" href="../../css/shopcart/addAddress.css" />
 </head>
 
@@ -20,40 +19,40 @@
                 <li class="lists">
                     <span class="title">收件人姓名：</span>
                     <div class="right">
-                        <input type="text">
+                        <input type="text" name="username">
                     </div>
                 </li>
                 <li class="lists">
                     <span class="title">手机号码：</span>
                     <div class="right">
-                        <input type="text">
+                        <input type="text" name="phone_num">
                     </div>
                 </li>
                 <li class="lists">
                     <span class="title">请选择省：</span>
                     <div class="right">
-                        <select name="" id="province"></select>
+                        <select name="province" id="province"></select>
                         <span class="icon"></span>
                     </div>
                 </li>
                 <li class="lists">
                     <span class="title">请选择市：</span>
                     <div class="right">
-                        <select name="" id="city"></select>
+                        <select name="city" id="city"></select>
                         <span class="icon"></span>
                     </div>
                 </li>
                 <li class="lists">
                     <span class="title">请选择区：</span>
                     <div class="right">
-                        <select name="" id="area"></select>
+                        <select name="area" id="area"></select>
                         <span class="icon"></span>
                     </div>
                 </li>
                 <li class="lists">
                     <span class="title">详细地址：</span>
                     <div class="right">
-                        <input type="text">
+                        <input type="text" name="detail_address">
                     </div>
                 </li>
                 <li class="lists">
@@ -61,11 +60,11 @@
                     <div class="right">
                         <span class="choose">
                             <i class="chooseBtn active"></i>
-                            公司
+                            <span>公司</span>
                         </span>
                         <span class="choose">
                             <i class="chooseBtn"></i>
-                            家庭
+                            <span>家庭</span>
                         </span>
                     </div>
                 </li>
@@ -80,11 +79,10 @@
         <div class="submit">
             <a href="javascript:;">保存并返回</a>
         </div>
+
     </div>
-
-
+    <div class="warn"></div>
     <script src="../../js/jquery/jquery-1.12.1.js"></script>
-    <!-- <script src="../../js/mui.min.js"></script> -->
     <script src="../../js/area.js"></script>
     <script src="../../js/addAddress.js"></script>
 </body>
