@@ -9,6 +9,9 @@
     <script src="../../js/rem.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" href="../../css/reset.css">
     <link href="../../css/mui.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../../css/mui.picker.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/mui.poppicker.css" />
+
     <link rel="stylesheet" type="text/css" href="../../css/shopcart/settle.css" />
 </head>
 
@@ -22,12 +25,12 @@
     <div class="settle_wrap">
         <!-- 用户信息 地址 -->
         <div class="user_info">
-            <div class="address" style="display:none;">
+            <div class="address">
                 <i></i>
                 <span class="text">添加收货地址</span>
                 <span class="arrow"></span>
             </div>
-            <div class="address_list">
+            <div class="address_list active">
                 <div class="name">
                     <span>zz</span>
                     <span>18437980288</span>
@@ -56,8 +59,9 @@
                 <div>
                     <span>配送日期</span>
                 </div>
-                <div>
-                    <span>收货地址不支持配送</span>
+                <div id='showUserPicker' class="mui-btn mui-btn-block" style="border:none">
+                    <span id='userResult'>收货地址不支持配送</span>
+                    <span class="times">09:00~21:00</span>
                 </div>
                 <i></i>
             </div>
@@ -140,10 +144,13 @@
         </div>
         <!-- 当前暂无U币可用 -->
         <div class="no_UB">当前暂无U币可用</div>
+        <!-- <div id='userResult' class="ui-alert"></div> -->
     </div>
 
     <script src="../../js/jquery/jquery-1.12.1.js"></script>
     <script src="../../js/mui.min.js"></script>
+    <script src="../../js/mui.picker.js"></script>
+    <script src="../../js/mui.poppicker.js"></script>
     <script src="../../js/settle.js"></script>
 </body>
 

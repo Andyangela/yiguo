@@ -1,4 +1,4 @@
-$(function () {
+$(function() {
     // 省市区三级联动
     // 省
     var province_option = document.querySelector("#province"),
@@ -9,11 +9,11 @@ $(function () {
     }
     Citys();
     Areas();
-    $("#province").on("change", function () { //省改变，市 区 也改变
+    $("#province").on("change", function() { //省改变，市 区 也改变
         Citys();
         Areas();
     });
-    $("#city").on("change", function () { //市改变  区也改变
+    $("#city").on("change", function() { //市改变  区也改变
         Areas();
     })
 
@@ -35,7 +35,7 @@ $(function () {
         }
     };
     // 选择地址类型
-    $(".chooseBtn").on("click", function () {
+    $(".chooseBtn").on("click", function() {
         if ($(this).hasClass("active")) {
             $(this).removeClass("active").parent().siblings().find(".chooseBtn").addClass("active");
         } else {
@@ -43,7 +43,7 @@ $(function () {
         }
     });
     // 设为默认地址
-    $(".default_btn").on("click", function () {
+    $(".default_btn").on("click", function() {
         if ($(this).hasClass("active")) {
             $(this).removeClass("active");
         } else {
@@ -53,32 +53,32 @@ $(function () {
     // 点击保存地址
     var patt = /^1[3-9]\d{9}$/; //验证手机号码格式
 
-    $(".submit").on("click", function () {
+    $(".submit").on("click", function() {
         if ($(".lists:nth-child(1) input").val() == "") { //联系人不能为空
-            $(".warn").html("联系人不能为空").fadeIn(2000, function () {
+            $(".warn").html("联系人不能为空").fadeIn(2000, function() {
                 $(this).fadeOut()
             });
             return false;
         } else {
             if ($(".lists:nth-child(2) input").val() == "") { //手机号码不能为空
-                $(".warn").html("手机号码不能为空").fadeIn(2000, function () {
+                $(".warn").html("手机号码不能为空").fadeIn(2000, function() {
                     $(this).fadeOut()
                 });
                 return false;
             } else if (!patt.test($(".lists:nth-child(2) input").val())) { //手机号码格式不正确
-                $(".warn").html("手机号码格式不正确").fadeIn(2000, function () {
+                $(".warn").html("手机号码格式不正确").fadeIn(2000, function() {
                     $(this).fadeOut()
                 });
                 return false;
             }
         };
         if ($(".lists:nth-child(6) input").val() == "") { //详细地址不能为空
-            $(".warn").html("详细地址不能为空").fadeIn(2000, function () {
+            $(".warn").html("详细地址不能为空").fadeIn(2000, function() {
                 $(this).fadeOut()
             });
             return false;
         };
-        $(".chooseBtn").each(function () { //判断所选地址类型
+        $(".chooseBtn").each(function() { //判断所选地址类型
             if ($(this).hasClass("active")) {
                 address_type = $(this).next().html();
             }
@@ -96,22 +96,22 @@ $(function () {
         //     detail_address = $(".lists:nth-child(6) input").val()
 
         // console.log(username, phone_num, province, city, area, detail_address, address_type, default_address);
-        
-            $.ajax({
-                url: "http://localhost/php/addAddress.php",
-                data: "username=" + $(".lists:nth-child(1) input").val() + 
-                "&phone_num=" + $(".lists:nth-child(2) input").val() + 
-                "&province=" + $("#province").val() + "&city=" + $("#city").val() + 
-                "&area=" + $("#area").val() + "&detail_address=" + $(".lists:nth-child(6) input").val() ,
-              
-                
-                type: "post",
-                dateType: "json",
-                success: function (data) {
-                    // console.log(data)
-                    location.href="settle.html"
-                }
-            })
+
+        $.ajax({
+            url: "../../php/addAddress.php",
+            data: "username=" + $(".lists:nth-child(1) input").val() +
+                "&phone_num=" + $(".lists:nth-child(2) input").val() +
+                "&province=" + $("#province").val() + "&city=" + $("#city").val() +
+                "&area=" + $("#area").val() + "&detail_address=" + $(".lists:nth-child(6) input").val(),
+
+
+            type: "post",
+            dateType: "json",
+            success: function(data) {
+                // console.log(data)
+                location.href = "settle.html"
+            }
+        })
 
 
     });
