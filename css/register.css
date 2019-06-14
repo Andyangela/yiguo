@@ -1,0 +1,109 @@
+body {
+    background: white;
+}
+
+.mui-input-group {
+    border-top: 0.01rem solid #d9dfd5;
+    margin-top: 30px;
+    padding: 0 0 0 20px;
+    background: #fff;
+}
+
+.mui-input-group .mui-input-row {
+    position: relative;
+    height: 2rem;
+}
+
+.mui-input-row .mui-input-clear {
+    width: 90%;
+    height: 100%;
+    font-size: 16px;
+}
+
+.getvc {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 0 .2rem;
+    box-sizing: border-box;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    border-radius: 4px;
+    background: #008842;
+}
+
+.agreement {
+    margin-top: 10px;
+    text-align: center;
+    color: #8d8a8a;
+    padding-left: 17px;
+    position: relative;
+}
+
+.agreement input {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 3px;
+    left: 1.7rem;
+}
+
+.green {
+    color: #008842;
+}
+
+.btn {
+    width: 50%;
+    margin:1rem auto 0;
+}
+
+.mui-btn {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+}
+
+.mui-btn-danger {
+    margin-right: 1rem;
+    background: #008842;
+    border: none;
+}
+@media(min-width:768px) {
+    .mui-input-row .mui-input-clear {
+		font-size: 25px;
+    }
+    .getvc {
+        top: 45px;
+        font-size: 20px;
+    }
+    .agreement {
+        margin-top: 30px;
+        font-size: 20px;
+    }
+    .agreement input {
+        width: 20px;
+        height: 20px;
+        top: 7px;
+        left: 2.5rem;
+    }
+    .mui-btn {
+        height: 60px;
+        font-size: 23px;
+    }
+}
+@media(min-width:1024px){
+    .agreement input {
+        left: 3.3rem;
+    }
+}
+@media(max-height:480px){
+    .agreement input {
+        left: 0.9rem;
+    }
+}
+@media(max-height:568px){
+    .agreement input {
+        left: 0.8rem;
+    }
+}

@@ -4,7 +4,7 @@
     if($mysqli->connect_errno){
         die();
     }
-    $sql='select * from product where weight="0"';
+    $sql='select * from product where sort="0"';
     $result=$mysqli->query($sql);
     while($rows=Mysqli_fetch_assoc($result)){
         $data[]=$rows;
