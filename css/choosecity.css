@@ -1,0 +1,42 @@
+.city h3 {
+    height: 1.32rem;
+    padding: 0 .32rem;
+    line-height: 1.32rem;
+    font-size: .45rem;
+    font-weight: 400;
+    color: #333;
+}
+
+.hot {
+    padding: 0 .64rem;
+}
+
+.hot span {
+    position: relative;
+    float: left;
+    width: 2.4rem;
+    height: .9rem;
+    margin: 0 1.31rem .32rem 0;
+    border-radius: 3px;
+    background: #fff;
+    line-height: .94rem;
+    font-size: .38rem;
+    color: #333;
+    text-align: center;
+}
+.hot span:after {
+    border-radius: 6px;
+    border-color: gray;
+}
+.line-all:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200%;
+    height: 200%;
+    box-sizing: border-box;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+    border:1px solid #ddd;
+}
