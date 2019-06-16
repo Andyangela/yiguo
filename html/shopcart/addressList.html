@@ -11,17 +11,20 @@
     <link href="../../css/mui.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="../../css/shopcart/addressList.css" />
 </head>
-
 <body>
     <header class="mui-bar mui-bar-nav">
         <h1 class="mui-title">我的收货地址</h1>
     </header>
-    <div class="addressList error">
+    <div class="addressList">
+        <!-- 没有收货地址 -->
         <div class="bg"></div>
         <div class="txt">你还没有添加地址</div>
+        <!-- 有收货地址 -->
+        <section class="myaddress">
+            <ul></ul>
+        </section>
     </div>
     <div class="footer">
-
         <a href="../../html/shopcart/addAddress.html"><i class="add_logo"></i>增加收货地址</a>
     </div>
     <script src="../../js/jquery/jquery-1.12.1.js"></script>

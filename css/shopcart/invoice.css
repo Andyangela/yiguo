@@ -1,0 +1,255 @@
+body {
+    font-size: 12px;
+    background: #f4f4f4;
+}
+
+i {
+    display: inline-block;
+}
+.invoice {
+    padding: 1.39rem 0 1.6rem;
+}
+/* 提示 */
+.hint{
+    z-index: 10;
+    position: fixed;
+    top: 0rem;
+    left: 0;
+    margin-bottom: .3rem;
+    font-size: .38rem;
+    color: #333;
+    text-align: center;
+    width: 100%;
+    height: 1.09rem;
+    line-height: 1.09rem;
+    background: #fff9eb;
+    padding: 0 .8rem 0 .3rem;
+    box-sizing: border-box;
+    border-bottom: .5px solid #ffd6a0;
+}
+.hint span:nth-child(1){
+    float: left;
+    display: block;
+    width: 80%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.hint span:nth-child(2){
+    float: right;
+    display: block;
+    width: 20%;
+}
+.arrow{
+    padding: 0;
+    top: 50%;
+    position: absolute;
+    right: .5rem;
+    width: .24rem;
+    height: .47rem;
+    background: url(../../images/settle/arrow.png) no-repeat center;
+    background-size: 100%;
+    margin-top: -.23rem;
+}
+/* 发票类型 */
+.type{
+    background: #fff;
+    margin-bottom: .3rem;
+}
+.title{
+    position: relative;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    padding: 0 .3rem;
+    color: #808080;
+    font-size: .46rem;
+    border-bottom: .5px solid #ddd;
+}
+.choose_type{
+    margin-left: .3rem;
+    padding-bottom: 0rem;
+    border-bottom: .5px solid #ddd;
+}
+.choose_type .txt{
+    position: relative;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    color: #333;
+    font-size: .46rem;
+}
+.choose_type .txt i{
+    position: absolute;
+    right: .4rem;
+    top: 50%;
+    margin-top: -0.27rem;
+    display: inline-block;
+    width: .54rem;
+    height: .54rem;
+    background: url(../../images/shopcart/check1.png) no-repeat;
+    background-size: 100%;
+}
+.choose_type .txt i.active{
+    background: url(../../images/shopcart/check2.png) no-repeat;
+    background-size: 100%;
+}
+.type_inline{
+    margin-left: .3rem;
+}
+.type_inline .tab{
+    border-bottom: .5px solid #ddd;
+    position: relative;
+}
+.type_inline .tab a{
+    color: #333;
+    font-size: .46rem;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    margin-right: 1rem;
+}
+.type_inline .tab a i{
+    display: inline-block;
+    width: .54rem;
+    height: .54rem;
+    margin-right: .4rem;
+    background: url(../../images/shopcart/check1.png) no-repeat;
+    background-size: 100%;
+    vertical-align: -3px;
+}
+.type_inline .tab a i.active{
+    background: url(../../images/shopcart/check2.png) no-repeat;
+    background-size: 100%;
+}
+.tab_bottom{
+    display: none;
+}
+.tab_bottom.active{
+    display: block;
+}
+.tab_bottom .input{
+    position: relative;
+    border-bottom:.5px solid #ddd;
+}
+.tab_bottom .input input{
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: .38rem;
+    line-height: .7rem;
+    padding: .3rem 0;
+}
+.tips{
+    font-size: .38rem;
+    padding: .33rem .33rem .33rem .52rem;
+    line-height: 1.5;
+    color: #808080;
+    background: url(../../images/settle/now.png) no-repeat left .38rem;
+    background-size: .36rem .36rem;
+}
+.tips b{
+    font-weight: normal;
+    color: #ff6353;
+}
+/* 说明 */
+.bottom_txt{
+    padding: 1rem .3rem;
+    background: #f4f4f4;
+}
+.bottom_txt span{
+    line-height: .5rem;
+    color: #808080;
+    font-size: .34rem;
+    display: block;
+}
+/* 按钮 */
+.btn_box{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 1.6rem;
+    width: 100%;
+    background: #fff;
+    padding: 0 1.2rem;
+    border-top: .5px solid #ddd;
+}
+.btn_box .no_need{
+    margin-right: .9rem;
+    border: 1px solid #808080;
+    background: #fff;
+    color: #808080;
+    box-sizing: border-box;
+}
+.btn_box a{
+    float: left;
+    width: 4.5rem;
+    height: 1.2rem;
+    background: #11b57c;
+    border: 1px solid #11b57c;
+    color: #fff;
+    font-size: .5rem;
+    text-align: center;
+    line-height: 1.2rem;
+    margin: .2rem auto;
+    border-radius: 3px;
+}
+/* 提示面板 */
+.mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    transition: all 2s;
+    display: none;
+}
+.mask .content{
+    position: relative;
+    margin-top: -5.1rem;
+    height: 12rem;
+    top: 50%;
+    left: 50%;
+    width: 11rem;
+    margin-left: -5.5rem;
+    border-radius: .4rem;
+    background-color: #fff;
+}
+.how_to_use{
+    height: 1.85rem;
+    line-height: 1.85rem;
+    font-size: .54rem;
+    color: #333;
+    position: relative;
+    text-align: center;
+    border: .5px solid #ddd;
+    border-top-left-radius: .4rem;
+    border-top-right-radius: .4rem;
+}
+.content .text{
+    padding: .8rem .8rem .3rem;
+    box-sizing: border-box;
+}
+.content .text h2 {
+    margin-bottom: .5rem;
+    color: #333;
+    font-weight: 400;
+    font-size: .46rem;
+}
+.content .text p {
+    margin-bottom: .6rem;
+    color: grey;
+    font-size: .42rem;
+    line-height: 1.1;
+}
+.know_btn a {
+    display: block;
+    width: 9.5rem;
+    height: 1.2rem;
+    font-size: .5rem;
+    color: #fff;
+    background: #11b57c;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.2rem;
+    border-radius: 3px;
+}

@@ -11,7 +11,6 @@
     <link href="../../css/mui.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="../../css/mui.picker.css" />
     <link rel="stylesheet" type="text/css" href="../../css/mui.poppicker.css" />
-
     <link rel="stylesheet" type="text/css" href="../../css/shopcart/settle.css" />
 </head>
 
@@ -25,22 +24,6 @@
     <div class="settle_wrap">
         <!-- 用户信息 地址 -->
         <div class="user_info">
-            <div class="address">
-                <i></i>
-                <span class="text">添加收货地址</span>
-                <span class="arrow"></span>
-            </div>
-            <div class="address_list active">
-                <div class="name">
-                    <span>zz</span>
-                    <span>18437980288</span>
-                </div>
-                <div class="address1">
-                    <i class="label">公司</i>
-                    <span class="address-details">河南郑州市中原区云和有限公司</span>
-                </div>
-                <span class="arrow"></span>
-            </div>
         </div>
         <!-- 显示购买的商品 -->
         <div class="commodity">
@@ -144,13 +127,81 @@
         </div>
         <!-- 当前暂无U币可用 -->
         <div class="no_UB">当前暂无U币可用</div>
-        <!-- <div id='userResult' class="ui-alert"></div> -->
+
+    </div>
+    <!-- 弹出结算面板 -->
+    <div class="settle_mask">
+        <div class="settleBox">
+            <div>
+                <p class="title">选择支付方式</p>
+            </div>
+            <div class="gift_card">
+                <div style="width:50%;">礼品卡支付</div>
+                <div style="width:40%;">卡包余额不足</div>
+                <i></i>
+            </div>
+            <div class="online_pay">
+                <div style="width:50%;">在线支付</div>
+                <div style="width:40%;">官网微信APP</div>
+                <i></i>
+            </div>
+            <div class="pay_cash online_pay">
+                <div style="width:50%;">货到付款</div>
+                <div style="width:40%;"></div>
+                <i></i>
+            </div>
+            <div class="sure_pay">
+                <span class="should_pay">应付金额：
+                    <b>￥</b>
+                    <b class="allMoney">39.00</b>
+                </span>
+                <a href="javascript:;">确认支付</a>
+            </div>
+            <i class="close mui-icon mui-icon-closeempty"></i>
+        </div>
+        <!-- 在线支付 -->
+        <div class="online_pay_box">
+            <div class="text">
+                在线支付
+                <i class="return"></i>
+            </div>
+            <div class="items">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-weixin"></use>
+                </svg>
+                <span>官网微信APP</span>
+                <i class="check_btn"></i>
+            </div>
+            <div class="items">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-zhifubao"></use>
+                </svg>
+                <span>支付宝</span>
+                <i class="check_btn"></i>
+            </div>
+        </div>
+        <!-- 货到付款 -->
+        <div class="online_pay_box pay_after">
+                <div class="text">
+                    货到付款
+                    <i class="return"></i>
+                </div>
+                <div class="items">
+                    <span>官网微信APP</span>
+                    <i class="check_btn"></i>
+                </div>
+                <div class="items">
+                    <span>支付宝</span>
+                    <i class="check_btn"></i>
+                </div>
+            </div>
     </div>
 
     <script src="../../js/jquery/jquery-1.12.1.js"></script>
     <script src="../../js/mui.min.js"></script>
     <script src="../../js/mui.picker.js"></script>
     <script src="../../js/mui.poppicker.js"></script>
+    <script src="../../fonts/iconfont.js"></script>
     <script src="../../js/settle.js"></script>
 </body>
 

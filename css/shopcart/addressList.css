@@ -16,32 +16,144 @@ i {
     font-size: 0.5rem;
     line-height: 1.44rem;
 }
-
-
-/* .addressList {} */
-
-.error {
+.addressList{
     position: fixed;
-    padding-top: 2.4rem;
+    padding: 2rem 0 0rem;
     width: 100%;
     text-align: center;
+    bottom: 1.47rem;
+    left:0;
+    top:0;
+    overflow-y: scroll;
 }
-
-.bg {
+.addressList .bg,.addressList .txt{
+    display: none;
+}
+/* 没有收货地址 */
+.addressList.error .bg {
     margin: 0 auto;
     width: 3.6rem;
     height: 3.6rem;
     background: url(../../images/addressList/img_coupon.png) no-repeat center;
     background-size: 100%;
+    display: block;
 }
 
-.txt {
+.addressList.error .txt {
     font-size: .47rem;
     color: #808080;
     line-height: .4rem;
     margin-top: .8rem;
+    display: block;
 }
-
+/* 有收货地址 */
+.addressList ul{
+    position: relative;
+}
+.myaddress{
+position: relative;
+}
+.addressList li{
+    margin:0.32rem 0;
+    padding-left: .31rem;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    /* position: relative; */
+}
+.item{
+    padding: .4rem .32rem .4rem 0rem;
+    height: 2.7rem;
+    line-height: 2.7rem;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+}
+.left{
+    text-align: left;
+    float: left;
+}
+.personal_info{
+    margin-top: .4rem;
+    font-size: .46rem;
+    line-height: .46rem;
+    color: #000;
+}
+.address_info{
+    position: relative;
+    padding: .42rem 0 0rem 1.2rem;
+    font-size: .4rem;
+    color: #8d8a8a;
+    line-height: .4rem;
+}
+.address_info .type{
+    position: absolute;
+    top: .35rem;
+    left: 0;
+    font-style: normal;
+    font-size: .38rem;
+    color: #11b57c;
+    border: 1px solid #11b57c;
+    padding: .07rem;
+    border-radius: 3px;
+    line-height: .38rem;
+}
+.item .left a{
+    display: block;
+    position: absolute;
+    width: .63rem;
+    height: .63rem;
+    background: url(../../images/shopcart/check1.png) no-repeat center;
+    background-size: 100%;
+    top: .8rem;
+    right: .32rem;
+}
+.item .left a.active{
+    background-image: url(../../images/shopcart/check2.png);
+}
+.operate{
+    margin-right: .31rem;
+    height: 1.34rem;
+    line-height: 1.34rem;
+    font-size: .4rem;
+    color: #8d8a8a;
+    position: relative;
+}
+.operate>.default{
+    position: absolute;
+    left: .2rem;
+    line-height: 1.34rem;
+    padding-left: .7rem;
+}
+.default_btn{
+    position: absolute;
+    left: 0rem;
+    top: 50%;
+    margin-top: -0.27rem;
+    width: .54rem;
+    height: .54rem;
+    background: url(../../images/shopcart/check1.png) no-repeat;
+    background-size: 100%;
+}
+.default_btn.active{
+    background-image: url(../../images/shopcart/check2.png);
+}
+.operate_right{
+    top: 0;
+    right: .31em;
+    position: absolute;
+}
+.operate_right>span{
+    display: inline-block;
+    width: 2.03rem;
+    font-size: .42rem;
+    line-height: .42rem;
+    padding: .235rem 0;
+    text-align: center;
+    color: #808080;
+    border:1px solid #ddd;
+    border-radius: 0.3rem;
+}
+/* footer  */
 .footer {
     height: 1.47rem;
     line-height: 1.47rem;
