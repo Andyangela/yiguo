@@ -7,11 +7,14 @@ body {
 	margin-top: 30px;
 	padding: 0 0 0 20px;
 	background: #fff;
+	position: relative;
+	z-index:1;
 }
 
 .mui-input-group .mui-input-row {
 	position: relative;
 	height: 2rem;
+	z-index:1;
 }
 
 .mui-input-row label {
@@ -27,7 +30,7 @@ body {
 	background-size: 55% 95%;
 }
 
-.mui-input-row .mui-input-clear {
+.mui-input-row .mui-input {
 	width: 90%;
 	height: 100%;
 	font-size: 16px;
@@ -39,11 +42,14 @@ body {
 }
 
 .mui-input-row img {
-	width: 2.2rem;
-	height: 1rem;
+	width: 2.5rem;
+	height: 1.2rem;
 	position: absolute;
-	top: 0.5rem;
+	top: 0.35rem;
 	right: 0.7rem;
+	border:1px solid rgb(163, 163, 163);
+	font-size:20px;
+	color:rgb(185, 0, 0);
 }
 
 .forgetpassword {
@@ -97,7 +103,7 @@ body {
 }
 
 @media(min-width:768px) {
-	.mui-input-row .mui-input-clear {
+	.mui-input-row .mui-input {
 		font-size: 25px;
 	}
 
@@ -121,4 +127,23 @@ body {
 		height: 60px;
 		font-size: 22px;
 	}
+	.tip{
+		font-size:20px;
+	}
+}
+.tip{
+	width:4.5rem;
+	height:1.5rem;
+	background-color: rgba(0,0,0,.5);
+	position: fixed;
+	top:50%;
+	left:50%;
+	z-index:10;
+	border-radius:5px;
+	text-align:center;
+	line-height:1.5rem;
+	color:white;
+	margin-top:-0.75rem;
+	margin-left:-2.25rem;
+	display:none;
 }
