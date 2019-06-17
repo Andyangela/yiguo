@@ -16,14 +16,18 @@
 
 <body>
     <header class="mui-bar mui-bar-nav">
-        <!-- mui-icon-arrowleft 返回按钮< -->
-        <!-- <a href="../shopcart/shopcart.html" class="mui-icon mui-icon-arrowleft" style="color:black;"></a> -->
         <h1 class="mui-title">结算</h1>
     </header>
 
     <div class="settle_wrap">
         <!-- 用户信息 地址 -->
         <div class="user_info">
+            <div class="address">
+                <i></i>
+                <span class="text">添加收货地址</span>
+                <span class="arrow"></span>
+            </div>
+            <div class="address_list active"></div>
         </div>
         <!-- 显示购买的商品 -->
         <div class="commodity">
@@ -52,7 +56,7 @@
                 <div>
                     发票信息
                 </div>
-                <div>
+                <div class="need_bill">
                     不需要发票
                 </div>
                 <i></i>
@@ -142,25 +146,25 @@
             </div>
             <div class="online_pay">
                 <div style="width:50%;">在线支付</div>
-                <div style="width:40%;">官网微信APP</div>
+                <div class="show_pay_online" style="width:40%;">官网微信APP</div>
                 <i></i>
             </div>
             <div class="pay_cash online_pay">
                 <div style="width:50%;">货到付款</div>
-                <div style="width:40%;"></div>
+                <div class="show_pay_cash" style="width:40%;"></div>
                 <i></i>
             </div>
             <div class="sure_pay">
                 <span class="should_pay">应付金额：
                     <b>￥</b>
-                    <b class="allMoney">39.00</b>
+                    <b class="allMoney"></b>
                 </span>
                 <a href="javascript:;">确认支付</a>
             </div>
             <i class="close mui-icon mui-icon-closeempty"></i>
         </div>
         <!-- 在线支付 -->
-        <div class="online_pay_box">
+        <div class="online_pay_box online">
             <div class="text">
                 在线支付
                 <i class="return"></i>
@@ -182,19 +186,19 @@
         </div>
         <!-- 货到付款 -->
         <div class="online_pay_box pay_after">
-                <div class="text">
-                    货到付款
-                    <i class="return"></i>
-                </div>
-                <div class="items">
-                    <span>官网微信APP</span>
-                    <i class="check_btn"></i>
-                </div>
-                <div class="items">
-                    <span>支付宝</span>
-                    <i class="check_btn"></i>
-                </div>
+            <div class="text">
+                货到付款
+                <i class="return"></i>
             </div>
+            <div class="items">
+                <span>现金支付</span>
+                <i class="check_btn"></i>
+            </div>
+            <div class="items">
+                <span>POSE机支付</span>
+                <i class="check_btn"></i>
+            </div>
+        </div>
     </div>
 
     <script src="../../js/jquery/jquery-1.12.1.js"></script>

@@ -23,6 +23,8 @@ i {
     padding: 0 0 1.66rem;
     margin-top: 1.6rem;
 }
+
+
 /* 用户信息 地址 */
 
 .user_info {
@@ -60,7 +62,8 @@ i {
     line-height: 2.7rem;
 }
 
-.arrow,.online_pay i{
+.arrow,
+.online_pay i {
     position: absolute;
     right: .5rem;
     top: 50%;
@@ -124,6 +127,8 @@ i {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
+
+
 /* 购买的商品 */
 
 .commodity {
@@ -175,12 +180,16 @@ i {
     width: 2.2rem;
     height: 2.2rem;
 }
+
+
 /* 购买时可选的信息 */
 
 .choose_info {
     margin-bottom: .3rem;
     background: #fff;
 }
+
+
 /* 配送日期 */
 
 .date {
@@ -244,6 +253,8 @@ i {
     margin-top: -.23rem;
     pointer-events: none;
 }
+
+
 /* 配送日期弹出框样式 */
 
 .mui-btn-blue,
@@ -258,9 +269,35 @@ input[type=submit] {
     border-bottom: solid 1px #22943a;
 }
 
+.mui-poppicker-header .mui-btn {
+    font-size: .46rem;
+    padding: 0.05rem 0.1rem;
+}
+
 .mui-pciker-list li.highlight {
     color: #22943a;
+    font-size: .46rem;
 }
+
+.mui-pciker-list,
+.mui-pciker-rule {
+    height: 0.7rem;
+    line-height: 0.7rem;
+}
+
+.mui-poppicker-body {
+    height: 7rem;
+}
+
+.mui-pciker-list li {
+    font-size: .3rem;
+}
+
+.mui-poppicker {
+    transform: translateY(655px);
+}
+
+
 /* 发票信息 */
 
 .bill {
@@ -282,6 +319,8 @@ input[type=submit] {
 .bill>div:nth-child(2) {
     margin-left: 6.7rem;
 }
+
+
 /* 留言 */
 
 .message {
@@ -307,6 +346,8 @@ input[type=submit] {
     line-height: 1.3rem;
     padding: .3rem 0;
 }
+
+
 /* 优惠券 */
 
 .coupon {
@@ -334,6 +375,8 @@ input[type=submit] {
     margin-left: .3rem;
     vertical-align: middle;
 }
+
+
 /* 商品合计 */
 
 .all {
@@ -377,6 +420,8 @@ input[type=submit] {
     background: url(../../images/settle/free-freight.png) no-repeat center;
     background-size: 100%;
 }
+
+
 /* 应付金额 */
 
 .all>div:nth-child(2) {
@@ -396,6 +441,8 @@ input[type=submit] {
 .all>div:nth-child(2)>.payfor {
     text-align: right;
 }
+
+
 /* u币抵现 */
 
 .Ub {
@@ -448,6 +495,8 @@ input[type=submit] {
     background: url(../../images/settle/disable.png) no-repeat;
     background-size: 100%;
 }
+
+
 /* 现金券 */
 
 .cash_coupon {
@@ -476,6 +525,8 @@ input[type=submit] {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+
 /* 底部 应付金额 */
 
 .bottom {
@@ -517,6 +568,8 @@ input[type=submit] {
     border: 0;
     color: #fff;
 }
+
+
 /* 遮罩 */
 
 .mask {
@@ -542,7 +595,6 @@ input[type=submit] {
     border-radius: .4rem;
     background-color: #fff;
 }
-/* .rules_text {} */
 
 .how_to_use {
     height: 1.85rem;
@@ -587,6 +639,8 @@ input[type=submit] {
     line-height: 1.2rem;
     border-radius: 3px;
 }
+
+
 /* 当前暂无U币可用 */
 
 .no_UB {
@@ -604,8 +658,11 @@ input[type=submit] {
     border-radius: 5px;
     display: none;
 }
+
+
 /* 弹出结算面板 */
-.settle_mask{
+
+.settle_mask {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -616,59 +673,74 @@ input[type=submit] {
     transition: all 2s;
     display: none;
 }
-.settleBox,.online_pay_box{
-    width:100%;
-    height:50%;
+
+.settleBox,
+.online_pay_box {
+    width: 100%;
+    height: 50%;
     background: #FFFFFF;
     position: fixed;
-    bottom:-40%;
-    left:0;
+    bottom: -40%;
+    left: 0;
     text-align: center;
 }
-.mui-icon{
+
+.mui-icon {
     font-size: 1.2rem;
 }
-.close{
+
+.close {
     position: absolute;
-    right:0rem;
-    top:0rem; 
+    right: 0rem;
+    top: 0rem;
 }
-.settleBox .title{
+
+.settleBox .title {
     display: block;
-    width:100%;
-    height:1.34rem;
+    width: 100%;
+    height: 1.34rem;
     line-height: 1.34rem;
     border-bottom: 1px solid #ddd;
 }
-.settleBox>div{
-    width:100%;
-    height:1.34rem;
+
+.settleBox>div {
+    width: 100%;
+    height: 1.34rem;
     border-bottom: 1px solid #ddd;
 }
-.settleBox .title{
+
+.settleBox .title {
     font-size: 0.46rem;
-    color:black;
+    color: black;
 }
-.settleBox div>div:nth-child(1){
+
+.settleBox div>div:nth-child(1) {
     text-align: left;
     margin-left: 0.35rem;
 }
-.settleBox>.gift_card, .online_pay {
+
+.settleBox>.gift_card,
+.online_pay {
     position: relative;
 }
-.gift_card>div,.online_pay>div{
+
+.gift_card>div,
+.online_pay>div {
     float: left;
-    font-size: 0.46rem;   
+    font-size: 0.46rem;
 }
-.online_pay>div{
+
+.online_pay>div {
     line-height: 1.2rem;
 }
-@media (min-width:768px){
-    .gift_card>div{
-        line-height: 1rem;  
+
+@media (min-width:768px) {
+    .gift_card>div {
+        line-height: 1rem;
     }
 }
-.gift_card i{
+
+.gift_card i {
     position: absolute;
     right: .3rem;
     top: 50%;
@@ -679,58 +751,68 @@ input[type=submit] {
     background-size: 100%;
 }
 
-.settleBox .sure_pay{
-    border:none;
-    height:2.68rem;
+.settleBox .sure_pay {
+    border: none;
+    height: 2.68rem;
     bottom: 0.5rem;
-    left:0;
+    left: 0;
     position: absolute;
     font-size: 0.46rem;
 }
-.settleBox .sure_pay a{
-   display: block;
-   width:80%;
-   height:1.3rem;
-   background-color: #FF6354;
-   line-height: 1.3rem;
-   font-size: 0.46rem;
-   margin: auto;
-   margin-top: 0.6rem;
-   clear: both;
-   color:white;
+
+.settleBox .sure_pay a {
+    display: block;
+    width: 80%;
+    height: 1.3rem;
+    background-color: #FF6354;
+    line-height: 1.3rem;
+    font-size: 0.46rem;
+    margin: auto;
+    margin-top: 0.6rem;
+    clear: both;
+    color: white;
 }
-.should_pay{
+
+.should_pay {
     float: right;
     margin-right: 1.2rem;
     line-height: 1.68rem;
 }
-@media (min-width:768px){
-    .settleBox .sure_pay a{
+
+@media (min-width:768px) {
+    .settleBox .sure_pay a {
         margin-top: 1rem;
-    } 
+    }
 }
-.should_pay b{
-    color:#FF6354;
+
+.should_pay b {
+    color: #FF6354;
 }
+
+
 /* 在线支付 */
-.online_pay_box{
-    height: 100%;
-    left:100%;
+
+.online_pay_box {
+    height: 90%;
+    left: 100%;
     z-index: 11;
 }
-.online_pay_box>div{
-    height:1.34rem;
+
+.online_pay_box>div {
+    height: 1.34rem;
     line-height: 1.34rem;
     border-bottom: .5px solid #ddd;
     position: relative;
     font-size: .46rem;
 }
-.online_pay_box>div>span{
+
+.online_pay_box>div>span {
     float: left;
-    margin-left:2rem;
+    margin-left: 2rem;
     font-size: .46rem;
 }
-.return{
+
+.return {
     width: .28rem;
     height: .52rem;
     background: url(../../images/settle/arrow.png) no-repeat center;
@@ -740,25 +822,28 @@ input[type=submit] {
     top: .42rem;
     transform: rotate(180deg);
 }
-.check_btn{
+
+.check_btn {
     position: absolute;
     width: .63rem;
     height: .63rem;
     background: url(../../images/shopcart/check1.png) no-repeat center;
     background-size: 100%;
     top: .4rem;
-    right: .32rem 
+    right: .32rem
 }
+
 .icon {
     width: 2em;
-    height:2em;
+    height: 2em;
     vertical-align: -0.15em;
     fill: currentColor;
     overflow: hidden;
     position: absolute;
-    top:.2rem;
-    left:.32rem;
-  }
-  .check_btn.active{
-      background-image: url(../../images/shopcart/check2.png)
-  }
+    top: .2rem;
+    left: .32rem;
+}
+
+.check_btn.active {
+    background-image: url(../../images/shopcart/check2.png)
+}

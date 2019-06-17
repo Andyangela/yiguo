@@ -4,7 +4,7 @@
     if($mysqli->connect_errno){
         die("数据库连接失败");
     }
-    $sql="select * from address_info where default_address='Yes'";
+    $sql="select * from address_info where default_address='yes'";
     $result=$mysqli->query($sql);
     while($rows=Mysqli_fetch_assoc($result)){
         $data[]=$rows;

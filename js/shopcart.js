@@ -1,7 +1,7 @@
 $(function() {
     // ======判断用户是否登录======
-    localStorage.setItem("username", 111);
-    var userLogin = localStorage.getItem("username");
+    cookie.setCookies("username", "111");
+    var userLogin = cookie.getCookies("username");
     if (userLogin) { //已登录
         $("header").show();
         $(".cart_login").hide();
@@ -56,8 +56,9 @@ $(function() {
                             arr.push(bought_img);
                         }
                     })
-                    localStorage.setItem("bought_img", arr)
-                })
+                    localStorage.setItem("bought_img", arr);
+                });
+                bottom_number(); //底部购物车数量
 
             }
         });
@@ -137,6 +138,7 @@ $(function() {
             });
             $(this).parents(".list_box").find(".count").html(count); //显示该商品的数量
             total_price(); //总商品和总价格
+            bottom_number(); //底部购物车数量
         })
     };
     //======减少按钮=======
@@ -160,6 +162,7 @@ $(function() {
             });
             $(this).parents(".list_box").find(".count").html(count); //显示该商品的数量
             total_price(); //总商品和总价格
+            bottom_number(); //底部购物车数量
         })
     };
     //======商品删除按钮======
@@ -201,7 +204,21 @@ $(function() {
         $(".allPrice").html(allPrice.toFixed(2)) //总价格
         $(".total_num").html(allNum) //总数量
     };
-
-
+    // 底部 购物车数量
+    function bottom_number() {
+        var bottom_count = 0;
+        $.ajax({
+            url: "../../php/shopcart.php",
+            type: "post",
+            dataType: "json",
+            success: function(data) {
+                for (var i = 0; i < data.length; i++) {
+                    bottom_count += parseInt(data[i].count)
+                }
+                $(".bottom_num").html(bottom_count);
+                localStorage.setItem("number", bottom_count)
+            }
+        })
+    };
 
 })
