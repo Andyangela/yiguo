@@ -54,10 +54,11 @@ $(function() {
             }
         });
 
-        // 编辑 跳转到编辑地址页面 
+        // ======编辑 跳转到编辑地址页面 =========
         $(".edit:nth-child(1)").on("click", function() {
+            var data_id=$(this).parents("li").data("id");
+            localStorage.setItem("data_id", data_id)
             location.href = "./addAddress.html";
-            localStorage.setItem("data_id", "0")
         });
         // ===========删除地址===========
         $(".del").on("click", function() {

@@ -50,10 +50,77 @@ $(function () {
             $(this).addClass("active");
         }
     });
-    // 点击保存地址
-    var patt = /^1[3-9]\d{9}$/; //验证手机号码格式
+    // 前一个页面编辑，进入此页面修改信息
+    var data_id = localStorage.getItem("data_id");
+    function edit() {
+        if (data_id) {
+            $.ajax({
+                url: "../../php/edit_address.php",
+                data: {
+                    data_id: data_id
+                },
+                type: "post",
+                dataType: "json",
+                success: function (data) {
+                    $("input").eq(0).val(data[0].username);
+                    $("input").eq(1).val(data[0].phone_num);
+                    $("input[name=detail_address]").val(data[0].detail_address);
+                    $("select").eq(0).val(data[0].province);
+                    $("select").eq(1).val(data[0].city);
+                    $("select").eq(2).val(data[0].area);
+                    if (data[0].address_type == "家庭") {
+                        $(".chooseBtn").eq(1).addClass("active")
+                    } else {
+                        $(".chooseBtn").eq(0).addClass("active")
+                    }
+                }
+            });
+            $(".submit").on("click", function () {
+                before_submit(); //提交之前的操作  
+                $.ajax({
+                    url: "../../php/edit_address2.php",
+                    data: {
+                        data_id: data_id,
+                        username: $(".lists:nth-child(1) input").val(),
+                        phone_num: $(".lists:nth-child(2) input").val(),
+                        province: $("#province").val(),
+                        city: $("#city").val(),
+                        area: $("#area").val(),
+                        detail_address: $(".lists:nth-child(6) input").val()
+                    },
+                    type: "post",
+                    dataType: "json",
+                    success: function (data) {
+                        location.href = "settle.html"
+                    }
+                });
+            })
 
-    $(".submit").on("click", function () {
+        }
+
+    };
+    edit();
+    if (!data_id) {
+        $(".submit").on("click", function () {  // 点击保存地址
+            before_submit(); //提交之前的操作
+            $.ajax({
+                url: "../../php/addAddress.php",
+                data:
+                    "username=" + $(".lists:nth-child(1) input").val() +
+                    "&phone_num=" + $(".lists:nth-child(2) input").val() +
+                    "&province=" + $("#province").val() + "&city=" + $("#city").val() +
+                    "&area=" + $("#area").val() + "&detail_address=" + $(".lists:nth-child(6) input").val(),
+                type: "post",
+                dateType: "json",
+                success: function (data) {
+                    console.log(data)
+                    location.href = "settle.html"
+                }
+            });
+        });
+    }
+    function before_submit() {  //提交之前的操作
+        var patt = /^1[3-9]\d{9}$/; //验证手机号码格式
         if ($(".lists:nth-child(1) input").val() == "") { //联系人不能为空
             $(".warn").html("联系人不能为空").fadeIn(2000, function () {
                 $(this).fadeOut()
@@ -87,17 +154,16 @@ $(function () {
                         "address_type": address_type,
                         "username": $(".lists:nth-child(1) input").val()
                     },
-                    dataType:"json",
-                    type:"post",
-                    success:function(data){
-                        console.log(data)
+                    dataType: "json",
+                    type: "post",
+                    success: function (data) {
                     }
                 })
             }
         });
 
         if ($(".default_btn").hasClass("active")) { //判断是否是默认地址
-            default_address = "Yes";
+            default_address = "yes";
             $.ajax({
                 url: "../../php/default_address.php",
                 data: {
@@ -108,29 +174,12 @@ $(function () {
                 type: "post",
                 dateType: "json",
                 success: function (data) {
-                    console.log(data)
                 }
             })
         } else {
-            default_address = "No"
+            default_address = "no"
         };
-        $.ajax({
-            url: "../../php/addAddress.php",
-            data:
-                "username=" + $(".lists:nth-child(1) input").val() +
-                "&phone_num=" + $(".lists:nth-child(2) input").val() +
-                "&province=" + $("#province").val() + "&city=" + $("#city").val() +
-                "&area=" + $("#area").val() + "&detail_address=" + $(".lists:nth-child(6) input").val(),
-            type: "post",
-            dateType: "json",
-            success: function (data) {
-                location.href = "settle.html"
-            }
-        })
-
-
-    });
-
+    };
 
 
 })
