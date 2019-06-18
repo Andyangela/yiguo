@@ -43,20 +43,21 @@ $(function() {
     addressList();
 
     function operation() {
-        //  点击选择当前收货地址 -----还没加动态数据
+        //  点击选择当前收货地址
         $(".item .left a").on("click", function() {
-            if ($(this).hasClass("active")) {
-                $(this).removeClass("active")
-            } else {
-                $(this).addClass("active");
-                // location.href = "./settle.html";
-                $(this).parents("li").siblings().find(".item .left a").removeClass("active");
-            }
+            $(this).addClass("active");
+            $(this).parents("li").siblings().find(".item .left a").removeClass("active");
+            var show_id = $(this).parents("li").data("id");
+            sessionStorage.setItem("show", show_id);
+            location.href = "settle.html";
         });
-
-        // ======编辑 跳转到编辑地址页面 =========
+        $(".footer a").on("click", function() {
+                var data_id = "";
+                localStorage.setItem("data_id", data_id)
+            })
+            // ======编辑 跳转到编辑地址页面 =========
         $(".edit:nth-child(1)").on("click", function() {
-            var data_id=$(this).parents("li").data("id");
+            var data_id = $(this).parents("li").data("id");
             localStorage.setItem("data_id", data_id)
             location.href = "./addAddress.html";
         });
@@ -71,50 +72,39 @@ $(function() {
                 type: "post",
                 dataType: "json",
                 success: function(data) {
-                    location.assign(location) //删除后自动刷新页面
+                    location.reload() //删除后自动刷新页面
                 }
             })
         })
     };
-
-    function default_address() { //========没写出来=======
+    //========默认地址=======
+    function default_address() {
         $(".default_btn").each(function() { //从数据库渲染的数据中 获取默认地址
+            // 默认地址为yes的 为选中状态
             if ($(this).data("defaults") == "yes") {
                 $(this).addClass("active");
                 $(this).next().html("默认地址");
-                $(this).parents("li").siblings().find(".default_btn").removeClass("active");
             };
-            // if (!$(this).hasClass("active")) {}
-
-
-            // if ($(this).data("defaults") == "no") {
-            //     $(this).on("click", function() {
-            //         var data_id = $(this).parents("li").data("id");
-            //         $(this).addClass("active");
-            //         $(this).next().html("默认地址");
-            //         $(this).parents("li").siblings().find(".default_btn").removeClass("active");
-            //         $.ajax({
-            //             url: "../../php/my_default.php",
-            //             data: {
-            //                 data_id: data_id
-            //             },
-            //             type: "post",
-            //             dataType: "json",
-            //             success: function(data) {
-            //                 console.log(data)
-            //                 console.log(111)
-            //             }
-            //         });
-            //     })
-            // }
-            // //不是默认地址  点击选为默认地址
+            $(this).on("click", function() { //不是默认地址  点击选为默认地址
+                var data_id = $(this).parents("li").data("id");
+                $.ajax({
+                    url: "../../php/my_default_no.php",
+                    type: "post",
+                    success: function(data) {
+                        $.ajax({
+                            url: "../../php/my_default_yes.php",
+                            type: "post",
+                            data: {
+                                data_id: data_id
+                            },
+                            success: function(data) {
+                                location.href = "settle.html"
+                            }
+                        })
+                    },
+                    error: function() {}
+                })
+            });
         });
-
-
-
-
-
-
     };
-
 })

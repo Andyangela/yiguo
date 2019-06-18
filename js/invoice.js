@@ -22,16 +22,13 @@ $(function() {
     });
     // 按钮  是否需要发票
     $(".no_need").on("click", function() {
-        console.log("不需要发票");
         location.href = "./settle.html"
     });
     $(".sure").on("click", function() {
-        console.log("确定");
         $(".tab a i").each(function() {
             if ($(this).hasClass("active")) {
                 var invoice_val = $(this).next().html(); //发票抬头
                 sessionStorage.setItem("invoice", invoice_val)
-                    // console.log(invoice_val)
             }
         })
         location.href = "./settle.html"

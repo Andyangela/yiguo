@@ -1,38 +1,71 @@
 $(function() {
     // 渲染收货地址
     function address() {
-        $.ajax({
-            url: "../../php/show_address.php",
-            type: "post",
-            // data: {
-            //     data_id: data_id //data-id=${}
-            // },
-            dataType: "json",
-            success: function(data) {
-                var html = `
-                <div>
-                    <div class="name">
-                        <span>${data[0].username}</span>
-                        <span>${data[0].phone_num}</span>
+        var show_id = sessionStorage.getItem("show");
+        if (show_id) {
+            $.ajax({
+                url: "../../php/show_now_address.php",
+                type: "post",
+                dataType: "json",
+                data: {
+                    show_id: show_id
+                },
+                success: function(data) {
+                    var html = `
+                    <div>
+                        <div class="name">
+                            <span>${data[0].username}</span>
+                            <span>${data[0].phone_num}</span>
+                        </div>
+                        <div class="address1">
+                            <i class="label">${data[0].address_type}</i>
+                            <span class="address-details">
+                            ${data[0].province}${data[0].city}${data[0].area}${data[0].detail_address}
+                            </span>
+                        </div>
+                        <span class="arrow"></span>
                     </div>
-                    <div class="address1">
-                        <i class="label">${data[0].address_type}</i>
-                        <span class="address-details">
-                        ${data[0].province}${data[0].city}${data[0].area}${data[0].detail_address}
-                        </span>
+                    `;
+                    $(".address_list").html(html);
+                    date();
+                },
+                error: function() {
+                    $(".address_list").removeClass("active");
+                    $(".address").show();
+                }
+            })
+        } else {
+            $.ajax({
+                url: "../../php/show_default_address.php",
+                type: "post",
+                dataType: "json",
+                success: function(data) {
+                    var html = `
+                    <div>
+                        <div class="name">
+                            <span>${data[0].username}</span>
+                            <span>${data[0].phone_num}</span>
+                        </div>
+                        <div class="address1">
+                            <i class="label">${data[0].address_type}</i>
+                            <span class="address-details">
+                            ${data[0].province}${data[0].city}${data[0].area}${data[0].detail_address}
+                            </span>
+                        </div>
+                        <span class="arrow"></span>
                     </div>
-                    <span class="arrow"></span>
-                </div>
-                `;
-                $(".address_list").html(html);
-                date();
-            },
-            error: function() {
-                $(".address_list").removeClass("active");
-                $(".address").show();
-            }
+                    `;
+                    $(".address_list").html(html);
+                    date();
+                },
+                error: function() {
+                    $(".address_list").removeClass("active");
+                    $(".address").show();
+                }
 
-        })
+            })
+        }
+
     };
     address();
     // 添加收货地址

@@ -1,14 +1,14 @@
 <?php
     header("Content-Type:text/html;charset=utf-8");
-    $username=$_POST["username"];
+    $show_id=$_POST["show_id"];
     $mysqli=new Mysqli("localhost","root","root","yiguo");
     if($mysqli->connect_errno){
         die("数据库连接失败");
     }
-    $sql="update address_info set default_address='yes' where username='$username'";
+    $sql="select * from address_info where Id='$show_id'";
     $result=$mysqli->query($sql);
-    if(!$result){
-	    echo("失败");
-    }else{
-    echo("成功");
+    while($rows=Mysqli_fetch_assoc($result)){
+        $data[]=$rows;
     }
+    $res=json_encode($data,320);
+    echo ($res);
