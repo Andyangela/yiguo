@@ -19,7 +19,7 @@ $(function() {
                 var html = "";
                 for (var i = 0; i < data.length; i++) {
                     html += `
-                    <div class="list_box">
+                    <div class="list_box" data-id="${data[i].Id}">
                         <div class="list_check">
                             <i class="active"></i>
                         </div>
@@ -216,7 +216,7 @@ $(function() {
                     bottom_count += parseInt(data[i].count)
                 }
                 $(".bottom_num").html(bottom_count);
-                localStorage.setItem("number", bottom_count)
+                localStorage.setItem("number", bottom_count);
             }
         })
     };
