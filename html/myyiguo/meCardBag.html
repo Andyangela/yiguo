@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的卡包</title>
+    <script src="../../js/rem.js"></script>
+    <script src="../../js/jquery/jquery-1.12.1.js"></script>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding-left: .32rem;
+            height: 1.3rem;
+            line-height: 1.3rem;
+            background: white;
+            border-bottom: 0.01rem solid #dddddd;
+            box-sizing: border-box;
+            z-index: 200;
+        }
+
+        .header .floatL {
+            float: left;
+            font-size: .46rem;
+            color: #333333;
+        }
+
+        .header .floatL span {
+            color: #ff6353;
+        }
+
+        .header .floatR {
+            float: right;
+            font-size: .42rem;
+            color: #11b57c;
+        }
+
+        .header .floatR span {
+            display: inline-block;
+        }
+        .header .floatR span a{
+            color: #11b57c;
+        }
+        .header .floatR span.helptext {
+            width: 1.64rem;
+            background: url(../../images/myyiguo/record-icon.png) 0.6rem center no-repeat;
+            background-size: auto .62rem;
+        }
+
+        .error {
+            margin-top: 4.2rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        .error .bg {
+            margin: 0 auto;
+            width: 3.6rem;
+            height: 3.6rem;
+            background: url(../../images/myyiguo/empty.png) no-repeat center;
+            background-size: 100%;
+        }
+
+        .error p {
+            font-size: .47rem;
+            color: #808080;
+            line-height: .6rem;
+            margin-top: .8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <p class="floatL">总计：<span>￥<span id="money">0</span></span></p>
+        <p class="floatR"><span><a href="historyRecord.html">历史记录</a></span><span class="helptext">&nbsp; </span></p>
+    </div>
+    <div class="error">
+        <div class="bg"></div>
+        <p>暂无可用礼品卡</p>
+    </div>
+    <script src="../../js/myyiguo/meCardBag.js"></script>
+</body>
+
+</html>
