@@ -1,0 +1,25 @@
+.imagesTextDetails{
+	padding: 0;
+}
+p{
+	padding: 0;
+	margin: 0;
+}
+img{
+	width: 100%;
+	display: block;
+}
+.option{
+	bottom: 2.5rem;
+}
+a{
+	position: fixed;
+	display: block;
+    width: 1.1rem;
+    height: 1.1rem;
+    margin: .68rem 0 0;
+    background: url(../img/top.png) no-repeat;
+    background-size: 100%;
+    bottom: 0;
+    right: 0.4rem;
+}
