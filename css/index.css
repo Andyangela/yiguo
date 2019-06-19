@@ -1,3 +1,6 @@
+body{
+    background-color:white;
+}
 /* 顶部搜索栏 */
 .top{
 	width:100%;
@@ -216,7 +219,7 @@
     margin: 0 .53rem;
     box-sizing: border-box;
 }
-.prolist .proitem {
+.prolist .proitem2 {
     position: relative;
     padding: .4rem .33rem;
     -webkit-box-shadow: 0 0 5px rgba(0,0,0,.1);
@@ -225,19 +228,19 @@
     background: #fff;
     margin-bottom: .32rem;
 }
-.prolist .proitem .pic {
+.prolist .proitem2 .pic {
     float: left;
     width: 3.11rem;
     height: 3.11rem;
     margin-right: .48rem;
 }
-.prolist .proitem .pic a {
+.prolist .proitem2 .pic a {
     display: inline-block;
 }
-.prolist .proitem .info,.prolist .proitem .pic a img {
+.prolist .proitem2 .info,.prolist .proitem2 .pic a img {
     height: 3.11rem;
 }
-.prolist .proitem .info .name {
+.prolist .proitem2 .info .name {
     line-height: .5rem;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -246,19 +249,19 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 }
-.prolist .proitem .name a {
+.prolist .proitem2 .name a {
     font-size: .43rem;
     color: #000;
     white-space: nowrap;
     font-weight: 100;
 }
-.proitem .sub {
+.proitem2 .sub {
     margin-top: .27rem;
     color: #8d8a8a;
     font-size:.4rem;
     white-space: nowrap;
 }
-.proitem .pricePadding {
+.proitem2 .pricePadding {
     padding-right: .2rem;
     width: 6.99rem;
     height: .79rem;
@@ -267,17 +270,17 @@
     bottom: 0;
     left: 3.6rem;
 }
-.proitem .price {
+.proitem2 .price {
     font-size: 11px;
     color: #8d8a8a;
 }
-.prolist .proitem .price strong {
+.prolist .proitem2 .price strong {
     font-size: .6rem;
     color: #fb3d3d;
     margin-right: .1rem;
     font-weight: bold;
 }
-.proitem .info .pricePadding .price-addcart {
+.proitem2 .info .pricePadding .price-addcart {
     width: .79rem;
     height: .79rem;
     background: url(../images/index/cart.png) no-repeat;
@@ -288,7 +291,7 @@
     border-radius: 50%;
     background-color: #01b27a;
 }
-.prolist .proitem:after {
+.prolist .proitem2:after {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -430,7 +433,7 @@
 }
 .footer-in a{
     position: relative;
-    display: inline-block;
+    /* display: inline-block; */
     float: left;
     box-sizing: border-box;
     width: 20%;

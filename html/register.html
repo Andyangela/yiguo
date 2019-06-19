@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+    <link href="../css/mui.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/register.css" />
+</head>
+
+<body>
+    <form class="mui-input-group">
+        <div class="mui-input-row">
+            <input type="text" class="mui-input" id="username" placeholder="请输入您的手机号">
+        </div>
+        <div class="getvc">获取验证码</div>
+        <div class="mui-input-row">
+            <input type="text" class="mui-input" placeholder="请输入您的验证码" id="verify2">
+        </div>
+        <div class="mui-input-row">
+            <input type="password" class="mui-input" id="password" placeholder="请设定您的密码">
+        </div>
+        <div class="mui-input-row">
+            <input type="password" class="mui-input verify" id="repassword" placeholder="请再次输入您的密码">
+        </div>
+    </form>
+    <div class="agreement">
+        <input type="checkbox" id="checkbox">我已阅读<a href="myyiguo/RegistrationAgreement.html" class="green">《易果服务协议》</a><a href="myyiguo/Privacyclause.html"
+            class="green">《隐私条款》</a>并同意
+    </div>
+    <div class="btn">
+        <button type="button" class="mui-btn mui-btn-danger">注册</button>
+    </div>
+    <!-- 图片验证码 -->
+    <div class="mask">
+        <div class="imgverify">
+            <div class="top">
+                <p class="text">请输入图片上的验证码</p>
+                <i class="closebtn"></i>
+            </div>
+            <div class="bottom">
+                <input type="text" placeholder="请输入验证码" id="verify">
+                <img id="captcha_img" border="1" src="../php/captcha.php?r=<?php echo rand();?>"
+                    onclick="document.getElementById('captcha_img').src='../php/captcha.php?r='+Math.random()">
+            </div>
+            <div class="buttons">
+                <button class="submit">提交</button>
+            </div>
+        </div>
+    </div>
+    <!-- tip -->
+    <div class="tip"></div>
+    <script src="../js/mui.min.js"></script>
+    <script src="../js/rem.js"></script>
+    <script src="../js/jquery/jquery-1.12.1.js"></script>
+    <script src="../js/cookiefengzhuang.js"></script>
+    <script>
+        function errortip(tipcontent) {
+            $(".tip").html(tipcontent);
+            $(".tip").css("display", "block");
+            setTimeout(function () {
+                $(".tip").css("display", "none");
+            }, 2000);
+        }
+        var time;
+        //  图片验证码 
+        $(".submit").on("click", function () {
+            if (!$("#verify").val()) {
+                errortip("请输入验证码")
+            } else {
+                $.ajax({
+                    url: "../php/form.php",
+                    type: "get",
+                    data: "verify=" + $("#verify").val(),
+                    success: function (data) {
+                        if (data == "输入错误") {
+                            errortip("验证码错误或已失效")
+                        } else {
+                            $(".getvc").addClass("countdown");
+                            $(".countdown").html('60秒后重新获取')
+                            $(".mask").css("display", "none");
+                            var count = 60;
+                            time = setInterval(function () {
+                                count--;
+                                if (count >= 0) {
+                                    $(".countdown").html(count + '秒后重新获取')
+                                } else {
+                                    clearInterval(time);
+                                    $(".getvc").removeClass("countdown");
+                                    $(".getvc").html("获取验证码")
+                                }
+                            }, 1000)
+                        }
+                    }
+                });
+            }
+        })
+        // 点击关闭
+        $(".closebtn").click(function () {
+            $(".mask").css("display", "none");
+        })
+        var testphone = /1[3-9]\d{9}/;
+        // 点击获取验证码
+        $(".getvc").click(function () {
+            if (!$("#username").val()) {
+                errortip("请输入手机号")
+            } else {
+                if (!testphone.test($("#username").val())) {
+                    errortip("请输入正确的手机号")
+                } else {
+                    $(".mask").css("display", "block");
+                }
+            }
+        })
+        var testpassword = /\w{6,20}/
+        // 点击注册
+        $(".mui-btn").on("click", function () {
+            if (!$("#username").val()) {
+                errortip("请输入手机号")
+            } else if (!testphone.test($("#username").val())) {
+                errortip("请输入正确的手机号")
+            } else {
+                $.ajax({
+                    url: "../php/testusername.php",
+                    type: 'post',
+                    data: 'username=' + $("#username").val(),
+                    success: function (data) {
+                        if (data == "该手机号已经被注册") {
+                            errortip("该手机号已经被注册")
+                        } else if (!$("#verify2").val()) {
+                            errortip("请输入验证码")
+                        } else {
+                            $.ajax({
+                                url: '../php/phoneverify.php',
+                                type: 'post',
+                                data: "verify=" + $("#verify2").val(),
+                                success: function (data) {
+                                    if (data == "输入错误") {
+                                        errortip("验证码已过期")
+                                    } else if (!$("#password").val()) {
+                                        errortip("请输入密码")
+                                    } else if (!testpassword.test($("#password")
+                                    .val())) {
+                                        errortip("密码格式不正确(6-20位)")
+                                    } else if (!$("#repassword").val()) {
+                                        errortip("请再次输入密码")
+                                    } else if ($("#password").val() != $("#repassword")
+                                        .val()) {
+                                        errortip("两次密码输入不一致")
+                                    } else if (!$("#checkbox").is(":checked")) {
+                                        errortip("请阅读协议并同意")
+                                    } else {
+                                        $.ajax({
+                                            url: '../php/adduser.php',
+                                            type: 'post',
+                                            data: "username=" + $("#username")
+                                                .val() + "&password=" + $(
+                                                    "#password").val()
+                                        })
+                                        location.href = "./myyiguo/home.html"
+                                        cookie.setCookie("username", $("#username")
+                                        .val(), {
+                                            path: "/",
+                                            expires: 7
+                                        })
+                                    }
+                                }
+                            })
+                        }
+                    }
+                })
+            }
+        })
+    </script>
+</body>
+
+</html>
