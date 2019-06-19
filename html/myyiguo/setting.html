@@ -52,6 +52,7 @@
 			$(".log-out").css({display:'block'})
 			$("#quit").on("click",function(){
 				$.removeCookie('username',{ path: '/'}); 
+				$.removeCookie('sign',{ path: '/'}); 
 				location.href = "home.html";
 			})
 		}
