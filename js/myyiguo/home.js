@@ -1,5 +1,5 @@
 var username = $.cookie("username");
-if (username!='null') {
+if (username) {
 	console.log("登录成功");
 	$.ajax({
 		url: '../../php/myyiguo/property.php',
