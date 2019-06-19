@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>个人中心</title>
+		<script src="../../js/rem.js"></script>
+		<script src="../../js/jquery/jquery-1.12.1.js"></script>
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/reset.css">
+		<link rel="stylesheet" type="text/css" href="../../css/myyiguo/home.css" />
+		<script src="../../js/mui.min.js"></script>
+		<script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+	</head>
+
+	<body>
+		<div class="my">
+			<div class="header">
+				<i id="setting"></i>
+				<div class="top">
+					<div class="imgborder">
+						<img src="../../images/myyiguo/no-pic.jpg" alt="用户头像" />
+					</div>
+					<div id="datum">
+						<a href="javascript:;">登录/注册</a>
+					</div>
+				</div>
+				<div class="bottom">
+					<a href="javascript:;" class="mecard">
+						<p class="num">-</p>
+						<p class="txt">卡包余额</p>
+					</a>
+					<a href="javascript:;" class="Ub">
+						<p class="num">-</p>
+						<p class="txt">悠币</p>
+					</a>
+				</div>
+			</div>
+			<ul class="list-line">
+				<li>
+					<a href="javascript:;" class="orderList1">
+						<img src="../../images/myyiguo/unpaid.png" />
+						<p>待支付</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;" class="orderList2">
+						<img src="../../images/myyiguo/take.png" />
+						<p>待收货</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;" class="orderList3">
+						<img src="../../images/myyiguo/evaluate.png" />
+						<p>评价送悠币</p>
+					</a>
+				</li>
+				<li class="exchange">
+					<a href="javascript:;">
+						<img src="../../images/myyiguo/changing.png" />
+						<p>在线退换货</p>
+					</a>
+				</li>
+				<li class="left-arr">
+					<a href="javascript:;" class="orderList">
+						<img src="../../images/myyiguo/allorder.png" />
+						<p>
+							全部订单
+							<img src="../../images/myyiguo/gopage2.png" class="gopage" />
+						</p>
+					</a>
+				</li>
+			</ul>
+			<div class="maskHint">
+				<div class="popup-hint">
+					<p class="hint-text">下载易果生鲜客户端体验更多服务</p>
+					<div class="btnpop1 clear">
+						<a href="javascript:;" class="btnone">取消</a>
+						<a href="javascript:;" class="btntwo">下载</a>
+					</div>
+				</div>
+			</div>
+			<ul class="list">
+				<li class="line-bottom coupon">
+					<a href="javascript:;">
+						<img src="../../images/myyiguo/coupons.png" />
+						<p>优惠券</p>
+					</a>
+				</li>
+				<li class="line-bottom exchange">
+					<a href="javascript:;">
+						<img src="../../images/myyiguo/yellowcard.png" />
+						<p>充值卡</p>
+					</a>
+				</li>
+				<li class="line-bottom exchange">
+					<a href="javascript:;">
+						<img src="../../images/myyiguo/delivery.png" />
+						<p>礼品兑换劵</p>
+					</a>
+				</li>
+				<li class="line-bottom addressList">
+					<a href="javascript:;">
+						<img src="../../images/myyiguo/address.png" />
+						<p>收货地址</p>
+					</a>
+				</li>
+				<li class="QuestionList">
+					<a href="javascript:;">
+						<img src="../../images/myyiguo/help.png" />
+						<p>帮助中心</p>
+					</a>
+				</li>
+				<li class="orderLists">
+					<a href="javascript:;">
+						<img src="../../images/myyiguo/box@3x.png" />
+						<p>我的团购</p>
+					</a>
+				</li>
+				<li class="exchange">
+					<a href="javascript:;">
+						<img src="../../images/myyiguo/account-icon.png" />
+						<p>账户余额</p>
+					</a>
+				</li>
+				<li class="exchange">
+					<a href="javascript:;">
+						<img src="../../images/myyiguo/service.png" />
+						<p>在线客服</p>
+					</a>
+				</li>
+			</ul>
+			<ul class="home">
+				<li>
+					<a href="javascript:;">
+						<img src="../../images/myyiguo/nav_home_selected.png" />
+						<p>首页</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="../../images/myyiguo/nav_classify.png" />
+						<p>分类</p>
+					</a>
+				</li>
+				<li>
+					<a href="../eat/dine.html">
+						<img src="../../images/myyiguo/nav_eat.png" />
+						<p>吃饭吧</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="../../images/myyiguo/nav_list.png" />
+						<p>购物车</p>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="../../images/myyiguo/nav_user_active.png" />
+						<p>我的易果</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<script type="text/javascript">
+			$("#setting").on("click", function() {
+				location.href = "setting.html";
+			})
+		</script>
+		<script src="../../js/myyiguo/home.js"></script>
+	</body>
+
+</html>

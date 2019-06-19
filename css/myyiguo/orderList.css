@@ -1,0 +1,144 @@
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+	color: #11B57C;
+	background: #fff;
+}
+.mui-control-item{
+	background: #fff;
+	font-size: 0.4rem;
+    color: #808080;
+    padding: 0.2rem;
+}
+.mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar {
+    background-color: #11B57C;
+}
+.mui-slider-item{
+	padding-top: 5rem;
+}
+.mui-slider .mui-slider-group .mui-slider-item img {
+     width: 3.6rem;
+    height: 3.6rem;
+    display: block;
+    margin: 0 auto;
+}
+.mui-slider .mui-slider-group .mui-slider-item .hint {
+    font-size: .46rem;
+    color: #808080;
+    text-align: center;
+    padding: .2rem 1.25rem 1rem;
+    line-height: .6rem;
+}
+.mui-slider .mui-slider-group .mui-slider-item .goShop {
+    display: block;
+    width: 3.6rem;
+    height: .8rem;
+    text-align: center;
+    border: 1px solid #11b57c;
+    color: #11b57c;
+    border-radius: .1rem;
+    font-size: .4rem;
+    line-height: .8rem;
+    margin: 0 auto;
+    background: #fff;
+}
+.mui-table-view-cell>a:not(.mui-btn) {
+     padding: 0; 
+}
+.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item{
+	border: none;
+}
+.mui-table-view{
+	background: none;
+}
+.orderLi {
+    margin-top: .32rem;
+    border-width: 1px 0;
+    background: #fff;
+    position: relative;
+}
+.orderLi .status {
+    position: relative;
+    height: 1.76rem;
+    padding-left: .32rem;
+}
+.status .orderCode {
+    font-size: .42rem;
+    color: #333;
+    position: absolute;
+    left: 0.32rem;
+    top: .40rem;
+}
+.status .orderTime {
+    font-size: .36rem;
+    color: #808080;
+    position: absolute;
+    left: 0.32rem;
+    top: 1rem;
+}
+.status .orderStatus {
+    font-size: .42rem;
+    color: #808080;
+    position: absolute;
+    right: .37rem;
+    top: .6rem;
+}
+
+.orderLi .commodity-show {
+    width: 100%;
+    height: 3.44rem;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+.commodity-show .scroll {
+    padding: .32rem 0 0 .18rem;
+    width: 100%;
+    height: 2.5rem;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+}
+.commodity-show .list-img .imgShow {
+    position: relative;
+    display: inline-block;
+    width: 1.86rem;
+    height: 1.86rem;
+    margin: 0 .14rem;
+}
+.commodity-show .list-img img {
+    width: 1.86rem !important;
+    height: 1.86rem !important;
+}
+.commodity-show .orderMsg {
+    text-align: right;
+    padding-right: .32rem;
+}
+.commodity-show .orderMsg .orderNum {
+    font-size: .46rem;
+    color: #333;
+}
+.commodity-show .orderMsg .price {
+    font-size: .46rem;
+    color: #fb3d3d;
+}
+.orderLi .operationBtn {
+    position: relative;
+    width: 100%;
+    text-align: right;
+}
+.operationBtn a {
+    display: inline-block;
+    width: 2.36rem;
+    height: .86rem;
+    border-radius: .1rem;
+    font-size: .4rem;
+    text-align: center;
+    line-height: .86rem;
+    margin: .4rem .3rem .39rem 0;
+}
+.operationBtn .orderTrack {
+    border: .02rem solid #11B57C;
+    color: #333;
+}
+.operationBtn a:last-child {
+    margin-right: .32rem;
+}

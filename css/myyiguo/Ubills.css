@@ -1,0 +1,75 @@
+.bg{
+    height: 4.45rem;
+    background-color: #e9712a;
+    background: url(../../images/myyiguo/ubbg.png) no-repeat;
+    background-size: cover;
+}
+.bg .t {
+    display: block;
+    width: 100%;
+    height: .7rem;
+    font-size: .46rem;
+    text-align: center;
+    padding: .6rem 0;
+    font-weight: normal;
+    color: white;
+}
+.bg .m {
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    margin-top: 0.5rem
+}
+.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
+    border:none;
+}
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item{
+    width: 33.33%;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    color: #fed1a0;
+    background-color: #e9712a;
+    /* color: white; */
+    /*border-right: 0.55px solid #b04914; */
+}
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{
+    color: white;
+    background-color: #b04914;
+}
+.error{
+    font-size: .46rem;
+    height: 2.41rem;
+    background-color: white;
+    border-bottom: 0.55px solid #e5e5e5;
+    padding: 0.6rem .6rem;
+}
+.error .l{
+    float: left;
+}
+.error .l h5 {
+    color: #000;
+    font-size: .46rem;
+    font-weight: normal;
+}
+.error .l p {
+    padding-top: .25rem;
+    font-size: .38rem;
+    color: #b7b7b7;
+}
+.error .r {
+    float: right;
+    font-size: .54rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    color: #333333;
+}
+.no_data {
+    padding: 2.8rem 0;
+    text-align: center;
+}
+.no_data p {
+    font-size: .46rem;
+    color: gray;
+}

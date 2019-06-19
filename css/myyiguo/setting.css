@@ -1,0 +1,19 @@
+.mui-table-view{
+	font-size: 0.38rem;
+	color: #333;
+}
+.mui-table-view-cell{
+	padding: 16px 18px;
+}
+.mui-table-view-cell a span{
+	display: inline-block;
+	width: 82%;
+	color: #11b57c;
+	text-align: right;
+}
+.top{
+	margin-bottom: 0.3rem;
+}
+.bottom li{
+	padding: 16px 26px;
+}

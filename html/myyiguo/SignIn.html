@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>签到有礼</title>
+    <script src="../../js/rem.js"></script>
+    <script src="../../js/jquery/jquery-1.12.1.js"></script>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/myyiguo/SignIn.css">
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+</head>
+
+<body>
+    <div style="font-size: 0">
+        <img src="../../images/myyiguo/SignIn/qiandao_01.jpg">
+        <div class="record">
+            <img src="../../images/myyiguo/SignIn/icon_edit.png">
+            <strong>连续签到 第1天</strong>
+        </div>
+        <div class="circleshow">
+            <i><img src="../../images/myyiguo/SignIn/coin_01.png"></i>
+            <i><img src="../../images/myyiguo/SignIn/coin_02.png"></i>
+            <i><img src="../../images/myyiguo/SignIn/coin_03.png"></i>
+            <i><img src="../../images/myyiguo/SignIn/coin_04.png"></i>
+            <i><img src="../../images/myyiguo/SignIn/coin_05.png"></i>
+            <i><img src="../../images/myyiguo/SignIn/coin_06.png"></i>
+            <i><img src="../../images/myyiguo/SignIn/coin_06.png"></i>
+            <i><img src="../../images/myyiguo/SignIn/coin_06.png"></i>
+            <i><img src="../../images/myyiguo/SignIn/coin_06.png"></i>
+            <i><img src="../../images/myyiguo/SignIn/coin_06.png"></i>
+            <i><img src="../../images/myyiguo/SignIn/coin_06.png"></i>
+            <i><img src="../../images/myyiguo/SignIn/coin_06.png"></i>
+            <i><img src="../../images/myyiguo/SignIn/coin_06.png"></i>
+            <i><img src="../../images/myyiguo/SignIn/coin_06.png"></i>
+            <i><img src="../../images/myyiguo/SignIn/coin2.png"></i>
+        </div>
+        <img src="../../images/myyiguo/SignIn/qiandao_04.jpg">
+        <img src="../../images/myyiguo/SignIn/qiandao_05.jpg">
+        <img src="../../images/myyiguo/SignIn/qiandao_06.jpg">
+        <div class="tableblock">
+            <p id="ubCount"></p>
+        </div>
+        <div class="col2">
+            <i class="left"><img src="../../images/myyiguo/SignIn/qd5.jpg"></i>
+            <i class="right"><img src="../../images/myyiguo/SignIn/qd10.jpg"></i>
+        </div>
+        <div class="tableblock">
+            <p id="tipswords"> 一笔订单仅限使用一张优惠券，优惠券间不可以叠加使用</p>
+        </div>
+        <img src="../../images/myyiguo/SignIn/qiandao_09.jpg">
+        <img src="../../images/myyiguo/SignIn/qiandao_10.jpg">
+        <div class="duihuanlist2">
+            <strong class="tt2"> 签到有礼： </strong>
+            <ul class=" list2">
+                <li> 每个账户每天可签到一次，首日签到可领50个悠币，连续第二天可领60个悠币，第三天70个悠币，最多每天可获得100个悠币，连续签满15天后，可重新开始签到 </li>
+                <li> 连续签到满15天可获得神秘礼物一份 </li>
+                <li> 优惠券自动绑定至会员账户，有效期：成功领取后5天内有效 </li>
+                <li> 活动期间遇到疑问，可拨打客服热线400-000-7788；周一至周日9:00-21:00 </li>
+            </ul>
+            <strong class="tt2"> 悠币兑换： </strong>
+            <ul class=" list2">
+                <li> 消耗一定数量的悠币可兑换相应档位的优惠券，每档优惠券不限兑换次数，优惠券数量有限，兑完即止 </li>
+                <li> 悠币兑换优惠券自动绑定至会员账户，结算时下拉选择相应优惠券即可使用 </li>
+                <li> 悠币兑换优惠券有效期：成功兑换起5天内有效 </li>
+                <li> 每张优惠券仅限使用一次，悠币兑换优惠券不可与其他优惠券叠加使用 </li>
+                <li> 悠币兑换优惠券后概不退换，使用悠币兑换的优惠券订单如发生退货，恕不返还优惠券和悠币 </li>
+            </ul>
+        </div>
+        <img src="../../images/myyiguo/SignIn/qiandao_11.jpg">
+
+        <!-- 功能 -->
+        <!-- 遮罩层 -->
+        <div class="window_shadow"></div>
+        <!-- 签到成功 -->
+        <div class="inner">
+            <div class="cell">连续签到第1天</div>
+            <p class="topok"> <img src="../../images/myyiguo/SignIn/icon_ok.png"> </p>
+        </div>
+        <!-- 兑换优惠券 -->
+        <div class="inner1">
+            <div class="cell"><span class="left"></span>悠币兑换<span class="right"></span>元</div>
+            <div class="cell1">现金抵用券</div>
+            <p class="topok"> <img src="../../images/myyiguo/SignIn/icon_ok.png"> </p>
+            <div class="btn">
+                <img src="../../images/myyiguo/SignIn/btn_cancel.png" id="cancel">
+                <img src="../../images/myyiguo/SignIn/btn_duihuan.png" id="duihuan">
+            </div>
+        </div>
+        <!-- 点击兑换 -->
+        <div class="inner2">
+            <div class="cell"></div>
+            <div class="cell1"></div>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            $.ajax({
+                url: '../../php/myyiguo/mecard.php',
+                type: 'post',
+                dataType: 'json',
+                success: function (data) {
+                    $("#ubCount").text("我的悠币:" + data.youbi)
+                    // 不够时
+                    $('#duihuan').on('click', function () {
+                        if (data.youbi < $('.cell .left').text()) {
+                            $('.window_shadow').css({ display: 'none' })
+                            $(".inner1").css({ display: 'none' })
+                            $('.inner2 .cell').text('悠币不够')
+                            $('.inner2 .cell1').text('记得每天签到攒悠币哦')
+                            $('.window_shadow').css({ display: 'block' })
+                            $(".inner2").css({ display: "block" })
+                        }else{
+                            $('.window_shadow').css({ display: 'none' })
+                            $(".inner1").css({ display: 'none' })
+                            $('.inner2 .cell').text('兑换成功')
+                            $('.inner2 .cell1').text('记得去购买物品使用哦')
+                            $('.window_shadow').css({ display: 'block' })
+                            $(".inner2").css({ display: "block" })
+                        }
+                        setTimeout(function () {
+                            $('.window_shadow').css({ display: 'none' })
+                            $('.inner2').css({ display: 'none' })
+                        }, 800)
+                    })
+                }
+            })
+        })
+
+        var first = $.cookie('first');
+        if (first == 'true') {
+            $('.window_shadow').css({ display: 'block' })
+            $('.inner').css({ display: 'block' })
+            $.cookie('first', false, {
+                expires: 1,
+                path: '/'
+            })
+            setTimeout(function () {
+                $('.window_shadow').css({ display: 'none' })
+                $('.inner').css({ display: 'none' })
+            }, 1200)
+        }
+        $('.circleshow i:nth-child(1) img').attr('src', '../../images/myyiguo/SignIn/coin_01on.png')
+
+        $('.col2 .left').on('click', function () {
+            $('.cell .left').text('500')
+            $('.cell .right').text('5')
+            $('.window_shadow').css({ display: 'block' })
+            $(".inner1").css({ display: 'block' })
+        })
+        $('.col2 .right').on('click', function () {
+            $('.cell .left').text('1000')
+            $('.cell .right').text('10')
+            $('.window_shadow').css({ display: 'block' })
+            $(".inner1").css({ display: 'block' })
+            $(".inner1 .cell").css({left:'22%'})
+        })
+        $('#cancel').on('click', function () {
+            $('.window_shadow').css({ display: 'none' })
+            $(".inner1").css({ display: 'none' })
+        })
+    </script>
+</body>
+
+</html>

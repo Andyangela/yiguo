@@ -1,0 +1,373 @@
+html,
+body {
+	width: 100%;
+	height: auto;
+	box-sizing: border-box;
+}
+
+div {
+	box-sizing: border-box;
+}
+
+a,
+i {
+	display: inline-block;
+}
+
+.my {
+	width: 100%;
+	height: auto;
+	margin-bottom: 1.8rem;
+}
+
+.header {
+	width: 100%;
+	height: 6.44rem;
+	background: url('../../images/myyiguo/bgimg.jpg') no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+.header #setting {
+	width: 0.55rem;
+	height: 0.61rem;
+	background: url('../../images/myyiguo/setting.png') no-repeat;
+	background-size: cover;
+	position: absolute;
+	top: 0.35rem;
+	right: 0.35rem;
+}
+
+.header .top {
+	position: absolute;
+	top: 0.9rem;
+	left: 0.5rem;
+	display: flex;
+	align-items: center;
+}
+
+.header .top .imgborder {
+	width: 2.52rem;
+	height: 2.52rem;
+	border: 0.13rem solid rgba(255, 255, 255, .5);
+	border-radius: 50%;
+	background: rgba(255, 255, 255, .5);
+	overflow: hidden;
+}
+
+.header .top .imgborder img {
+	width: 2.26rem;
+	height: 2.26rem;
+	border-radius: 50%;
+}
+
+.header .top #datum {
+	margin-left: 0.6rem;
+}
+
+.header .top #datum a {
+	color: #fff;
+	font-size: 0.52rem;
+}
+
+.header .top #datum .memberIcon {
+	width: 1.5rem;
+	height: .62rem;
+	border: 1px solid rgba(39, 127, 85, 1);
+	border-radius: 20px;
+	font-size: .32rem;
+	color: #fff;
+	background: rgba(0, 0, 0, .16);
+}
+
+.header .top #datum .memberIcon i {
+	width: .56rem;
+	height: .56rem;
+	background: url(../../images/myyiguo/pticon.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.header .top #datum .memberIcon span {
+	position: relative;
+	top: -0.15rem;
+	left: 0.08rem;
+}
+.header .top #datum .upgrade{
+    height: .52rem;
+    font-size: .32rem;
+    color: #fff;
+    margin-top: 0.4rem;
+}
+.header .grandTotal{
+	position: absolute;
+    width: 100%;
+    left: 0;
+    box-sizing: border-box;
+    bottom: 1.78rem;
+    font-size: .32rem;
+    background: rgba(0,0,0,0.1);
+}
+.header .grandTotal a{
+	display: block;
+    position: relative;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    padding: 0.4rem .95rem;
+}
+.header .grandTotal a::before {
+    content: " ";
+    display: inline-block;
+    position: absolute;
+    top: .425rem;
+    left: 0.32rem;
+    width: 0.44rem;
+    height: 0.44rem;
+    background: url(../../images/myyiguo/grandtotal-icon.png) center no-repeat;
+    background-size: 100%;
+}
+.header .signIn{
+	position: absolute;
+	top: 1.55rem;
+	right: 0;
+	color: #12b67c;
+	font-size: 0.32rem;
+    background: #c5f9e5;
+    border-radius: 3px 0 0 3px;
+}
+.header .signIn .gift {
+    position: absolute;
+    left: .3rem;
+    top: 50%;
+    margin-top: -.45rem;
+    display: inline-block;
+    width: .48rem;
+    height: .9rem;
+    background: url(../../images/myyiguo/gift.png) center no-repeat;
+    background-size: .48rem .52rem;
+}
+.header .signIn a {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #12b67c;
+    line-height: .6rem;
+    padding: .15rem .65rem .15rem 1rem;
+    box-sizing: border-box;
+}
+.header .signIn .goBack {
+    position: absolute;
+    top: 0;
+    right: .3rem;
+    display: inline-block;
+    width: .15rem;
+    height: .9rem;
+    background: url(../../images/myyiguo/gopage3.png) center no-repeat;
+    background-size: .15rem .24rem;
+}
+.maskHint {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    -webkit-transition: all 2s;
+    display: none;
+}
+.maskHint .popup-hint {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    width: 11rem;
+    height: auto;
+    margin: -2rem 0 0 -5.5rem;
+    background: #fff;
+    border-radius: .2rem;
+    text-align: center;
+    padding: 1.15rem .75rem .82rem;
+    box-sizing: border-box;
+}
+.maskHint .popup-hint .hint-text {
+    font-size: .54rem;
+    padding: .1rem 0 1.18rem;
+    color: #333;
+}
+.maskHint .popup-hint .btnpop1 a {
+    border-radius: 3px;
+    display: inline-block;
+    float: left;
+    width: 4.37rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    color: gray;
+    border: 1px solid gray;
+    font-size: .5rem;
+}
+.maskHint .popup-hint .btnpop1 a.btntwo {
+    float: right;
+    background: #11b57c;
+    border: 1px solid #11b57c;
+    color: #fff;
+}
+.header .bottom {
+	width: 100%;
+	height: 1.78rem;
+	background: white;
+	padding: .3rem .3rem .3rem .3rem;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: flex;
+}
+
+.header .bottom a {
+	display: inline-block;
+	width: 50%;
+	height: 100%;
+	text-align: center;
+}
+
+.header .bottom a .num {
+	font-size: 0.5rem;
+	color: #0e9f4e;
+}
+.header .bottom a .num span{
+	font-size: 0.4rem;
+}
+
+.header .bottom a .txt {
+	font-size: 0.32rem;
+	color: #333333;
+}
+
+.list-line {
+	width: 100%;
+	height: 2.7rem;
+	background: #fff;
+	margin: 0.3rem 0;
+	display: flex;
+}
+
+.list-line li {
+	width: 20%;
+	height: auto;
+	text-align: center;
+}
+
+.list-line li img {
+	width: 0.74rem;
+	height: 100%;
+	margin-top: 0.8rem;
+	margin-bottom: 0.2rem;
+}
+
+.list-line li:nth-child(4) img {
+	height: 0.7rem;
+}
+
+.list-line li p {
+	font-size: 0.36rem;
+	color: #333;
+}
+
+.list-line .left-arr {
+	position: relative;
+}
+
+.list-line .left-arr img {
+	width: 0.9rem;
+	height: 0.85rem;
+	margin-bottom: 0;
+}
+
+.list-line .left-arr .gopage {
+	margin-top: 0;
+	width: 0.15rem;
+	height: 0.25rem;
+	margin-left: 0.03rem;
+}
+
+.list-line .left-arr:before {
+	content: '';
+	display: inline-block;
+	width: 6%;
+	height: 100%;
+	background: url('../../images/myyiguo/xian.png') no-repeat;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.list {
+	width: 100%;
+	background-color: #fff;
+	margin-bottom: 0.3rem;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.list li {
+	width: 25%;
+	height: 2.7rem;
+	text-align: center;
+}
+
+.list .line-bottom {
+	border-bottom: 1px solid #ddd;
+}
+
+.list li a {
+	margin-top: 0.5rem;
+}
+
+.list li a img {
+	width: 1.08rem;
+	height: 1.08rem;
+}
+
+.list li a p {
+	font-size: 0.36rem;
+	color: #333;
+}
+
+.home {
+	z-index: 99;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 1.53rem;
+	width: 100%;
+	background: #fff;
+	padding: 0 11px;
+	display: flex;
+}
+
+.home li {
+	width: 25%;
+	height: 2.7rem;
+	text-align: center;
+}
+
+.home li a {
+	margin-top: 0.15rem;
+}
+
+.home li img {
+	width: 1.02rem;
+	height: 0.72rem;
+}
+
+.home li p {
+	font-size: 0.36rem;
+	color: #8d8a8a;
+}
+
+.home li:nth-child(5) p {
+	color: #008842;
+}
