@@ -1,0 +1,149 @@
+body {
+    font-size: 12px;
+    background: #f4f4f4;
+}
+
+i {
+    display: inline-block;
+}
+
+
+/* 地址信息 */
+
+.addressInfo {
+    padding-left: .32rem;
+    background-color: #fff;
+    font-size: .4rem;
+    color: #000;
+    margin-bottom: .3rem;
+}
+
+.lists {
+    width: 100%;
+    height: 1.34rem;
+    line-height: 1.34rem;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+}
+
+.lists .title {
+    width: 4rem;
+    color: #808080;
+    background-color: #fff;
+    font-size: .4rem;
+}
+
+.lists .right {
+    width: 10rem;
+    margin-left: .3rem;
+    position: relative;
+}
+
+.lists .right input {
+    background-color: #fff;
+    width: 100%;
+    font-size: .4rem;
+    outline: none;
+    border: none;
+}
+
+.choose {
+    width: 30%;
+    margin-right: .2rem;
+}
+
+.choose .chooseBtn {
+    margin-right: .2rem;
+    width: .54rem;
+    height: .54rem;
+    background: url(../../images/shopcart/check1.png) no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+}
+
+.choose .chooseBtn.active {
+    background: url(../../images/shopcart/check2.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+select {
+    width: 100%;
+    height: 1.34rem;
+    border: none;
+    -webkit-appearance: none;
+    /* appearance: none; */
+    background: #fff;
+}
+
+.icon {
+    display: inline-block;
+    width: .28rem;
+    height: .52rem;
+    background: url(../../images/settle/arrow.png) no-repeat center;
+    background-size: 100%;
+    position: absolute;
+    right: .32rem;
+    top: .42rem;
+}
+
+
+/* 设为默认地址 */
+
+.default {
+    position: relative;
+    padding: .32rem;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.default_btn {
+    position: absolute;
+    right: .3rem;
+    top: 50%;
+    margin-top: -.465rem;
+    background: url(../../images/settle/disable.png) no-repeat;
+    background-size: 100% 100%;
+    width: 1.59rem;
+    height: 1.17rem;
+}
+
+.default_btn.active {
+    background: url(../../images/settle/on.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/* 保存按钮 */
+
+.submit {
+    margin-top: 1.7rem;
+    width: 100%;
+    text-align: center;
+}
+
+.submit a {
+    display: inline-block;
+    line-height: 1.32rem;
+    width: 6.9rem;
+    height: 1.32rem;
+    background-color: #11b57c;
+    color: #fff;
+    font-size: .46rem;
+    border-radius: .2rem;
+}
+
+.warn {
+    width: 4rem;
+    height: 1.3rem;
+    margin-left: -2rem;
+    margin-top: -0.65rem;
+    line-height: 1.3rem;
+    text-align: center;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    color: white;
+    border-radius: 5px;
+    display: none;
+}

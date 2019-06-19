@@ -10,8 +10,14 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>com.pandora.projects.ui.MKeyBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
+		<nature>com.pandora.projects.ui.MKeyNature</nature>
 		<nature>com.aptana.projects.webnature</nature>
 	</natures>
 	<filteredResources>
@@ -25,6 +31,7 @@
 			</matcher>
 		</filter>
 		<filter>
+<<<<<<< HEAD
 			<id>1559652290793</id>
 			<name></name>
 			<type>26</type>
@@ -35,6 +42,9 @@
 		</filter>
 		<filter>
 			<id>1559722168616</id>
+=======
+			<id>1559652195280</id>
+>>>>>>> 3f598e0c632668764d3770632b70157e4e292ea0
 			<name></name>
 			<type>26</type>
 			<matcher>

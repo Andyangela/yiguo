@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>结算</title>
+    <script src="../../js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link href="../../css/mui.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../../css/mui.picker.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/mui.poppicker.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/shopcart/settle.css" />
+</head>
+
+<body>
+    <header class="mui-bar mui-bar-nav">
+        <h1 class="mui-title">结算</h1>
+    </header>
+
+    <div class="settle_wrap">
+        <!-- 用户信息 地址 -->
+        <div class="user_info">
+            <div class="address">
+                <i></i>
+                <span class="text">添加收货地址</span>
+                <span class="arrow"></span>
+            </div>
+            <div class="address_list active"></div>
+        </div>
+        <!-- 显示购买的商品 -->
+        <div class="commodity">
+            <div class="num_title">
+                <p>共<span class="num"></span>件商品</p>
+            </div>
+            <div class="commodity_show">
+                <ul class="list">
+                    <!-- 图片渲染 -->
+                </ul>
+            </div>
+        </div>
+        <!-- 购买时可选的信息 -->
+        <div class="choose_info">
+            <div class="date">
+                <div>
+                    <span>配送日期</span>
+                </div>
+                <div id='showUserPicker' class="mui-btn mui-btn-block" style="border:none">
+                    <span id='userResult'>收货地址不支持配送</span>
+                    <span class="times">09:00~21:00</span>
+                </div>
+                <i></i>
+            </div>
+            <div class="bill">
+                <div>
+                    发票信息
+                </div>
+                <div class="need_bill">
+                    不需要发票
+                </div>
+                <i></i>
+            </div>
+            <div class="message">
+                <span>留言：</span>
+                <input type="text" name="" id="" placeholder="如有特殊要求，请在此留言">
+            </div>
+        </div>
+        <!-- 优惠券 -->
+        <div class="coupon">
+            <span>优惠券<i class="coupon_num">2</i></span>
+            <span></span>
+            <i></i>
+        </div>
+        <!-- 商品合计 -->
+        <div class="all">
+            <div>
+                <div class="total">
+                    <span>商品合计</span>
+                    <span class="payfor"><span>￥</span></span>
+                </div>
+                <div class="total">
+                    <span>运费</span>
+                    <span><span>￥</span>0.00</span>
+                    <span class="freight"></span>
+                </div>
+            </div>
+            <!-- 应付金额 -->
+            <div>
+                <span>应付金额</span>
+                <span class="payfor"><span>￥</span></span>
+            </div>
+        </div>
+        <!-- u币抵现 -->
+        <div class="Ub">
+            <span class="fl">u币抵现<i class="warn"></i></span>
+            <span class="fr">当前无u币可用</span>
+            <i class="Ub_btn"></i>
+        </div>
+
+        <!-- 现金券 -->
+        <div class="cash_coupon">
+            <span class="title">现金券</span>
+            <span class="txt"></span>
+            <i></i>
+        </div>
+        <!-- 底部 应付金额 -->
+        <div class="bottom">
+            <div class="price_text">应付金额:<span class="total_pay"><span>￥</span></span>
+            </div>
+            <a href="javascript:;" class="settle_btn">结算</a>
+        </div>
+        <!-- 遮罩 -->
+        <div class="mask">
+            <div class="rules">
+                <div class="rules_text">
+                    <div class="how_to_use">U币使用规则说明</div>
+                    <ul>
+                        <li>1.100U币抵1元；</li>
+                        <li>2.订单的实付金额>=10元；</li>
+                        <li>3.U币抵扣不超过每笔订单应付金额的10%；</li>
+                        <li>4.U币抵扣金额每笔订单上限￥20；</li>
+                        <li>5.U币每次抵扣金额为100的整数倍；</li>
+                        <li>6.购买礼卡礼券和充值不能使用U币。</li>
+                    </ul>
+                </div>
+                <div class="know_btn">
+                    <a href="javascript:;">知道了</a>
+                </div>
+            </div>
+        </div>
+        <!-- 当前暂无U币可用 -->
+        <div class="no_UB">当前暂无U币可用</div>
+
+    </div>
+    <!-- 弹出结算面板 -->
+    <div class="settle_mask">
+        <div class="settleBox">
+            <div>
+                <p class="title">选择支付方式</p>
+            </div>
+            <div class="gift_card">
+                <div style="width:50%;">礼品卡支付</div>
+                <div style="width:40%;">卡包余额不足</div>
+                <i></i>
+            </div>
+            <div class="online_pay">
+                <div style="width:50%;">在线支付</div>
+                <div class="show_pay_online" style="width:40%;">官网微信APP</div>
+                <i></i>
+            </div>
+            <div class="pay_cash online_pay">
+                <div style="width:50%;">货到付款</div>
+                <div class="show_pay_cash" style="width:40%;"></div>
+                <i></i>
+            </div>
+            <div class="sure_pay">
+                <span class="should_pay">应付金额：
+                    <b>￥</b>
+                    <b class="allMoney"></b>
+                </span>
+                <a href="javascript:;">确认支付</a>
+            </div>
+            <i class="close mui-icon mui-icon-closeempty"></i>
+        </div>
+        <!-- 在线支付 -->
+        <div class="online_pay_box online">
+            <div class="text">
+                在线支付
+                <i class="return"></i>
+            </div>
+            <div class="items">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-weixin"></use>
+                </svg>
+                <span>官网微信APP</span>
+                <i class="check_btn"></i>
+            </div>
+            <div class="items">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-zhifubao"></use>
+                </svg>
+                <span>支付宝</span>
+                <i class="check_btn"></i>
+            </div>
+        </div>
+        <!-- 货到付款 -->
+        <div class="online_pay_box pay_after">
+            <div class="text">
+                货到付款
+                <i class="return"></i>
+            </div>
+            <div class="items">
+                <span>现金支付</span>
+                <i class="check_btn"></i>
+            </div>
+            <div class="items">
+                <span>POSE机支付</span>
+                <i class="check_btn"></i>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/jquery/jquery-1.12.1.js"></script>
+    <script src="../../js/mui.min.js"></script>
+    <script src="../../js/mui.picker.js"></script>
+    <script src="../../js/mui.poppicker.js"></script>
+    <script src="../../fonts/iconfont.js"></script>
+    <script src="../../js/settle.js"></script>
+</body>
+
+</html>
