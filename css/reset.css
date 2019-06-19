@@ -12,3 +12,9 @@ legend { color:#000; }
 fieldset, img { border:0; } 
 button, input, select, textarea { font-size:100%; }
  table { border-collapse:collapse; border-spacing:0; }
+ .clear:after {
+    display: block;
+    clear: both;
+    height: 0;
+    content: " ";
+}
