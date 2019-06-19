@@ -52,9 +52,6 @@
     			padding-left: .53rem;
     			height: .8rem;
     	}
-    	.subhead span{
-    		
-    	}
     	.shade{
     		background-color: #EFEFF4;
     		width: 100%;
@@ -172,7 +169,7 @@
     		display: inline-block;
     		width: .69rem;
     		height: .61rem;
-    		background: url(../img/home.png) no-repeat;
+    		background: url(../../images/detalis/home.png) no-repeat;
     		background-size: 100% 100%;
     	}
     	.car{
@@ -183,7 +180,7 @@
     		display: inline-block;
     		width: .7rem;
     		height: .7rem;
-    		background: url(../img/nav_list.png) no-repeat;
+    		background: url(../../images/detalis/nav_list.png) no-repeat;
     		background-size: 100% 100%;
     	}
     	.foot .but1{
@@ -264,7 +261,7 @@
     		top: .28rem;
     		width: .33rem;
     		height: .33rem;
-    		background: url(../img/cut2.png) no-repeat;
+    		/* background: url(../../images/detalis/cut2.png) no-repeat; */
     		background-size: 100%;
 			/*background-image: url(../img/cut2.png);*/
 		}
@@ -332,7 +329,7 @@
     		top: .28rem;
     		width: .33rem;
    			height: .33rem;
-    		background: url(../img/add2.png) no-repeat;
+    		/* background: url(../../images/detalis/add2.png) no-repeat; */
     		background-size: 100%;
 		}
 		.add:after{
@@ -381,7 +378,7 @@
     		display: inline-block;
     		width: .33rem;
     		height: .39rem;
-    		background: url(../img/dw.png) no-repeat;
+			background: url(../../images/detalis/dw.png) no-repeat;			
     		background-size: 100% 100%;
 		}
 		.infor{
