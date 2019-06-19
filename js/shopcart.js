@@ -1,6 +1,6 @@
 $(function() {
     // ======判断用户是否登录======
-    cookie.setCookies("username", "15938722869");
+    // cookie.setCookies("username", "15938722869");
     var userLogin = cookie.getCookies("username");
     if (userLogin) { //已登录
         $("header").show();
