@@ -16,8 +16,8 @@
 <body>
     <!--顶部搜索栏-->
     <div class="top">
-        <a href="#" class="address">
-            郑州
+        <a href="choosecity.html" class="address">
+            <span>郑州</span>
             <i class="arrow"></i>
         </a>
         <a href="#">
@@ -148,8 +148,8 @@
     <script type="text/template" id="product2">
         <%for(var i=0;i<data.length;i++){%>
         <div class="prolist">
-                <div class="blockwrap">
-                    <div class="proitem2">
+                <div class="blockwrap" >
+                    <div class="proitem2" data-num="<%=i%>">
                         <div class="pic">
                             <a href="javascript:;">
                                 <img class="lazy" data-original="<%=data[i].img%>" alt="">
@@ -158,12 +158,12 @@
                         <div class="info">
                             <div class="info-wrap">
                                 <p class="name">
-                                    <a href="javascript:;"><%=data[i].tittle%></a>
+                                    <a href="javascript:;"  class="header"><%=data[i].tittle%></a>
                                 </p>
                                 <p class="sub"><%=data[i].describe%></p>
                             </div>
                             <div class="price pricePadding">
-                                <strong>￥<%=data[i].price%></strong>/<%=data[i].weight%>
+                                <strong>￥<span class="money"><%=data[i].price%></span></strong>/<%=data[i].weight%>
                                 <i class="price-addcart"></i>
                             </div>
                         </div>

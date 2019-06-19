@@ -59,6 +59,7 @@
     <script src="../js/mui.min.js"></script>
     <script src="../js/rem.js"></script>
     <script src="../js/jquery/jquery-1.12.1.js"></script>
+    <script src="../js/cookiefengzhuang.js"></script>
     <script type="text/javascript">
       $(".mui-btn-danger").click(function() {
         location.href = "register.html";
@@ -99,8 +100,7 @@
                       errortip("验证码错误或已失效")
                     }else{
                       location.href="./index.html"
-                      document.cookie="username="+$("#username").val();
-                      Response.Cookies("username").expires=date()+7 
+                      cookie.setCookie("username",$("#username").val(),{path:"/",expires:7})
                     }
                   }
                 });
