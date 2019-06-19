@@ -9,20 +9,14 @@
     <link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
     <link rel="stylesheet" type="text/css" href="../css/reset.css" />
     <link rel="stylesheet" type="text/css" href="../css/index.css" />
-    <title>Document</title>
-    <link href="../css/mui.min.css" rel="stylesheet" />
-</head>
-<body>
-    <script src="../js/mui.min.js"></script>
-		<script type="text/javascript">
-			mui.init()
-		</script>
+    <script src="../js/jquery/jquery-1.12.1.js"></script>
+    <script src="../js/jquery/jquery.lazyload.min.js"></script>
 </head>
 <body>
     <!--顶部搜索栏-->
     <div class="top">
-        <a href="#" class="address">
-            郑州
+        <a href="choosecity.html" class="address">
+            <span>郑州</span>
             <i class="arrow"></i>
         </a>
         <a href="#">
@@ -36,361 +30,34 @@
     </div>
     <!--banner图-->
     <div class="mui-slider">
-        <div class="mui-slider-group mui-slider-loop">
-            <!--支持循环，需要重复图片节点-->
-            <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img
-                        src="../images/index/banner3.jpg" /></a></div>
-            <div class="mui-slider-item"><a href="#"><img src="../images/index/banner2.jpg" /></a></div>
-            <div class="mui-slider-item"><a href="#"><img src="../images/index/banner1.jpg" /></a></div>
-            <div class="mui-slider-item"><a href="#"><img src="../images/index/banner3.jpg" /></a></div>
-            <!--支持循环，需要重复图片节点-->
-            <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img
-                        src="../images/index/banner2.jpg" /></a></div>
-        </div>
+        <div class="mui-slider-group mui-slider-loop"></div>
         <div class="mui-slider-indicator">
             <div class="mui-indicator mui-active"></div>
-            <div class="mui-indicator"></div>
             <div class="mui-indicator"></div>
         </div>
     </div>
     <!-- 分类 -->
-    <div class="menu clear">
-        <div class="one">
-            <i>
-                <img src="../images/index/fruit.png" alt="">
-            </i>
-            <p class="one-title">新鲜水果</p>
-        </div>
-        <div class="one">
-            <i>
-                <img src="../images/index/meat.png" alt="">
-            </i>
-            <p class="one-title">精选肉类</p>
-        </div>
-        <div class="one">
-            <i>
-                <img src="../images/index/seafood.png" alt="">
-            </i>
-            <p class="one-title">海鲜水产</p>
-        </div>
-        <div class="one">
-            <i>
-                <img src="../images/index/quick.png" alt="">
-            </i>
-            <p class="one-title">快手料理</p>
-        </div>
-    </div>
-    <!-- 中间新加的 -->
+    <div class="menu clear"></div>
+    <!-- 横向滚动商品 -->
     <div class="group-floor">
-        <a href="javascript:;" class="floor-img">
-            <img src="../images/index/middle.jpg" alt="">
-        </a>
+        <a href="javascript:;" class="floor-img"></a>
         <div class="product-list clear">
-            <div class="product-list-in">
-                <div class="proitem">
-                    <div class="pic">
-                        <a href="javascript:;" class="pic-a">
-                            <img src="../images/index/product.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="info">
-                        <p class="name">
-                            <a href="javascript:;">
-                                心中甜每日坚果750g(25g*30)
-                            </a>
-                        </p>
-                        <div class="price">
-                            <strong>￥138</strong>
-                            <i class="price-addcart"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="proitem">
-                    <div class="pic">
-                        <a href="javascript:;" class="pic-a">
-                            <img src="../images/index/product.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="info">
-                        <p class="name">
-                            <a href="javascript:;">
-                                心中甜每日坚果750g(25g*30)
-                            </a>
-                        </p>
-                        <div class="price">
-                            <strong>￥138</strong>
-                            <i class="price-addcart"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="proitem">
-                    <div class="pic">
-                        <a href="javascript:;" class="pic-a">
-                            <img src="../images/index/product.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="info">
-                        <p class="name">
-                            <a href="javascript:;">
-                                心中甜每日坚果750g(25g*30)
-                            </a>
-                        </p>
-                        <div class="price">
-                            <strong>￥138</strong>
-                            <i class="price-addcart"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="proitem">
-                    <div class="pic">
-                        <a href="javascript:;" class="pic-a">
-                            <img src="../images/index/product.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="info">
-                        <p class="name">
-                            <a href="javascript:;">
-                                心中甜每日坚果750g(25g*30)
-                            </a>
-                        </p>
-                        <div class="price">
-                            <strong>￥138</strong>
-                            <i class="price-addcart"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="proitem">
-                    <div class="pic">
-                        <a href="javascript:;" class="pic-a">
-                            <img src="../images/index/product.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="info">
-                        <p class="name">
-                            <a href="javascript:;">
-                                心中甜每日坚果750g(25g*30)
-                            </a>
-                        </p>
-                        <div class="price">
-                            <strong>￥138</strong>
-                            <i class="price-addcart"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="proitem">
-                    <div class="pic">
-                        <a href="javascript:;" class="pic-a">
-                            <img src="../images/index/product.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="info">
-                        <p class="name">
-                            <a href="javascript:;">
-                                心中甜每日坚果750g(25g*30)
-                            </a>
-                        </p>
-                        <div class="price">
-                            <strong>￥138</strong>
-                            <i class="price-addcart"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="proitem">
-                    <div class="pic">
-                        <a href="javascript:;" class="pic-a">
-                            <img src="../images/index/product.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="info">
-                        <p class="name">
-                            <a href="javascript:;">
-                                心中甜每日坚果750g(25g*30)
-                            </a>
-                        </p>
-                        <div class="price">
-                            <strong>￥138</strong>
-                            <i class="price-addcart"></i>
-                        </div>
-                    </div>
-                </div>
-                <a href="javascipts:;" class="more">
-                    <p class="hot">
-                        查看更多
-                        <i></i>
-                    </p>
-                </a>
-            </div>
+            <div class="product-list-in"></div>
         </div>
     </div>
     <!-- 礼盒 -->
-    <div class="prolist">
-        <div class="blockwrap">
-            <div class="proitem">
-                <div class="pic">
-                    <a href="javascript:;">
-                        <img src="../images/index/product.jpg" alt="">
-                    </a>
-                </div>
-                <div class="info">
-                    <div class="info-wrap">
-                        <p class="name">
-                            <a href="javascript:;">
-                                心中甜幸福礼赞礼盒
-                            </a>
-                        </p>
-                        <p class="sub">
-                            香脆可口 休闲零食
-                        </p>
-                    </div>
-                    <div class="price pricePadding">
-                        <strong>￥138</strong>/1.296kg
-                        <i class="price-addcart"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="prolist">
-            <div class="blockwrap">
-                <div class="proitem">
-                    <div class="pic">
-                        <a href="javascript:;">
-                            <img src="../images/index/product.jpg" alt="">
-                        </a>
-                    </div>
-                    <div class="info">
-                        <div class="info-wrap">
-                            <p class="name">
-                                <a href="javascript:;">
-                                    心中甜幸福礼赞礼盒
-                                </a>
-                            </p>
-                            <p class="sub">
-                                香脆可口 休闲零食
-                            </p>
-                        </div>
-                        <div class="price pricePadding">
-                            <strong>￥138</strong>/1.296kg
-                            <i class="price-addcart"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <!-- 产品 -->
-    <div class="title">
-        <h3>礼盒专场</h3>
-    </div>
-    <ul class="product">
-        <li>
-            <div class="proitem">
-                <div class="pic">
-                    <a href="#">
-                        <img src="../images/index/product.jpg" alt="">
-                    </a>
-                </div>
-                <div class="info">
-                    <p class="name">
-                        <a href="#">联鲜圆嫩香菇200g</a>
-                    </p>
-                    <div class="price">
-                        <strong>￥75</strong>/200g
-                        <i class="addcart"></i>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="proitem">
-                <div class="pic">
-                    <a href="#">
-                        <img src="../images/index/product.jpg" alt="">
-                    </a>
-                </div>
-                <div class="info">
-                    <p class="name">
-                        <a href="#">联鲜圆嫩香菇200g</a>
-                    </p>
-                    <div class="price">
-                        <strong>￥75</strong>/200g
-                        <i class="addcart"></i>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="proitem">
-                <div class="pic">
-                    <a href="#">
-                        <img src="../images/index/product.jpg" alt="">
-                    </a>
-                </div>
-                <div class="info">
-                    <p class="name">
-                        <a href="#">联鲜圆嫩香菇200g</a>
-                    </p>
-                    <div class="price">
-                        <strong>￥75</strong>/200g
-                        <i class="addcart"></i>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="proitem">
-                <div class="pic">
-                    <a href="#">
-                        <img src="../images/index/product.jpg" alt="">
-                    </a>
-                </div>
-                <div class="info">
-                    <p class="name">
-                        <a href="#">联鲜圆嫩香菇200g</a>
-                    </p>
-                    <div class="price">
-                        <strong>￥75</strong>/200g
-                        <i class="addcart"></i>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="proitem">
-                <div class="pic">
-                    <a href="#">
-                        <img src="../images/index/product.jpg" alt="">
-                    </a>
-                </div>
-                <div class="info">
-                    <p class="name">
-                        <a href="#">联鲜圆嫩香菇200g</a>
-                    </p>
-                    <div class="price">
-                        <strong>￥75</strong>/200g
-                        <i class="addcart"></i>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="proitem">
-                <div class="pic">
-                    <a href="#">
-                        <img src="../images/index/product.jpg" alt="">
-                    </a>
-                </div>
-                <div class="info">
-                    <p class="name">
-                        <a href="#">联鲜圆嫩香菇200g</a>
-                    </p>
-                    <div class="price">
-                        <strong>￥75</strong>/200g
-                        <i class="addcart"></i>
-                    </div>
-                </div>
-            </div>
-        </li>
-    </ul>
+    <div class="gift"></div>
+    <!-- 分类产品 -->
+    <!-- 礼盒专场 -->
+    <div class="giftbox"></div>
+    <!-- 精致杂粮 -->
+    <div class="grain"></div>
+    <!-- 品质干货 -->
+    <div class="cargo"></div>
+    <!-- 精选坚果 -->
+    <div class="nut"></div>
+    <!-- 更多好货 -->
+    <div class="morecargo"></div>
     <!-- 备案 -->
     <div class="pagefooter">
         <p>沪IPC备09008015号</p>
@@ -420,27 +87,234 @@
     <div class="totop">
         <a href="#"><img src="../images/index/top.png" alt=""></a>
     </div>
+
+    <!-- 模板引擎============================================================================================= -->
+    <!-- banner -->
+    <script type="text/template" id="banner">
+        <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img
+            src="<%=data[1].img%>" /></a></div>
+    <%for(var i=0;i<data.length;i++){%>
+        <div class="mui-slider-item"><a href="#"><img src="<%=data[i].img%>" /></a></div>
+    <%}%>
+        <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img
+                    src="<%=data[0].img%>" /></a></div>
+    </script>
+    <!-- 活动 -->
+    <script type="text/template" id="activity">
+        <%for(var i=0;i<data.length;i++){%> 
+        <div class="one">
+                <i>
+                    <img src="<%=data[i].img%>" alt="">
+                </i>
+                <p class="one-title"><%=data[i].tittle%></p>
+            </div>
+        <%}%>
+    </script>
+    <!-- middlebanner -->
+    <script type="text/template" id="middle">
+        <img src="<%=data[0].img%>" alt="">
+    </script>
+    <!-- 横向商品 -->
+    <script type="text/template" id="product1">
+        <%for(var i=0;i<data.length;i++){%>
+            <div class="proitem">
+                <div class="pic">
+                    <a href="javascript:;" class="pic-a">
+                        <img class="lazy" data-original="<%=data[i].img%>" alt="">
+                    </a>
+                </div>
+                <div class="info">
+                        <p class="name">
+                            <a href="javascript:;">
+                                    <%=data[i].tittle%>
+                            </a>
+                        </p>
+                        <div class="price">
+                            <strong>￥<%=data[i].price%></strong>
+                            <i class="price-addcart"></i>
+                        </div>
+                </div>
+            </div>
+        <%}%>
+        <a href="javascipts:;" class="more">
+                <p class="hot">
+                    查看更多
+                    <i></i>
+                </p>
+            </a>
+    </script>
+    <!-- 礼盒  -->
+    <script type="text/template" id="product2">
+        <%for(var i=0;i<data.length;i++){%>
+        <div class="prolist">
+                <div class="blockwrap" >
+                    <div class="proitem2" data-num="<%=i%>">
+                        <div class="pic">
+                            <a href="javascript:;">
+                                <img class="lazy" data-original="<%=data[i].img%>" alt="">
+                            </a>
+                        </div>
+                        <div class="info">
+                            <div class="info-wrap">
+                                <p class="name">
+                                    <a href="javascript:;"  class="header"><%=data[i].tittle%></a>
+                                </p>
+                                <p class="sub"><%=data[i].describe%></p>
+                            </div>
+                            <div class="price pricePadding">
+                                <strong>￥<span class="money"><%=data[i].price%></span></strong>/<%=data[i].weight%>
+                                <i class="price-addcart"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        <%}%>       
+    </script>
+    <!-- 礼盒专场 -->
+    <script type="text/template" id="product3">
+        <div class="title">
+            <h3>礼盒专场</h3>
+        </div>
+        <ul class="product">
+        <%for(var i=0;i<data.length;i++){%> 
+            <li>
+                <div class="proitem">
+                    <div class="pic">
+                        <a href="#">
+                            <img class="lazy" data-original="<%=data[i].img%>" alt="">
+                        </a>
+                    </div>
+                    <div class="info">
+                        <p class="name">
+                            <a href="#"><%=data[i].tittle%></a>
+                        </p>
+                        <div class="price">
+                            <strong>￥<%=data[i].price%></strong>/<%=data[i].weight%>
+                            <i class="addcart"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        <%}%>
+        </ul>
+    </script>
+    <!-- 精致杂粮 -->
+    <script type="text/template" id="product4">
+        <div class="title">
+            <h3>精致杂粮</h3>
+        </div>
+        <ul class="product">
+        <%for(var i=0;i<data.length;i++){%> 
+            <li>
+                <div class="proitem">
+                    <div class="pic">
+                        <a href="#">
+                            <img class="lazy" data-original="<%=data[i].img%>" alt="">
+                        </a>
+                    </div>
+                    <div class="info">
+                        <p class="name">
+                            <a href="#"><%=data[i].tittle%></a>
+                        </p>
+                        <div class="price">
+                            <strong>￥<%=data[i].price%></strong>/<%=data[i].weight%>
+                            <i class="addcart"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        <%}%>
+        </ul>
+    </script>
+    <!-- 品质干货 -->
+    <script type="text/template" id="product5">
+        <div class="title">
+            <h3>品质干货</h3>
+        </div>
+        <ul class="product">
+        <%for(var i=0;i<data.length;i++){%> 
+            <li>
+                <div class="proitem">
+                    <div class="pic">
+                        <a href="#">
+                            <img class="lazy" data-original="<%=data[i].img%>" alt="">
+                        </a>
+                    </div>
+                    <div class="info">
+                        <p class="name">
+                            <a href="#"><%=data[i].tittle%></a>
+                        </p>
+                        <div class="price">
+                            <strong>￥<%=data[i].price%></strong>/<%=data[i].weight%>
+                            <i class="addcart"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        <%}%>
+        </ul>
+    </script>
+    <!-- 精选坚果 -->
+    <script type="text/template" id="product6">
+        <div class="title">
+            <h3>精选坚果</h3>
+        </div>
+        <ul class="product">
+        <%for(var i=0;i<data.length;i++){%> 
+            <li>
+                <div class="proitem">
+                    <div class="pic">
+                        <a href="#">
+                            <img class="lazy" data-original="<%=data[i].img%>" alt="">
+                        </a>
+                    </div>
+                    <div class="info">
+                        <p class="name">
+                            <a href="#"><%=data[i].tittle%></a>
+                        </p>
+                        <div class="price">
+                            <strong>￥<%=data[i].price%></strong>/<%=data[i].weight%>
+                            <i class="addcart"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        <%}%>
+        </ul>
+    </script>
+    <!-- 更多好货 -->
+    <script type="text/template" id="product7">
+        <div class="title">
+            <h3>更多好货</h3>
+        </div>
+        <ul class="product">
+        <%for(var i=0;i<data.length;i++){%> 
+            <li>
+                <div class="proitem">
+                    <div class="pic">
+                        <a href="#">
+                            <img class="lazy" data-original="<%=data[i].img%>" alt="">
+                        </a>
+                    </div>
+                    <div class="info">
+                        <p class="name">
+                            <a href="#"><%=data[i].tittle%></a>
+                        </p>
+                        <div class="price">
+                            <strong>￥<%=data[i].price%></strong>/<%=data[i].weight%>
+                            <i class="addcart"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        <%}%>
+        </ul>
+    </script>
     <script src="../js/mui.min.js"></script>
     <script src="../js/rem.js"></script>
-    <script src="../js/jquery/jquery-1.12.1.js"></script>
-    <script type="text/javascript">
-        mui.init()
-        var gallery = mui('.mui-slider');
-        gallery.slider({
-            interval: 3000 //自动轮播周期，若为0则不自动播放，默认为0；
-        });
-        // $.ajax({
-
-        // })
-        // 回顶部
-        $(document).scroll(function () {
-            if (window.pageYOffset == 400) {
-                $(".totop").css("display", "block");
-            } else if (window.pageYOffset < 400) {
-                $(".totop").css("display", "none");
-            }
-        })
-    </script>
+    <script src="../js/ejs.js"></script>
+    <script src="../js/index.js"></script>
 </body>
 
 </html>
