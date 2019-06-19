@@ -1,10 +1,11 @@
 <?php
     header("Content-Type:text/html;charset=utf-8");
+    $nameId=$_GET["nameId"];
     $mysqli=new Mysqli("localhost","root","root","yiguo");
     if($mysqli->connect_errno){
         die();
     }
-    $sql='select * from product where weight="0"';
+    $sql="select * from city where name_id=$nameId";
     $result=$mysqli->query($sql);
     while($rows=Mysqli_fetch_assoc($result)){
         $data[]=$rows;
