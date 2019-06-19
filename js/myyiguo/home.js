@@ -106,7 +106,7 @@ if (username) {
 } else {
 	$(function () {
 		$(".imgborder,a,ul").on("click", function () {
-			location.href = "1.html";
+			location.href = "../login.html";
 		})
 	})
 }
