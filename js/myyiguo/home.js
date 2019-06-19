@@ -1,6 +1,5 @@
 var username = $.cookie("username");
 if (username) {
-	console.log("登录成功");
 	$.ajax({
 		url: '../../php/myyiguo/property.php',
 		type: 'post',
@@ -40,7 +39,6 @@ if (username) {
 				}
 			})
 			if (sign) {
-				console.log('已签到')
 				$("#sign").html(`<div class="signIn">已连续签到1天</div>`);
 				$(".header .signIn").css({
 					padding: ".25rem .3rem",

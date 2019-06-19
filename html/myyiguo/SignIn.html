@@ -106,7 +106,7 @@
                     $("#ubCount").text("我的悠币:" + data.youbi)
                     // 不够时
                     $('#duihuan').on('click', function () {
-                        if (data.youbi < $('.cell .left').text()) {
+                        if (Number(data.youbi) < Number($('.cell .left').text())) {
                             $('.window_shadow').css({ display: 'none' })
                             $(".inner1").css({ display: 'none' })
                             $('.inner2 .cell').text('悠币不够')
