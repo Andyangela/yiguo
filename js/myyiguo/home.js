@@ -1,12 +1,11 @@
-var username = false;
-username = $.cookie("username");
-if (username) {
+var username = $.cookie("username");
+if (username!='null') {
 	console.log("登录成功");
 	$.ajax({
 		url: '../../php/myyiguo/property.php',
 		type: 'post',
 		data: "username=" + username,
-		dataType:'json',
+		dataType: 'json',
 		success: function (data) {
 			$('.imgborder').removeClass("imgborder").css({
 				width: '2.32rem',
@@ -54,22 +53,22 @@ if (username) {
 			$(".header .bottom a:nth-child(2) .num").text(`${data.youbi}`);
 
 			// 卡包余额
-			$(".mecard").on("click",function(){
+			$(".mecard").on("click", function () {
 				location.href = "../../html/myyiguo/meCardBag.html";
 			})
 			// 悠币
-			$(".Ub").on("click",function(){
+			$(".Ub").on("click", function () {
 				location.href = "../../html/myyiguo/Ubills.html";
 			})
 			// 订单列表的href
 			// 待支付
-			$(".orderList1").attr("href","orderList.html?username="+username+"&page=1")
+			$(".orderList1").attr("href", "orderList.html?username=" + username + "&page=1")
 			// 待收货
-			$(".orderList2").attr("href","orderList.html?username="+username+"&page=2")
+			$(".orderList2").attr("href", "orderList.html?username=" + username + "&page=2")
 			// 待评价
-			$(".orderList3").attr("href","orderList.html?username="+username+"&page=3")
+			$(".orderList3").attr("href", "orderList.html?username=" + username + "&page=3")
 			// 全部
-			$(".orderList").attr("href","orderList.html?username="+username+"&page=0")
+			$(".orderList").attr("href", "orderList.html?username=" + username + "&page=0")
 			//点击出现下载手机版
 			$(".exchange").on("click", function () {
 				console.log('下载')
@@ -86,19 +85,19 @@ if (username) {
 				})
 			})
 			// 优惠券
-			$(".coupon").on("click",function(){
+			$(".coupon").on("click", function () {
 				location.href = "../../html/myyiguo/coupon.html";
 			})
 			// 帮助中心
-			$(".QuestionList").on("click",function(){
+			$(".QuestionList").on("click", function () {
 				location.href = "../../html/myyiguo/QuestionList.html";
 			})
 			// 我的团购
-			$(".orderLists").on("click",function(){
+			$(".orderLists").on("click", function () {
 				location.href = "../../html/myyiguo/orderLists.html";
 			})
 			// 收货地址
-			$(".addressList").on("click",function(){
+			$(".addressList").on("click", function () {
 				location.href = "../../html/shopcart/addressList.html";
 			})
 		}

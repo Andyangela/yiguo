@@ -131,13 +131,10 @@
         })
 
         var first = $.cookie('first');
-        if (first == 'true') {
+        if (first) {
             $('.window_shadow').css({ display: 'block' })
             $('.inner').css({ display: 'block' })
-            $.cookie('first', false, {
-                expires: 1,
-                path: '/'
-            })
+            $.removeCookie('first',{ path: '/'}); 
             setTimeout(function () {
                 $('.window_shadow').css({ display: 'none' })
                 $('.inner').css({ display: 'none' })
