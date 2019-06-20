@@ -1,2 +1,0 @@
-# yiguo
-yiguoshengxianApp

@@ -2,7 +2,7 @@ $(function () {
     var arr = [];
     arr = location.hash.split("=");
     $.ajax({
-        url: '../php/getcity.php',
+        url: '../../php/getcity.php',
         type: 'get',
         data: 'nameId=' + arr[1],
         dataType: 'json',
@@ -18,9 +18,51 @@ $(function () {
         });
         $(container).html(html);
     }
+    // 添加购物车
+    function addshopcart(kid,father){
+        $(kid).on("click", function () {
+            $img = $(this).parents(father).find(".lazy").data("original");
+            console.log($img)
+            $title = $(this).parents(father).find(".header").text();
+            $money = $(this).parents(father).find(".money").text();
+            $count = 1;
+            $.ajax({
+                url:'../../php/examnum.php',
+                type:'get',
+                data:'title="'+$title+'"',
+                success:function(data){
+                    if(data=="添加一整条"){
+                        $.ajax({
+                            url: '../../php/index_addcart.php',
+                            type: 'post',
+                            data: {
+                                'img': $img,
+                                'title': $title,
+                                "money": $money,
+                                'count': $count,
+                            },
+                        })
+                    }else{                         
+                        data=JSON.parse(data)
+                        $num=Number(data.count)
+                        $num++;                           
+                        $.ajax({
+                            url:'../../php/updatecount.php',
+                            type:'get',
+                            data:'count='+$num+'&title="'+$title+'"',
+                        })
+                    }
+                }
+            })             
+            $(".tip").css("display", "block");
+            setTimeout(function () {
+                $(".tip").css("display", "none");
+            }, 2000);
+        })
+    }
     // banner
     $.ajax({
-        url: '../php/banner.php',
+        url: '../../php/banner.php',
         type: 'post',
         data: 'title="banner"',
         dataType: 'json',
@@ -35,7 +77,7 @@ $(function () {
     })
     // 活动
     $.ajax({
-        url: '../php/indexactivity.php',
+        url: '../../php/indexactivity.php',
         type: 'post',
         dataType: 'json',
         success: function (data) {
@@ -44,7 +86,7 @@ $(function () {
     })
     // middlebanner
     $.ajax({
-        url: '../php/banner.php',
+        url: '../../php/banner.php',
         type: 'post',
         data: 'title="middle"',
         dataType: 'json',
@@ -54,135 +96,107 @@ $(function () {
     })
     // 横向商品
     $.ajax({
-        url: '../php/indexproduct.php',
+        url: '../../php/indexproduct.php',
         type: 'post',
         dataType: 'json',
+        async:false,
         success: function (data) {
             renderer("product1", ".product-list-in", data)
             $("img.lazy").lazyload({
                 effect: "fadeIn"
             })
+            // addshopcart(".price-addcart",".proitem")
         }
     })
     // 礼盒（横向商品下面的3个）
-    var index;
     $.ajax({
-        url: '../php/indexproduct2.php',
+        url: '../../php/indexproduct2.php',
         type: 'post',
         dataType: 'json',
+        async:false,
         success: function (data) {
             renderer("product2", ".gift", data)
             $("img.lazy").lazyload({
                 effect: "fadeIn"
-            })
-            $(".price-addcart").on("click", function () {
-                $img = $(this).parents(".proitem2").find(".lazy").data("original");
-                $title = $(this).parents(".proitem2").find(".header").text();
-                $money = $(this).parents(".proitem2").find(".money").text();
-                $count = 1;
-                $.ajax({
-                    url:'../php/examnum.php',
-                    type:'get',
-                    data:'title="'+$title+'"',
-                    success:function(data){
-                        if(data=="添加一整条"){
-                            $.ajax({
-                                url: '../php/index_addcart.php',
-                                type: 'post',
-                                data: {
-                                    'img': $img,
-                                    'title': $title,
-                                    "money": $money,
-                                    'count': $count,
-                                },
-                            })
-                        }else{
-                            
-                            data=JSON.parse(data)
-                            $num=Number(data.count)
-                            $num++;
-                            
-                            $.ajax({
-                                url:'../php/updatecount.php',
-                                type:'get',
-                                data:'count='+$num+'&title="'+$title+'"',
-                            })
-                        }
-                    }
-                })
-                
-                $(".tip").css("display", "block");
-                setTimeout(function () {
-                    $(".tip").css("display", "none");
-                }, 2000);
-            })
+            }) 
+            addshopcart(".price-addcart",".proitem2")  
         }
     })
 
     // 分类商品========
     // 礼盒专场
     $.ajax({
-        url: '../php/indexproduct3.php',
+        url: '../../php/indexproduct3.php',
         type: 'post',
         data: 'sortname="礼盒专场"',
         dataType: 'json',
+        async:false,
         success: function (data) {
             renderer("product3", ".giftbox", data)
             $("img.lazy").lazyload({
                 effect: "fadeIn"
             })
+            addshopcart(".addcart",".proitem")
         }
     })
     // 精致杂粮
     $.ajax({
-        url: '../php/indexproduct3.php',
+        url: '../../php/indexproduct3.php',
         type: 'post',
         data: 'sortname="精致杂粮"',
         dataType: 'json',
+        async:false,
         success: function (data) {
             renderer("product4", ".grain", data)
             $("img.lazy").lazyload({
                 effect: "fadeIn"
             })
+            // addshopcart(".addcart",".proitem")
         }
     })
     // 品质干货
     $.ajax({
-        url: '../php/indexproduct3.php',
+        url: '../../php/indexproduct3.php',
         type: 'post',
         dataType: 'json',
+        async:false,
         data: 'sortname="品质干货"',
         success: function (data) {
             renderer("product5", ".cargo", data)
             $("img.lazy").lazyload({
                 effect: "fadeIn"
             })
+            // addshopcart(".addcart",".proitem")
         }
     })
     // 精选坚果
     $.ajax({
-        url: '../php/indexproduct3.php',
+        url: '../../php/indexproduct3.php',
         type: 'post',
         data: 'sortname="精选坚果"',
         dataType: 'json',
+        async:false,
         success: function (data) {
             renderer("product6", ".nut", data)
             $("img.lazy").lazyload({
                 effect: "fadeIn"
             })
+            // addshopcart(".addcart",".proitem")
         }
     })
     // 更多好货
     $.ajax({
-        url: '../php/indexproduct3.php',
+        url: '../../php/indexproduct3.php',
         type: 'post',
         data: 'sortname="更多好货"',
         dataType: 'json',
+        async:false,
         success: function (data) {
             renderer("product7", ".morecargo", data)
             $("img.lazy").lazyload({
                 effect: "fadeIn"
             })
+            // addshopcart(".addcart",".proitem")
         }
     })
     // 回顶部
