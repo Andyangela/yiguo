@@ -1,6 +1,10 @@
 body{
     background-color:white;
 }
+.wrap{
+    position:relative;
+    z-index:1;
+}
 /* 顶部搜索栏 */
 .top{
 	width:100%;
@@ -486,4 +490,20 @@ body{
 }
 .totop img{
     width:100%;
+}
+.tip{
+	width:4.5rem;
+	height:1.5rem;
+	background-color: rgba(0,0,0,.5);
+	position: fixed;
+	top:50%;
+	left:50%;
+	z-index:100;
+	border-radius:5px;
+	text-align:center;
+	line-height:1.5rem;
+	color:white;
+	margin-top:-0.75rem;
+	margin-left:-2.25rem;
+	display:none;
 }
