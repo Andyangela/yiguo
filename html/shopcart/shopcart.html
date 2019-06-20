@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../css/reset.css">
     <link href="../../css/mui.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="../../css/shopcart/shopcart.css" />
+    <link rel="import" href="../../html/bottom.html" id="bottom">
 </head>
 
 <body>
@@ -60,7 +61,10 @@
         </div>
     </div>
     <!-- 底部 -->
-    <div class="footer">
+    <script type="text/javascript">
+        document.write(bottom.import.body.innerHTML)
+    </script>
+    <!-- <div class="footer">
         <div class="footer-in">
             <a href="../index.html" class="list active">
                 <i class="icon icon1"></i>首页
@@ -79,7 +83,7 @@
                 <i class="icon icon5"></i>我的易果
             </a>
         </div>
-    </div>
+    </div> -->
     <script src="../../js/jquery/jquery-1.12.1.js"></script>
     <script src="../../js/mui.min.js"></script>
     <script src="../../js/cookies.js"></script>
