@@ -106,7 +106,7 @@
                     $("#ubCount").text("我的悠币:" + data.youbi)
                     // 不够时
                     $('#duihuan').on('click', function () {
-                        if (data.youbi < $('.cell .left').text()) {
+                        if (Number(data.youbi) < Number($('.cell .left').text())) {
                             $('.window_shadow').css({ display: 'none' })
                             $(".inner1").css({ display: 'none' })
                             $('.inner2 .cell').text('悠币不够')
@@ -131,13 +131,10 @@
         })
 
         var first = $.cookie('first');
-        if (first == 'true') {
+        if (first) {
             $('.window_shadow').css({ display: 'block' })
             $('.inner').css({ display: 'block' })
-            $.cookie('first', false, {
-                expires: 1,
-                path: '/'
-            })
+            $.removeCookie('first',{ path: '/'}); 
             setTimeout(function () {
                 $('.window_shadow').css({ display: 'none' })
                 $('.inner').css({ display: 'none' })

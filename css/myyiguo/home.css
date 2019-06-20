@@ -355,7 +355,9 @@ i {
 }
 
 .home li a {
-	margin-top: 0.15rem;
+	padding-top: 0.15rem;
+	width: 100%;
+    height: auto;
 }
 
 .home li img {
