@@ -103,7 +103,7 @@ if (username) {
 } else {
 	$(function () {
 		$(".imgborder,a,ul").on("click", function () {
-			location.href = "../login.html";
+			location.href = "../index/login.html";
 		})
 	})
 }
