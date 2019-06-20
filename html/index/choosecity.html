@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>选择收货城市</title>
-  <link rel="stylesheet" href="../css/reset.css" />
-  <link rel="stylesheet" href="../css/mui.min.css" />
-  <link rel="stylesheet" href="../css/choosecity.css" />
-  <script src="../js/rem.js"></script>
-  <script src="../js/jquery/jquery-1.12.1.js"></script>
-  <script src="../js/ejs.js"></script>
+  <link rel="stylesheet" href="../../css/reset.css" />
+  <link rel="stylesheet" href="../../css/mui.min.css" />
+  <link rel="stylesheet" href="../../css/choosecity.css" />
+  <script src="../../js/rem.js"></script>
+  <script src="../../js/jquery/jquery-1.12.1.js"></script>
+  <script src="../../js/ejs.js"></script>
 </head>
 
 <body>
@@ -412,7 +412,7 @@
     $("span").click(function () {
       $(".area h3").html($(this).html())
       $.ajax({
-        url: '../php/getcity.php',
+        url: '../../php/getcity.php',
         data: 'nameId=' + $(this).index(),
         type: 'get',
         datatype: 'json',

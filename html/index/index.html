@@ -6,12 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>易果生鲜</title>
+<<<<<<< HEAD:html/index.html
     <link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
     <link rel="stylesheet" type="text/css" href="../css/reset.css" />
     <link rel="stylesheet" type="text/css" href="../css/index.css" />
     <script src="../js/jquery/jquery-1.12.1.js"></script>
     <script src="../js/jquery/jquery.lazyload.min.js"></script>
     <link rel="import" href="../bottom.html" id="bottom">
+=======
+    <link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+    <script src="../../js/jquery/jquery-1.12.1.js"></script>
+    <script src="../../js/jquery/jquery.lazyload.min.js"></script>
+>>>>>>> 3d4c27ba591ee8622d86028d5722b1f4e2e13e3b:html/index/index.html
 </head>
 <body>
     <div class="wrap">
@@ -21,7 +29,7 @@
                 <span>郑州</span>
                 <i class="arrow"></i>
             </a>
-            <a href="#">
+            <a href="../classify/grop.html">
                 <div class="search">
                     <a href="javascript:;" class="btn"></a>
                     <span class="placeholder">
@@ -66,12 +74,29 @@
             <p>上海易果电子商务有限公司</p>
         </div>
         <!-- 底部 -->
-        <script type="text/javascript">
-            document.write(bottom.import.body.innerHTML);
-        </script>
+        <!-- 底部 -->
+        <div class="footer">
+            <div class="footer-in">
+                <a href="index.html" class="list active">
+                    <i class="icon icon1"></i>首页
+                </a>
+                <a href="../classify/grop.html" class="list">
+                    <i class="icon icon2"></i>分类
+                </a>
+                <a href="../eat/dine.html" class="list">
+                    <i class="icon icon3"></i>吃饭吧
+                </a>
+                <a href="../shopcart/shopcart.html" class="list">
+                    <i class="icon icon4"></i>购物车
+                </a>
+                <a href="../myyiguo/home.html" class="list">
+                    <i class="icon icon5"></i>我的易果
+                </a>
+            </div>
+        </div>
         <!-- 回顶部 -->
         <div class="totop">
-            <a href="#"><img src="../images/index/top.png" alt=""></a>
+            <a href="#"><img src="../../images/index/top.png" alt=""></a>
         </div>
     </div>
     <!-- tip -->
@@ -79,12 +104,12 @@
     <!-- 模板引擎============================================================================================= -->
     <!-- banner -->
     <script type="text/template" id="banner">
-        <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img
+        <div class="mui-slider-item mui-slider-item-duplicate"><a href="../minisite.html"><img
             src="<%=data[1].img%>" /></a></div>
     <%for(var i=0;i<data.length;i++){%>
-        <div class="mui-slider-item"><a href="#"><img src="<%=data[i].img%>" /></a></div>
+        <div class="mui-slider-item"><a href="../minisite.html"><img src="<%=data[i].img%>" /></a></div>
     <%}%>
-        <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img
+        <div class="mui-slider-item mui-slider-item-duplicate"><a href="../minisite.html"><img
                     src="<%=data[0].img%>" /></a></div>
     </script>
     <!-- 活动 -->
@@ -92,7 +117,7 @@
         <%for(var i=0;i<data.length;i++){%> 
         <div class="one">
                 <i>
-                    <img src="<%=data[i].img%>" alt="">
+                    <a href="../minisite.html"><img src="<%=data[i].img%>" alt=""></a>
                 </i>
                 <p class="one-title"><%=data[i].tittle%></p>
             </div>
@@ -100,31 +125,31 @@
     </script>
     <!-- middlebanner -->
     <script type="text/template" id="middle">
-        <img src="<%=data[0].img%>" alt="">
+        <a href="../minisite.html"><img src="<%=data[0].img%>" alt=""></a>
     </script>
     <!-- 横向商品 -->
     <script type="text/template" id="product1">
         <%for(var i=0;i<data.length;i++){%>
             <div class="proitem">
                 <div class="pic">
-                    <a href="javascript:;" class="pic-a">
+                    <a href="../particulars.html" class="pic-a">
                         <img class="lazy" data-original="<%=data[i].img%>" alt="">
                     </a>
                 </div>
                 <div class="info">
                         <p class="name">
-                            <a href="javascript:;">
+                            <a href="../particulars.html" class="header">
                                     <%=data[i].tittle%>
                             </a>
                         </p>
                         <div class="price">
-                            <strong>￥<%=data[i].price%></strong>
+                            <strong>￥<span class="money"><%=data[i].price%></span></strong>
                             <i class="price-addcart"></i>
                         </div>
                 </div>
             </div>
         <%}%>
-        <a href="javascipts:;" class="more">
+        <a href="../classify/nut.html" class="more">
                 <p class="hot">
                     查看更多
                     <i></i>
@@ -136,16 +161,16 @@
         <%for(var i=0;i<data.length;i++){%>
         <div class="prolist">
                 <div class="blockwrap" >
-                    <div class="proitem2" data-num="<%=i%>">
+                    <div class="proitem2">
                         <div class="pic">
-                            <a href="javascript:;">
+                            <a href="../classify/nut.html">
                                 <img class="lazy" data-original="<%=data[i].img%>" alt="">
                             </a>
                         </div>
                         <div class="info">
                             <div class="info-wrap">
                                 <p class="name">
-                                    <a href="javascript:;"  class="header"><%=data[i].tittle%></a>
+                                    <a href="../classify/nut.html"  class="header"><%=data[i].tittle%></a>
                                 </p>
                                 <p class="sub"><%=data[i].describe%></p>
                             </div>
@@ -169,16 +194,16 @@
             <li>
                 <div class="proitem">
                     <div class="pic">
-                        <a href="#">
+                        <a href="../particulars.html">
                             <img class="lazy" data-original="<%=data[i].img%>" alt="">
                         </a>
                     </div>
                     <div class="info">
                         <p class="name">
-                            <a href="#"><%=data[i].tittle%></a>
+                            <a href="../particulars.html" class="header"><%=data[i].tittle%></a>
                         </p>
                         <div class="price">
-                            <strong>￥<%=data[i].price%></strong>/<%=data[i].weight%>
+                            <strong>￥<span class="money"><%=data[i].price%></span></strong>/<%=data[i].weight%>
                             <i class="addcart"></i>
                         </div>
                     </div>
@@ -197,16 +222,16 @@
             <li>
                 <div class="proitem">
                     <div class="pic">
-                        <a href="#">
+                        <a href="../particulars.html">
                             <img class="lazy" data-original="<%=data[i].img%>" alt="">
                         </a>
                     </div>
                     <div class="info">
                         <p class="name">
-                            <a href="#"><%=data[i].tittle%></a>
+                            <a href="../particulars.html" class="header"><%=data[i].tittle%></a>
                         </p>
                         <div class="price">
-                            <strong>￥<%=data[i].price%></strong>/<%=data[i].weight%>
+                            <strong>￥<span class="money"><%=data[i].price%></span></strong>/<%=data[i].weight%>
                             <i class="addcart"></i>
                         </div>
                     </div>
@@ -225,16 +250,16 @@
             <li>
                 <div class="proitem">
                     <div class="pic">
-                        <a href="#">
+                        <a href="../particulars.html">
                             <img class="lazy" data-original="<%=data[i].img%>" alt="">
                         </a>
                     </div>
                     <div class="info">
                         <p class="name">
-                            <a href="#"><%=data[i].tittle%></a>
+                            <a href="../particulars.html" class="header"><%=data[i].tittle%></a>
                         </p>
                         <div class="price">
-                            <strong>￥<%=data[i].price%></strong>/<%=data[i].weight%>
+                            <strong>￥<span class="money"><%=data[i].price%></span></strong>/<%=data[i].weight%>
                             <i class="addcart"></i>
                         </div>
                     </div>
@@ -253,16 +278,16 @@
             <li>
                 <div class="proitem">
                     <div class="pic">
-                        <a href="#">
+                        <a href="../particulars.html">
                             <img class="lazy" data-original="<%=data[i].img%>" alt="">
                         </a>
                     </div>
                     <div class="info">
                         <p class="name">
-                            <a href="#"><%=data[i].tittle%></a>
+                            <a href="../particulars.html" class="header"><%=data[i].tittle%></a>
                         </p>
                         <div class="price">
-                            <strong>￥<%=data[i].price%></strong>/<%=data[i].weight%>
+                            <strong>￥<span class="money"><%=data[i].price%></span></strong>/<%=data[i].weight%>
                             <i class="addcart"></i>
                         </div>
                     </div>
@@ -281,16 +306,16 @@
             <li>
                 <div class="proitem">
                     <div class="pic">
-                        <a href="#">
+                        <a href="../particulars.html">
                             <img class="lazy" data-original="<%=data[i].img%>" alt="">
                         </a>
                     </div>
                     <div class="info">
                         <p class="name">
-                            <a href="#"><%=data[i].tittle%></a>
+                            <a href="../particulars.html" class="header"><%=data[i].tittle%></a>
                         </p>
                         <div class="price">
-                            <strong>￥<%=data[i].price%></strong>/<%=data[i].weight%>
+                            <strong>￥<span class="money"><%=data[i].price%></span></strong>/<%=data[i].weight%>
                             <i class="addcart"></i>
                         </div>
                     </div>
@@ -299,10 +324,10 @@
         <%}%>
         </ul>
     </script>
-    <script src="../js/mui.min.js"></script>
-    <script src="../js/rem.js"></script>
-    <script src="../js/ejs.js"></script>
-    <script src="../js/index.js"></script>
+    <script src="../../js/mui.min.js"></script>
+    <script src="../../js/rem.js"></script>
+    <script src="../../js/ejs.js"></script>
+    <script src="../../js/index.js"></script>
 </body>
 
 </html>
