@@ -95,7 +95,7 @@ $(function() {
                         },
                         type: "post",
                         success: function(data) {
-                            location.href = "settle.html"
+                            location.href = "addressList.html"
                         }
                     });
                 }
@@ -118,7 +118,7 @@ $(function() {
                 type: "post",
                 dateType: "json",
                 success: function(data) {
-                    location.href = "settle.html"
+                    location.href = "addressList.html"
                 }
             });
         });
