@@ -11,83 +11,71 @@
     <link rel="stylesheet" type="text/css" href="../css/index.css" />
     <script src="../js/jquery/jquery-1.12.1.js"></script>
     <script src="../js/jquery/jquery.lazyload.min.js"></script>
+    <link rel="import" href="./bottom.html" id="bottom">
 </head>
 <body>
-    <!--顶部搜索栏-->
-    <div class="top">
-        <a href="choosecity.html" class="address">
-            <span>郑州</span>
-            <i class="arrow"></i>
-        </a>
-        <a href="#">
-            <div class="search">
-                <a href="javascript:;" class="btn"></a>
-                <span class="placeholder">
-                    请输入商品名称
-                </span>
+    <div class="wrap">
+        <!--顶部搜索栏-->
+        <div class="top">
+            <a href="choosecity.html" class="address">
+                <span>郑州</span>
+                <i class="arrow"></i>
+            </a>
+            <a href="#">
+                <div class="search">
+                    <a href="javascript:;" class="btn"></a>
+                    <span class="placeholder">
+                        请输入商品名称
+                    </span>
+                </div>
+            </a>
+        </div>
+        <!--banner图-->
+        <div class="mui-slider">
+            <div class="mui-slider-group mui-slider-loop"></div>
+            <div class="mui-slider-indicator">
+                <div class="mui-indicator mui-active"></div>
+                <div class="mui-indicator"></div>
             </div>
-        </a>
-    </div>
-    <!--banner图-->
-    <div class="mui-slider">
-        <div class="mui-slider-group mui-slider-loop"></div>
-        <div class="mui-slider-indicator">
-            <div class="mui-indicator mui-active"></div>
-            <div class="mui-indicator"></div>
+        </div>
+        <!-- 分类 -->
+        <div class="menu clear"></div>
+        <!-- 横向滚动商品 -->
+        <div class="group-floor">
+            <a href="javascript:;" class="floor-img"></a>
+            <div class="product-list clear">
+                <div class="product-list-in"></div>
+            </div>
+        </div>
+        <!-- 礼盒 -->
+        <div class="gift"></div>
+        <!-- 分类产品 -->
+        <!-- 礼盒专场 -->
+        <div class="giftbox"></div>
+        <!-- 精致杂粮 -->
+        <div class="grain"></div>
+        <!-- 品质干货 -->
+        <div class="cargo"></div>
+        <!-- 精选坚果 -->
+        <div class="nut"></div>
+        <!-- 更多好货 -->
+        <div class="morecargo"></div>
+        <!-- 备案 -->
+        <div class="pagefooter">
+            <p>沪IPC备09008015号</p>
+            <p>上海易果电子商务有限公司</p>
+        </div>
+        <!-- 底部 -->
+        <script type="text/javascript">
+            document.write(bottom.import.body.innerHTML);
+        </script>
+        <!-- 回顶部 -->
+        <div class="totop">
+            <a href="#"><img src="../images/index/top.png" alt=""></a>
         </div>
     </div>
-    <!-- 分类 -->
-    <div class="menu clear"></div>
-    <!-- 横向滚动商品 -->
-    <div class="group-floor">
-        <a href="javascript:;" class="floor-img"></a>
-        <div class="product-list clear">
-            <div class="product-list-in"></div>
-        </div>
-    </div>
-    <!-- 礼盒 -->
-    <div class="gift"></div>
-    <!-- 分类产品 -->
-    <!-- 礼盒专场 -->
-    <div class="giftbox"></div>
-    <!-- 精致杂粮 -->
-    <div class="grain"></div>
-    <!-- 品质干货 -->
-    <div class="cargo"></div>
-    <!-- 精选坚果 -->
-    <div class="nut"></div>
-    <!-- 更多好货 -->
-    <div class="morecargo"></div>
-    <!-- 备案 -->
-    <div class="pagefooter">
-        <p>沪IPC备09008015号</p>
-        <p>上海易果电子商务有限公司</p>
-    </div>
-    <!-- 底部 -->
-    <div class="footer">
-        <div class="footer-in">
-            <a href="#" class="list active">
-                <i class="icon icon1"></i>首页
-            </a>
-            <a href="#" class="list">
-                <i class="icon icon2"></i>分类
-            </a>
-            <a href="#" class="list">
-                <i class="icon icon3"></i>吃饭吧
-            </a>
-            <a href="#" class="list">
-                <i class="icon icon4"></i>购物车
-            </a>
-            <a href="#" class="list">
-                <i class="icon icon5"></i>我的易果
-            </a>
-        </div>
-    </div>
-    <!-- 回顶部 -->
-    <div class="totop">
-        <a href="#"><img src="../images/index/top.png" alt=""></a>
-    </div>
-
+    <!-- tip -->
+    <div class="tip">加入购物车成功</div>
     <!-- 模板引擎============================================================================================= -->
     <!-- banner -->
     <script type="text/template" id="banner">
