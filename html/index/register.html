@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>注册</title>
-    <link href="../css/mui.min.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="../css/register.css" />
+    <link href="../../css/mui.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/register.css" />
 </head>
 
 <body>
@@ -28,7 +28,7 @@
         </div>
     </form>
     <div class="agreement">
-        <input type="checkbox" id="checkbox">我已阅读<a href="myyiguo/RegistrationAgreement.html" class="green">《易果服务协议》</a><a href="myyiguo/Privacyclause.html"
+        <input type="checkbox" id="checkbox">我已阅读<a href="../myyiguo/RegistrationAgreement.html" class="green">《易果服务协议》</a><a href="../myyiguo/Privacyclause.html"
             class="green">《隐私条款》</a>并同意
     </div>
     <div class="btn">
@@ -43,8 +43,8 @@
             </div>
             <div class="bottom">
                 <input type="text" placeholder="请输入验证码" id="verify">
-                <img id="captcha_img" border="1" src="../php/captcha.php?r=<?php echo rand();?>"
-                    onclick="document.getElementById('captcha_img').src='../php/captcha.php?r='+Math.random()">
+                <img id="captcha_img" border="1" src="../../php/captcha.php?r=<?php echo rand();?>"
+                    onclick="document.getElementById('captcha_img').src='../../php/captcha.php?r='+Math.random()">
             </div>
             <div class="buttons">
                 <button class="submit">提交</button>
@@ -53,10 +53,10 @@
     </div>
     <!-- tip -->
     <div class="tip"></div>
-    <script src="../js/mui.min.js"></script>
-    <script src="../js/rem.js"></script>
-    <script src="../js/jquery/jquery-1.12.1.js"></script>
-    <script src="../js/cookiefengzhuang.js"></script>
+    <script src="../../js/mui.min.js"></script>
+    <script src="../../js/rem.js"></script>
+    <script src="../../js/jquery/jquery-1.12.1.js"></script>
+    <script src="../../js/cookiefengzhuang.js"></script>
     <script>
         function errortip(tipcontent) {
             $(".tip").html(tipcontent);
@@ -72,7 +72,7 @@
                 errortip("请输入验证码")
             } else {
                 $.ajax({
-                    url: "../php/form.php",
+                    url: "../../php/form.php",
                     type: "get",
                     data: "verify=" + $("#verify").val(),
                     success: function (data) {
@@ -124,7 +124,7 @@
                 errortip("请输入正确的手机号")
             } else {
                 $.ajax({
-                    url: "../php/testusername.php",
+                    url: "../../php/testusername.php",
                     type: 'post',
                     data: 'username=' + $("#username").val(),
                     success: function (data) {
@@ -134,7 +134,7 @@
                             errortip("请输入验证码")
                         } else {
                             $.ajax({
-                                url: '../php/phoneverify.php',
+                                url: '../../php/phoneverify.php',
                                 type: 'post',
                                 data: "verify=" + $("#verify2").val(),
                                 success: function (data) {
@@ -154,13 +154,13 @@
                                         errortip("请阅读协议并同意")
                                     } else {
                                         $.ajax({
-                                            url: '../php/adduser.php',
+                                            url: '../../php/adduser.php',
                                             type: 'post',
                                             data: "username=" + $("#username")
                                                 .val() + "&password=" + $(
                                                     "#password").val()
                                         })
-                                        location.href = "./myyiguo/home.html"
+                                        location.href = "../myyiguo/home.html"
                                         cookie.setCookie("username", $("#username")
                                         .val(), {
                                             path: "/",

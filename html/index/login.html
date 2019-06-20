@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <title>登录</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <link href="../css/mui.min.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="../css/login.css" />
+    <link href="../../css/mui.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/login.css" />
   </head>
 
   <body>
@@ -41,8 +41,8 @@
         <img
           id="captcha_img"
           border="1"
-          src="../php/captcha.php?r=<?php echo rand();?>"
-          onclick="document.getElementById('captcha_img').src='../php/captcha.php?r='+Math.random()"
+          src="../../php/captcha.php?r=<?php echo rand();?>"
+          onclick="document.getElementById('captcha_img').src='../../php/captcha.php?r='+Math.random()"
         />
       </div>
     </form>
@@ -56,10 +56,10 @@
     </div>
     <!-- tip -->
     <div class="tip"></div>
-    <script src="../js/mui.min.js"></script>
-    <script src="../js/rem.js"></script>
-    <script src="../js/jquery/jquery-1.12.1.js"></script>
-    <script src="../js/cookiefengzhuang.js"></script>
+    <script src="../../js/mui.min.js"></script>
+    <script src="../../js/rem.js"></script>
+    <script src="../../js/jquery/jquery-1.12.1.js"></script>
+    <script src="../../js/cookiefengzhuang.js"></script>
     <script type="text/javascript">
       $(".mui-btn-danger").click(function() {
         location.href = "register.html";
@@ -80,7 +80,7 @@
           errortip("请输入验证码");
         } else {
           $.ajax({
-            url: "../php/verifyuser.php",
+            url: "../../php/verifyuser.php",
             type: "post",
             data:
               "username=" +
@@ -92,14 +92,14 @@
                 errortip("用户名或密码错误");
               } else {
                 $.ajax({
-                  url: "../php/form.php",
+                  url: "../../php/form.php",
                   type: "get",
                   data: "verify=" + $("#verify").val(),
                   success: function(data) {
                     if(data=="输入错误"){
                       errortip("验证码错误或已失效")
                     }else{
-                      location.href="./myyiguo/home.html"
+                      location.href="../myyiguo/home.html"
                       cookie.setCookie("username",$("#username").val(),{path:"/",expires:7})
                     }
                   }

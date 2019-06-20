@@ -2,7 +2,7 @@ $(function () {
     var arr = [];
     arr = location.hash.split("=");
     $.ajax({
-        url: '../php/getcity.php',
+        url: '../../php/getcity.php',
         type: 'get',
         data: 'nameId=' + arr[1],
         dataType: 'json',
@@ -20,7 +20,7 @@ $(function () {
     }
     // banner
     $.ajax({
-        url: '../php/banner.php',
+        url: '../../php/banner.php',
         type: 'post',
         data: 'title="banner"',
         dataType: 'json',
@@ -35,7 +35,7 @@ $(function () {
     })
     // 活动
     $.ajax({
-        url: '../php/indexactivity.php',
+        url: '../../php/indexactivity.php',
         type: 'post',
         dataType: 'json',
         success: function (data) {
@@ -44,7 +44,7 @@ $(function () {
     })
     // middlebanner
     $.ajax({
-        url: '../php/banner.php',
+        url: '../../php/banner.php',
         type: 'post',
         data: 'title="middle"',
         dataType: 'json',
@@ -54,7 +54,7 @@ $(function () {
     })
     // 横向商品
     $.ajax({
-        url: '../php/indexproduct.php',
+        url: '../../php/indexproduct.php',
         type: 'post',
         dataType: 'json',
         success: function (data) {
@@ -67,7 +67,7 @@ $(function () {
     // 礼盒（横向商品下面的3个）
     var index;
     $.ajax({
-        url: '../php/indexproduct2.php',
+        url: '../../php/indexproduct2.php',
         type: 'post',
         dataType: 'json',
         success: function (data) {
@@ -81,13 +81,13 @@ $(function () {
                 $money = $(this).parents(".proitem2").find(".money").text();
                 $count = 1;
                 $.ajax({
-                    url:'../php/examnum.php',
+                    url:'../../php/examnum.php',
                     type:'get',
                     data:'title="'+$title+'"',
                     success:function(data){
                         if(data=="添加一整条"){
                             $.ajax({
-                                url: '../php/index_addcart.php',
+                                url: '../../php/index_addcart.php',
                                 type: 'post',
                                 data: {
                                     'img': $img,
@@ -103,7 +103,7 @@ $(function () {
                             $num++;
                             
                             $.ajax({
-                                url:'../php/updatecount.php',
+                                url:'../../php/updatecount.php',
                                 type:'get',
                                 data:'count='+$num+'&title="'+$title+'"',
                             })
@@ -122,7 +122,7 @@ $(function () {
     // 分类商品========
     // 礼盒专场
     $.ajax({
-        url: '../php/indexproduct3.php',
+        url: '../../php/indexproduct3.php',
         type: 'post',
         data: 'sortname="礼盒专场"',
         dataType: 'json',
@@ -135,7 +135,7 @@ $(function () {
     })
     // 精致杂粮
     $.ajax({
-        url: '../php/indexproduct3.php',
+        url: '../../php/indexproduct3.php',
         type: 'post',
         data: 'sortname="精致杂粮"',
         dataType: 'json',
@@ -148,7 +148,7 @@ $(function () {
     })
     // 品质干货
     $.ajax({
-        url: '../php/indexproduct3.php',
+        url: '../../php/indexproduct3.php',
         type: 'post',
         dataType: 'json',
         data: 'sortname="品质干货"',
@@ -161,7 +161,7 @@ $(function () {
     })
     // 精选坚果
     $.ajax({
-        url: '../php/indexproduct3.php',
+        url: '../../php/indexproduct3.php',
         type: 'post',
         data: 'sortname="精选坚果"',
         dataType: 'json',
@@ -174,7 +174,7 @@ $(function () {
     })
     // 更多好货
     $.ajax({
-        url: '../php/indexproduct3.php',
+        url: '../../php/indexproduct3.php',
         type: 'post',
         data: 'sortname="更多好货"',
         dataType: 'json',
