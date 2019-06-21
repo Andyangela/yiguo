@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>发票</title>
+    <script src="../../js/rem.js"></script>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/shopcart/invoice.css">
+</head>
+
+<body>
+    <div class="invoice">
+        <!-- 提示 -->
+        <div class="hint">
+            <span>温馨提示：按照国家有关税收法律法规，在您购买应税在您购买应税</span>
+            <span>查看详情</span>
+            <i class="arrow"></i>
+        </div>
+        <!-- 发票类型 -->
+        <div class="type">
+            <p class="title">发票类型</p>
+            <div class="choose_type">
+                <p class="txt">
+                    <span>电子发票</span>
+                    <i class="active"></i>
+                </p>
+            </div>
+        </div>
+        <div class="type">
+            <p class="title">发票抬头</p>
+            <div class="type_inline">
+                <div class="tab">
+                    <a href="javascript:;">
+                        <i class="active"></i>
+                        <span>个人</span>
+
+                    </a>
+                    <a href="javascript:;">
+                        <i></i>
+                        <span>单位</span>
+
+                    </a>
+                </div>
+                <div class="tab_bottom">
+                    <p class="input">
+                        <input type="text" placeholder="请填写单位名称">
+                    </p>
+                    <p class="input">
+                        <input type="text" placeholder="请填写纳税人识别号">
+                    </p>
+                    <p class="tips">
+                        应国税总局2017年第16号规定，开具增值税普通发票时，应在“购买方纳税人识别号”栏填写<b>购买方的纳税人识别号</b>或<b>统一社会信用代码</b>。不符合规定的发票，不得作为税收凭证。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- 说明 -->
+        <div class="type">
+            <p class="bottom_txt">
+                <span>说明:</span>
+                <span>1.发票金额不含现金券、礼品卡或卡包余额支付；</span>
+                <span>2.按国家税务局规定，储值卡、礼品卡仅开具“不征税”发票类型；</span>
+                <span>3.电子发票确认收货后可在订单详情中查看。</span>
+                <span style="padding-top: 0.5rem;">注：电子发票是税务局认可的有效收付款凭证，其法律效力、基本用途及使用规定同纸质发票，如需纸质发票可自行下载电子发票并打印。</span>
+            </p>
+        </div>
+        <!-- 按钮 -->
+        <div class="btn_box">
+            <a href="javascript:;" class="no_need">不需要发票</a>
+            <a href="javascript:;" class="sure">确定</a>
+        </div>
+        <!-- 提示面板 -->
+        <div class="mask">
+            <div class="content">
+                <div class="how_to_use">温馨提示</div>
+                <div class="text">
+                    <h2>尊敬的客户：</h2>
+                    <p>按照国家有关税收法律法规，在您购买应税货物或接 受应税服务的同时，有权索取增值税发票。</p>
+                    <p>如您为自然人以外的单位或个体工商户，符合规定条件的，索取增值税专用发票是，应向我们提供购买方名称、纳税人识别号、地址电话、开户行及账号信息等四项信息，不需相关证件或其他证明材料。</p>
+                    <p>您在索取增值税发票时，不需提供相关证件或其他证明材料。</p>
+                </div>
+                <div class="know_btn">
+                    <a href="javascript:;">知道了</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../../js/jquery/jquery-1.12.1.js"></script>
+    <script src="../../js/invoice.js"></script>
+</body>
+
+</html>

@@ -10,13 +10,50 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>com.pandora.projects.ui.MKeyBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
+		<nature>com.pandora.projects.ui.MKeyNature</nature>
 		<nature>com.aptana.projects.webnature</nature>
 	</natures>
 	<filteredResources>
 		<filter>
 			<id>1559647715120</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-node_modules</arguments>
+			</matcher>
+		</filter>
+		<filter>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+			<id>1559725354360</id>
+=======
+>>>>>>> 16e174faec5411e45acd0998568d2857f529e941
+			<id>1559652290793</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-node_modules</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1559722168616</id>
+<<<<<<< HEAD
+=======
+			<id>1559652195280</id>
+>>>>>>> 3f598e0c632668764d3770632b70157e4e292ea0
+=======
+>>>>>>> 3e6c0ae09024be7167561c8825364cb2dd4d45dc
+>>>>>>> 16e174faec5411e45acd0998568d2857f529e941
 			<name></name>
 			<type>26</type>
 			<matcher>

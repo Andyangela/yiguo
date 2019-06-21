@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>设置</title>
+	<script src="../../js/rem.js"></script>
+	<link rel="stylesheet" href="../../css/mui.min.css">
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../../css/myyiguo/setting.css" />
+	<script src="../../js/mui.min.js"></script>
+	<script src="../../js/jquery/jquery-1.12.1.js"></script>
+	<script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+</head>
+
+<body>
+	<ul class="mui-table-view top">
+		<li class="mui-table-view-cell">
+			<a class="mui-navigate-right">客服热线
+				<span>400-000-7788</span>
+			</a>
+		</li>
+	</ul>
+	<ul class="mui-table-view bottom">
+		<li class="mui-table-view-cell">
+			<a href="about.html" class="mui-navigate-right">关于我们</a>
+		</li>
+		<li class="mui-table-view-cell">
+			<a href="aptitude.html" class="mui-navigate-right">营业资质</a>
+		</li>
+		<li class="mui-table-view-cell">
+			<a href="RegistrationAgreement.html" class="mui-navigate-right">服务协议</a>
+		</li>
+		<li class="mui-table-view-cell">
+			<a href="Privacyclause.html" class="mui-navigate-right">隐私条款</a>
+		</li>
+		<li class="mui-table-view-cell">
+			<a href="DeliveryNotes.html" class="mui-navigate-right">配送说明</a>
+		</li>
+		<li class="mui-table-view-cell">
+			<a href="ReturnPolicy.html" class="mui-navigate-right">退换货说明</a>
+		</li>
+	</ul>
+	<div class="log-out">
+		<button type="button" class="mui-btn" id="quit">退出登录</button>
+	</div>
+	<script>
+		var username = $.cookie("username");
+		if (username) {
+			$(".log-out").css({display:'block'})
+			$("#quit").on("click",function(){
+				$.removeCookie('username',{ path: '/'}); 
+				$.removeCookie('sign',{ path: '/'}); 
+				location.href = "home.html";
+			})
+		}
+	</script>
+</body>
+
+</html>
