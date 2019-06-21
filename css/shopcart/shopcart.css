@@ -1,0 +1,482 @@
+body {
+    font-size: 12px;
+    background: #f4f4f4;
+}
+
+i {
+    display: inline-block;
+}
+
+header {
+    display: none;
+}
+
+.mui-bar {
+    height: 1.44rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.mui-title {
+    font-size: 0.5rem;
+    line-height: 1.44rem;
+}
+
+
+/*如果没有登录，要先登录*/
+
+.cart_login {
+    width: 100%;
+    height: 1.32rem;
+    line-height: 1.32rem;
+    font-size: 0.42rem;
+    background: white;
+    color: #808080;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    z-index: 1;
+}
+
+.cart_login a {
+    display: inline-block;
+    width: 1.8rem;
+    height: .72rem;
+    margin: 0 0 0 .42rem;
+    line-height: .72rem;
+    color: #808080;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border-color: #808080;
+}
+
+
+/* 购物车为空时 */
+
+.nogoods {
+    width: 100%;
+    position: relative;
+    padding: 1.8rem 0 1.75rem;
+    background: #fff;
+    margin-top: 1.96rem;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.nogoods .cartlogo {
+    width: 100%;
+    height: 3.6rem;
+    background: url(../../images/shopcart/img_nogoods@3x.png) no-repeat center;
+    background-size: auto 100%;
+}
+
+.nogoods p {
+    padding: 1rem 0 .5rem;
+    font-size: 0.42rem;
+    color: #808080;
+}
+
+.nogoods .visit {
+    height: 1.2rem;
+}
+
+.nogoods .visit a {
+    position: relative;
+    display: inline-block;
+    width: 4.5rem;
+    height: 1.2rem;
+    border: 1px solid #11b57c;
+    border-radius: 6px;
+    line-height: 1.2rem;
+    font-size: .5rem;
+    color: #11b57c;
+}
+
+
+/* 购物车不为空时 */
+
+.goods {
+    padding: 0 0 0px;
+    color: #333;
+    margin-top: 1.96rem;
+    margin-bottom: 3.5rem;
+}
+
+.goods .list_box {
+    position: relative;
+    margin-bottom: .1rem;
+    background: #fff;
+    padding: .32rem 0 .32rem 1.22rem;
+}
+
+.list_box .list_check {
+    position: absolute;
+    top: .32rem;
+    left: 0;
+    width: 1.22rem;
+    height: .54rem;
+    padding: 1.08rem 0;
+    text-align: center;
+}
+
+.list_box .list_check i {
+    display: inline-block;
+    width: .6rem;
+    height: .6rem;
+    background: url(../../images/shopcart/check1.png) no-repeat;
+    background-size: 100%;
+}
+
+.list_box .list_check i.active {
+    background-image: url(../../images/shopcart/check2.png);
+}
+
+.list_box .img {
+    position: absolute;
+    left: 1.22rem;
+    top: .32rem;
+    width: 2.7rem;
+    height: 2.7rem;
+}
+
+.list_box .img img {
+    display: block;
+    width: 2.7rem;
+    height: 2.7rem;
+}
+
+.list_box .text {
+    padding: 0 1.9rem 0 3rem;
+}
+
+.list_box .text .goodsName {
+    height: 1.12rem;
+    line-height: .56rem;
+    font-size: .42rem;
+    font-weight: normal;
+}
+
+.stripe {
+    height: .56rem;
+    padding: .2rem 0 .1rem;
+}
+
+.list_box .text p {
+    height: .72rem;
+    line-height: .72rem;
+    font-size: .34rem;
+    color: #ccc;
+}
+
+.list_box .text p strong,
+.list_box .text p b {
+    color: #fb3d3d;
+}
+
+.list_box .text p b {
+    font-size: 0.42rem;
+}
+
+.list_box .del {
+    position: absolute;
+    right: .5rem;
+    top: .42rem;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.list_box .del i {
+    display: block;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: url(../../images/shopcart/del.png) center right no-repeat;
+    background-size: 0.48rem 0.5rem;
+}
+
+.list_box .num {
+    position: absolute;
+    right: .5rem;
+    top: 2.3rem;
+    width: 2.7rem;
+    height: .73rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.list_box .num span {
+    display: block;
+    float: left;
+}
+
+.list_box .num .minus {
+    position: relative;
+    width: .72rem;
+    height: .71rem;
+}
+
+.list_box .num .minus i {
+    position: absolute;
+    left: .21rem;
+    top: .21rem;
+    width: .33rem;
+    height: .33rem;
+    background: url(../../images/shopcart/cut2.png) no-repeat;
+    background-size: 100%;
+}
+
+.list_box .num .count {
+    position: relative;
+    width: 1.16rem;
+    height: .69rem;
+    line-height: .69rem;
+    font-size: .4rem;
+    color: #333;
+    text-align: center;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+.list_box .num .plus {
+    position: relative;
+    width: .72rem;
+    height: .71rem;
+}
+
+.list_box .num .plus i {
+    position: absolute;
+    left: .21rem;
+    top: .21rem;
+    width: .33rem;
+    height: .33rem;
+    background: url(../../images/shopcart/add2.png) no-repeat;
+    background-size: 100%;
+}
+
+
+/*购物车底部 结算区域*/
+
+.total_cart {
+    position: fixed;
+    left: 0;
+    bottom: 1.51rem;
+    width: 100%;
+    height: 1.6rem;
+    padding: 0 3.9rem 0 0;
+    box-sizing: border-box;
+    background: #fff;
+    border-top: 1px solid #ddd;
+}
+
+.total_cart .check {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2.1rem;
+    height: .54rem;
+    padding: .53rem 0 .53rem .36rem;
+    font-size: .38rem;
+}
+
+.total_cart .check i {
+    display: inline-block;
+    width: 0.6rem;
+    height: 0.6rem;
+    margin: 0 .18rem 0 0;
+    background: url(../../images/shopcart/check1.png) no-repeat;
+    background-size: 100%;
+    vertical-align: -4px;
+}
+
+.total_cart .check i.no {
+    background-image: url(../../images/shopcart/check3.png);
+}
+
+.total_cart .check i.active {
+    background-image: url(../../images/shopcart/check2.png);
+}
+
+.total_cart .text {
+    padding: .2rem 0;
+    line-height: .6rem;
+    font-size: 0.11rem;
+    text-align: right;
+}
+
+.total_cart .text p {
+    font-size: 0.38rem;
+    margin-bottom: 0;
+    color: black;
+}
+
+.total_cart .text p:nth-child(2) {
+    color: #999;
+}
+
+.total_cart .text p:nth-child(1) span {
+    color: red;
+}
+
+.total_cart .btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 3.6rem;
+    height: 1.6rem;
+}
+
+.total_cart .btn a {
+    display: block;
+    width: 3.6rem;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    font-size: .5rem;
+    color: #fff;
+    text-align: center;
+    background: #fb3d3d;
+}
+
+.total_cart .btn a.no {
+    background: #ccc;
+}
+
+
+/* 遮罩阴影 */
+
+.shade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* z-index: 1010; */
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    transition: all 2s;
+    display: none;
+}
+
+.confirm_del {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    width: 11rem;
+    height: auto;
+    margin: -2rem 0 0 -5.5rem;
+    background: #fff;
+    border-radius: .2rem;
+    text-align: center;
+    padding: 1.15rem .75rem .82rem;
+    box-sizing: border-box;
+}
+
+.sure_del {
+    font-size: .54rem;
+    padding: .1rem 0 1.18rem;
+    color: #333;
+}
+
+.btnbox a {
+    border-radius: 3px;
+    display: inline-block;
+    /* float: left; */
+    width: 4.37rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    color: gray;
+    border: 1px solid gray;
+    font-size: .5rem;
+}
+
+.btnbox a:nth-child(2) {
+    float: right;
+    background: #11b57c;
+    border: 1px solid #11b57c;
+    color: #fff;
+}
+
+
+/* 底部 */
+
+.footer {
+    z-index: 99;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 1.53rem;
+    padding: 0 11px;
+    background: #fff;
+}
+
+.footer-in {
+    width: 100%;
+    height: 100%;
+}
+
+.footer-in a {
+    position: relative;
+    /* display: inline-block; */
+    float: left;
+    box-sizing: border-box;
+    width: 20%;
+    height: 100%;
+    padding-top: 1rem;
+    text-align: center;
+    font-size: .36rem;
+    color: #8d8a8a;
+}
+
+.footer-in .active {
+    color: #11b57c;
+}
+
+.footer-in .icon {
+    display: inline-block;
+    position: absolute;
+    top: .18rem;
+    left: 50%;
+    margin-left: -.51rem;
+    width: 1.02rem;
+    height: .72rem;
+}
+
+.footer-in .icon1 {
+    background: url(../../images/common/nav_home_selected.png) 50% no-repeat;
+    background-size: 100% 100%;
+}
+
+.footer-in .icon2 {
+    background: url(../../images/common/nav_classify.png) 50% no-repeat;
+    background-size: 100% 100%;
+}
+
+.footer-in .icon3 {
+    background: url(../../images/common/nav_eat.png) 50% no-repeat;
+    background-size: 100% 100%;
+}
+
+.footer-in .icon4 {
+    background: url(../../images/common/nav_list_active.png) 50% no-repeat;
+    background-size: 100% 100%;
+}
+
+.footer-in .icon5 {
+    background: url(../../images/common/nav_user.png) 50% no-repeat;
+    background-size: 100% 100%;
+}
+
+.bottom_num {
+    position: absolute;
+    right: .66rem;
+    top: .06rem;
+    line-height: .48rem;
+    padding: 0 .12rem;
+    border-radius: .24rem;
+    font-size: .36rem;
+    font-weight: 700;
+    font-family: Arial;
+    background: #fb3d3d;
+    color: #fff;
+}

@@ -1,0 +1,104 @@
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+	color: #11B57C;
+	background: #fff;
+}
+.mui-control-item{
+	background: #fff;
+	font-size: 0.45rem;
+    color: #808080;
+    padding: 0.2rem;
+}
+.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
+    border:none;
+}
+.mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar {
+    background-color: #11B57C;
+}
+.mui-table-view{
+    background-color: #efeff4;
+}
+.mui-table-view-cell{
+    width: 11.78rem;
+    height: 3rem;
+    margin: .32rem auto;
+    background: url('../../images/myyiguo/coupon2.png') no-repeat;
+    background-size: cover;
+    padding: 0;
+    background-color: #efeff4;
+}
+.left {
+    float: left;
+    width: 4rem;
+    text-align: center;
+    color: #11b57c;
+    margin-top: 0.3rem;
+}
+.left p{
+    text-align: center;
+    color: #11b57c;
+}
+.left .money .big {
+    font-size: 1.35rem;
+    line-height: 1.66rem;
+    padding-right: .1rem;
+    font-weight: 500;
+}
+.left .type {
+    display: inline-block;
+    width: 100%;
+    height: .72rem;
+    line-height: .72rem;
+    color: #11b57c;
+    font-size: .34rem;
+}
+.right {
+    float: right;
+    width: 7.7rem;
+    padding: .32rem .6rem;
+}
+.isWillExpire {
+    position: absolute;
+    width: 1.4rem !important;
+    height: 1.4rem;
+    right: 0rem;
+    top: 0rem;
+}
+.right .txt {
+    padding-right: .8rem;
+    font-size: .48rem;
+    color: #000;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.right .couponText {
+    color: #808080;
+    margin: .24rem 0 .42rem 0;
+    height: .34rem;
+    font-size: .34rem;
+    position: relative;
+}
+.right .time {
+    color: #808080;
+    line-height: .38rem;
+    position: relative;
+    font-size: .32rem;
+}
+.error {
+    padding-top: 2.4rem;
+    width: 100%;
+    text-align: center;
+}
+.error .bg {
+    margin: 0 auto;
+    width: 3.6rem;
+    height: 3.6rem;
+    background: url(../../images/myyiguo/img_coupon.png) no-repeat center;
+    background-size: 100%;
+}
+.error p {
+    font-size: .47rem;
+    color: #808080;
+    line-height: .6rem;
+    margin-top: .8rem;
+}

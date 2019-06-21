@@ -1,0 +1,25 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1560691085601'); /* IE9 */
+  src: url('iconfont.eot?t=1560691085601#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAQIAAsAAAAACCgAAAO7AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqEDINMATYCJAMMCwgABCAFhG0HOxsXB8gehXEsLDTq1VvZh3jg//B33/jvz0V9aizM9/FoTIzy9IOVaKBbuONtga5/59rUpiS4PEy9tIhVXkqoh3Ci2Il9qVs5MftuAwRYnv7j3mlTfD6gHP9YRWOv86gLMA4osDXWeSADJEFvOZx5FR5d0wlomIlCHJRUSUAsI/UCwg2jloM4pZBr0oOaoJR0zRDuQagWZ/FuALjzvx/+ICExiCoJSNPD62IV5H2SHxB/wDKg3WUBOp4OYi8SNoFMuCo1nOCHgU18DZ0R1McXWRDHclssAD5iUIX+4REFQgGS2gKrOBj5JG0kliHAzhq9ufcLangA8DHCkSni1MrKgSSdysbOcXn0SPrggWTgYbVEtvEitTB0GWE2SzduHdgye9vgdomjW719TkKma1Ly4cOmOYdDm6SnzYpFVTRVrJbNDpduW7DEecnK8K1XqYPmyMWnI489eqAzyx59kD54J3n4vsksNZc+ku54UHbgwqVj2zwXguuWMdKNtl682u20Ofjgw/LV+72sCYogbe/gYooCIBtAz6d8zgpbu9duXTvH9RPDvD0LeMa8PGaLb7su+WC6zx1idQBPPX9Ossy+KFASdCDo/MVS5wP8/UGS1E3nWPjdi6dqCROxcIDoIroXTjURbp+xJMa1+m9Wa2fbGn/3AMqxwD1+lYiSj5MP73Om/4tKmE3gPHt5lc/7Kw3pl7UhYwR3l4S2Q29lFKFRIXUiJBzVXmoAHplKutfUtkaV+P9rzc3zePjt8clDBBHknC8WikjvmN8WRYP9GiPrNfwrV5YYsKrgdMDpAnEzWdl42/924Sa+ry64pA2dq4A8xJUeeZ9+72/Mnqvpssv6L6YEAO9Rinl+l/+BDGkOoCbSGv2ZaMusbOBEmbKG2IjlTM79MH9Ew9D4B8vAi/6mMYh1QU1CAaKqBUhqFtmZvwkVTVtQ1GxDw4bS3k1DLL6QrYB10xAEPbsh6niDpOcmO/OfQ8XEdyh68aHhKDgN2bQcQxayWM5hFVKMR4zSoKeZmiOD9Aas7tfK2STuC6SY7WPcKD4mLhsuxXrMjtGib4w6geNoRLMGHSpBs2Gt1oCMrKEXK7mYHo4zZsTG0mUXilEadEDax8LkOJgKojAewlAy0KPd/Bwy9/kGmFo/LTm2JqMuLYWx+jDFI/FixLVglzL6VhnXskufMdQScDg0hMYy0EFKkA7T0oABYiyv1AtT4sTo6eEzyhCLc9FtmZj55brnWwANZI0UeASfEEC5xcw4Ri+e0MPQ/Qq5AQAA') format('woff2'),
+  url('iconfont.woff?t=1560691085601') format('woff'),
+  url('iconfont.ttf?t=1560691085601') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1560691085601#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-weixin:before {
+  content: "\e620";
+}
+
+.icon-zhifubao:before {
+  content: "\e60a";
+}
+

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>易果生鲜</title>
+    <link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/index.css" />
+    <script src="../../js/jquery/jquery-1.12.1.js"></script>
+    <script src="../../js/jquery/jquery.lazyload.min.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <!--顶部搜索栏-->
+        <div class="top">
+            <a href="choosecity.html" class="address">
+                <span>郑州</span>
+                <i class="arrow"></i>
+            </a>
+            <a href="../classify/grop.html">
+                <div class="search">
+                    <a href="javascript:;" class="btn"></a>
+                    <span class="placeholder">
+                        请输入商品名称
+                    </span>
+                </div>
+            </a>
+        </div>
+        <!--banner图-->
+        <div class="mui-slider">
+            <div class="mui-slider-group mui-slider-loop"></div>
+            <div class="mui-slider-indicator">
+                <div class="mui-indicator mui-active"></div>
+                <div class="mui-indicator"></div>
+            </div>
+        </div>
+        <!-- 分类 -->
+        <div class="menu clear"></div>
+        <!-- 横向滚动商品 -->
+        <div class="group-floor">
+            <a href="javascript:;" class="floor-img"></a>
+            <div class="product-list clear">
+                <div class="product-list-in"></div>
+            </div>
+        </div>
+        <!-- 礼盒 -->
+        <div class="gift"></div>
+        <!-- 分类产品 -->
+        <!-- 礼盒专场 -->
+        <div class="giftbox"></div>
+        <!-- 精致杂粮 -->
+        <div class="grain"></div>
+        <!-- 品质干货 -->
+        <div class="cargo"></div>
+        <!-- 精选坚果 -->
+        <div class="nut"></div>
+        <!-- 更多好货 -->
+        <div class="morecargo"></div>
+        <!-- 备案 -->
+        <div class="pagefooter">
+            <p>沪IPC备09008015号</p>
+            <p>上海易果电子商务有限公司</p>
+        </div>
+        <!-- 底部 -->
+        <!-- 底部 -->
+        <div class="footer">
+            <div class="footer-in">
+                <a href="index.html" class="list active">
+                    <i class="icon icon1"></i>首页
+                </a>
+                <a href="../classify/grop.html" class="list">
+                    <i class="icon icon2"></i>分类
+                </a>
+                <a href="../eat/dine.html" class="list">
+                    <i class="icon icon3"></i>吃饭吧
+                </a>
+                <a href="../shopcart/shopcart.html" class="list">
+                    <i class="icon icon4"></i>购物车
+                </a>
+                <a href="../myyiguo/home.html" class="list">
+                    <i class="icon icon5"></i>我的易果
+                </a>
+            </div>
+        </div>
+        <!-- 回顶部 -->
+        <div class="totop">
+            <a href="#"><img src="../../images/index/top.png" alt=""></a>
+        </div>
+    </div>
+    <!-- tip -->
+    <div class="tip">加入购物车成功</div>
+    <!-- 模板引擎============================================================================================= -->
+    <!-- banner -->
+    <script type="text/template" id="banner">
+        <div class="mui-slider-item mui-slider-item-duplicate"><a href="../minisite.html"><img
+            src="<%=data[1].img%>" /></a></div>
+    <%for(var i=0;i<data.length;i++){%>
+        <div class="mui-slider-item"><a href="../minisite.html"><img src="<%=data[i].img%>" /></a></div>
+    <%}%>
+        <div class="mui-slider-item mui-slider-item-duplicate"><a href="../minisite.html"><img
+                    src="<%=data[0].img%>" /></a></div>
+    </script>
+    <!-- 活动 -->
+    <script type="text/template" id="activity">
+        <%for(var i=0;i<data.length;i++){%> 
+        <div class="one">
+                <i>
+                    <a href="../minisite.html"><img src="<%=data[i].img%>" alt=""></a>
+                </i>
+                <p class="one-title"><%=data[i].tittle%></p>
+            </div>
+        <%}%>
+    </script>
+    <!-- middlebanner -->
+    <script type="text/template" id="middle">
+        <a href="../minisite.html"><img src="<%=data[0].img%>" alt=""></a>
+    </script>
+    <!-- 横向商品 -->
+    <script type="text/template" id="product1">
+        <%for(var i=0;i<data.length;i++){%>
+            <div class="proitem">
+                <div class="pic">
+                    <a href="../particulars.html" class="pic-a">
+                        <img class="lazy" data-original="<%=data[i].img%>" alt="">
+                    </a>
+                </div>
+                <div class="info">
+                        <p class="name">
+                            <a href="../particulars.html" class="header">
+                                    <%=data[i].tittle%>
+                            </a>
+                        </p>
+                        <div class="price">
+                            <strong>￥<span class="money"><%=data[i].price%></span></strong>
+                            <i class="price-addcart"></i>
+                        </div>
+                </div>
+            </div>
+        <%}%>
+        <a href="../classify/nut.html" class="more">
+                <p class="hot">
+                    查看更多
+                    <i></i>
+                </p>
+            </a>
+    </script>
+    <!-- 礼盒  -->
+    <script type="text/template" id="product2">
+        <%for(var i=0;i<data.length;i++){%>
+        <div class="prolist">
+                <div class="blockwrap" >
+                    <div class="proitem2">
+                        <div class="pic">
+                            <a href="../classify/nut.html">
+                                <img class="lazy" data-original="<%=data[i].img%>" alt="">
+                            </a>
+                        </div>
+                        <div class="info">
+                            <div class="info-wrap">
+                                <p class="name">
+                                    <a href="../classify/nut.html"  class="header"><%=data[i].tittle%></a>
+                                </p>
+                                <p class="sub"><%=data[i].describe%></p>
+                            </div>
+                            <div class="price pricePadding">
+                                <strong>￥<span class="money"><%=data[i].price%></span></strong>/<%=data[i].weight%>
+                                <i class="price-addcart"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        <%}%>       
+    </script>
+    <!-- 礼盒专场 -->
+    <script type="text/template" id="product3">
+        <div class="title">
+            <h3>礼盒专场</h3>
+        </div>
+        <ul class="product">
+        <%for(var i=0;i<data.length;i++){%> 
+            <li>
+                <div class="proitem">
+                    <div class="pic">
+                        <a href="../particulars.html">
+                            <img class="lazy" data-original="<%=data[i].img%>" alt="">
+                        </a>
+                    </div>
+                    <div class="info">
+                        <p class="name">
+                            <a href="../particulars.html" class="header"><%=data[i].tittle%></a>
+                        </p>
+                        <div class="price">
+                            <strong>￥<span class="money"><%=data[i].price%></span></strong>/<%=data[i].weight%>
+                            <i class="addcart"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        <%}%>
+        </ul>
+    </script>
+    <!-- 精致杂粮 -->
+    <script type="text/template" id="product4">
+        <div class="title">
+            <h3>精致杂粮</h3>
+        </div>
+        <ul class="product">
+        <%for(var i=0;i<data.length;i++){%> 
+            <li>
+                <div class="proitem">
+                    <div class="pic">
+                        <a href="../particulars.html">
+                            <img class="lazy" data-original="<%=data[i].img%>" alt="">
+                        </a>
+                    </div>
+                    <div class="info">
+                        <p class="name">
+                            <a href="../particulars.html" class="header"><%=data[i].tittle%></a>
+                        </p>
+                        <div class="price">
+                            <strong>￥<span class="money"><%=data[i].price%></span></strong>/<%=data[i].weight%>
+                            <i class="addcart"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        <%}%>
+        </ul>
+    </script>
+    <!-- 品质干货 -->
+    <script type="text/template" id="product5">
+        <div class="title">
+            <h3>品质干货</h3>
+        </div>
+        <ul class="product">
+        <%for(var i=0;i<data.length;i++){%> 
+            <li>
+                <div class="proitem">
+                    <div class="pic">
+                        <a href="../particulars.html">
+                            <img class="lazy" data-original="<%=data[i].img%>" alt="">
+                        </a>
+                    </div>
+                    <div class="info">
+                        <p class="name">
+                            <a href="../particulars.html" class="header"><%=data[i].tittle%></a>
+                        </p>
+                        <div class="price">
+                            <strong>￥<span class="money"><%=data[i].price%></span></strong>/<%=data[i].weight%>
+                            <i class="addcart"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        <%}%>
+        </ul>
+    </script>
+    <!-- 精选坚果 -->
+    <script type="text/template" id="product6">
+        <div class="title">
+            <h3>精选坚果</h3>
+        </div>
+        <ul class="product">
+        <%for(var i=0;i<data.length;i++){%> 
+            <li>
+                <div class="proitem">
+                    <div class="pic">
+                        <a href="../particulars.html">
+                            <img class="lazy" data-original="<%=data[i].img%>" alt="">
+                        </a>
+                    </div>
+                    <div class="info">
+                        <p class="name">
+                            <a href="../particulars.html" class="header"><%=data[i].tittle%></a>
+                        </p>
+                        <div class="price">
+                            <strong>￥<span class="money"><%=data[i].price%></span></strong>/<%=data[i].weight%>
+                            <i class="addcart"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        <%}%>
+        </ul>
+    </script>
+    <!-- 更多好货 -->
+    <script type="text/template" id="product7">
+        <div class="title">
+            <h3>更多好货</h3>
+        </div>
+        <ul class="product">
+        <%for(var i=0;i<data.length;i++){%> 
+            <li>
+                <div class="proitem">
+                    <div class="pic">
+                        <a href="../particulars.html">
+                            <img class="lazy" data-original="<%=data[i].img%>" alt="">
+                        </a>
+                    </div>
+                    <div class="info">
+                        <p class="name">
+                            <a href="../particulars.html" class="header"><%=data[i].tittle%></a>
+                        </p>
+                        <div class="price">
+                            <strong>￥<span class="money"><%=data[i].price%></span></strong>/<%=data[i].weight%>
+                            <i class="addcart"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        <%}%>
+        </ul>
+    </script>
+    <script src="../../js/mui.min.js"></script>
+    <script src="../../js/rem.js"></script>
+    <script src="../../js/ejs.js"></script>
+    <script src="../../js/index.js"></script>
+</body>
+
+</html>

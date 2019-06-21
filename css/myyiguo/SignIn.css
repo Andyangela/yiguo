@@ -1,0 +1,242 @@
+img{
+    width: 100%;
+    font-size: 0;
+}
+i{
+    display: inline-block;
+}
+.record{
+    color: #2ca3c7;
+    font-size: 0.6rem;
+    background: url(../../images/myyiguo/SignIn/qiandao_02.jpg) no-repeat;
+    background-size: cover;
+    height: 1.83rem;
+    line-height: 1.83rem;
+    text-align: center;
+}
+.record img{
+    width: 5%;
+}
+.circleshow{
+    height: 5.3rem;
+    background: url(../../images/myyiguo/SignIn/qiandao_03.jpg) no-repeat;
+    background-size: cover;
+    color: #46afd7;
+    font-size: 0.45rem;
+    position: relative;
+}
+.circleshow i{
+    width: 11.56%;
+    position: absolute;
+}
+.circleshow i:nth-child(1){
+    left: 4.37%;
+    top: 0;
+}
+.circleshow i:nth-child(2){
+    left: 16.87%;
+    top: 0;
+}
+.circleshow i:nth-child(3){
+    left: 29.37%;
+    top: 0;
+}
+.circleshow i:nth-child(4){
+    left: 41.71%;
+    top: 0;
+}
+.circleshow i:nth-child(5){
+    left: 54%;
+    top: 0;
+}
+.circleshow i:nth-child(6){
+    left: 66.56%;
+    top: 0;
+}
+.circleshow i:nth-child(7){
+    left: 78.75%;
+    top: 0;
+}
+.circleshow i:nth-child(8){
+    right: 2.18%;
+    top: 36.49%;
+}
+.circleshow i:nth-child(9){
+    left: 76.87%;
+    top: 60.58%;
+}
+.circleshow i:nth-child(10){
+    left: 64.84%;
+    top: 60.58%;
+}
+.circleshow i:nth-child(11){
+    left: 52.5%;
+    top: 60.58%;
+}
+.circleshow i:nth-child(12){
+    left: 40.15%;
+    top: 60.58%;
+}
+.circleshow i:nth-child(13){
+    left: 27.96%;
+    top: 60.58%;
+}
+.circleshow i:nth-child(14){
+    left: 15.62%;
+    top: 60.58%;
+}
+.circleshow i:nth-child(15){
+    left: 3.05%;
+    top: 52.55%;
+}
+.tableblock{
+    color: #FFF;
+    background: url(../../images/myyiguo/SignIn/qiandao_07.jpg);
+    background-size: 100% auto;
+    text-align: center;
+}
+.tableblock #ubCount{
+    width: 100%;
+    padding: 0.2rem 0;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+.col2{
+    height: 3.4rem;
+}
+.col2 i{
+    width: 50%;
+}
+.tableblock #tipswords{
+    width: 100%;
+    padding: 0.2rem 0;
+    font-size: 0.3rem;
+}
+.duihuanlist2{
+    height: 13.3rem;
+    color: #FFF;
+    padding: 0.5rem 5% 0;
+    background: url(../../images/myyiguo/SignIn/qiandao_07.jpg);
+    background-size: 100% auto;
+}
+.tt2 {
+    padding: 0.2rem 0 0 0.5rem;
+    font-size: 0.5rem;
+    display: inline-block;
+}
+.list2 {
+    padding: 0.2rem 2%;
+    margin: 0 0 0.2rem;
+    font-size: 0.3rem;
+}
+.list2 li {
+    list-style-type: decimal;
+    list-style-position: outside;
+    margin-left: 7%;
+    margin-bottom: 0.25rem;
+}
+.window_shadow{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.7);
+    display: none;
+}
+.inner {
+    width: 100%;
+    height: 8.2rem;
+    background: url(../../images/myyiguo/SignIn/windowbg_4.png) no-repeat;
+    position: fixed;
+    top: 21.6%;
+    background-size: 100% auto;
+    padding-right: 1%;
+    z-index: 1000;
+    text-align: center;
+    display: none;
+}
+.inner .cell {
+    position: absolute;
+    left: 26%;
+    top: 48%;
+    text-align: center;
+    color: #fff;
+    font-size: 0.85rem;
+}
+.inner .topok {
+    position: absolute;
+    left: 41.75%;
+    top: 7%;
+    width: 16.5%;
+    text-align: center;
+}
+.inner1 {
+    width: 100%;
+    height: 10rem;
+    background: url(../../images/myyiguo/SignIn/windowbg_3.png) no-repeat;
+    position: fixed;
+    top: 21.6%;
+    background-size: 100% auto;
+    padding-right: 1%;
+    z-index: 1000;
+    display: none;
+}
+.inner1 .cell {
+    position: absolute;
+    left: 26%;
+    top: 35%;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+.inner1 .cell1 {
+    position: absolute;
+    left: 35%;
+    top: 48%;
+    color: #fff;
+    font-size: 0.75rem;
+}
+.inner1 .topok {
+    position: absolute;
+    left: 41.75%;
+    top: 7%;
+    width: 16.5%;
+}
+.inner1 .btn{
+    position: absolute;
+    left: 4%;
+    top: 65%;
+    text-align: center;
+}
+.inner1 .btn img{
+    width: 25%;
+    padding: 0.5rem;
+}
+.inner2 {
+    width: 100%;
+    height: 8.2rem;
+    background: url(../../images/myyiguo/SignIn/windowbg_4.png) no-repeat;
+    position: fixed;
+    top: 21.6%;
+    background-size: 100% auto;
+    padding-right: 1%;
+    z-index: 1000;
+    text-align: center;
+    display: none;
+}
+.inner2 .cell {
+    position: absolute;
+    left: 37%;
+    top: 35%;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+.inner2 .cell1 {
+    position: absolute;
+    left: 27%;
+    top: 57%;
+    color: #fff;
+    font-size: 0.6rem;
+}

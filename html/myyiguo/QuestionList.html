@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>订单列表</title>
+    <script src="../../js/rem.js"></script>
+    <script src="../../js/jquery/jquery-1.12.1.js"></script>
+    <link rel="stylesheet" href="../../css/mui.min.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+        .mui-navigate-right{
+            font-weight: bold;
+        }
+        .jumpDelivery {
+            color: #8f8f94;
+            text-decoration: underline;
+        }
+        .subtitle{
+            color: #8f8f94;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">配送运费如何收取，多少钱包邮？</a>
+            <div class="mui-collapse-content">
+                <p>1、易果物流配送区域购物满100元（实际支付不含U币），免费送货；不满100元，每单收取10元运费。</p>
+                <p>2、其他地区运费按照第三方物流的收费标准执行，选好商品及收货地址后会自动计算。</p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">配送区域及送达时间？</a>
+            <div class="mui-collapse-content">
+                <p><strong> 易果物流配送城市： </strong></p>
+                <p><a class="jumpDelivery" href="./DeliveryNotes.html">参见配送范围和时间</a></p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">下单后何时可以送达？</a>
+            <div class="mui-collapse-content">
+                <p>次日达地区（当天20：00之前下单，特殊商品除外）：<br>
+                    北京（除延庆县，密云县，怀柔区, 平谷区）<br>
+                    天津（除蓟县）<br>
+                    上海（除崇明三岛）<br>
+                    苏州（吴中区，相城区，姑苏区，工业园区，高新区）<br>
+                    昆山（花桥开发区，玉山镇，兵希镇，蓬朗镇，新镇，陆家镇）<br>
+                    无锡（北塘区，崇安区，南长区，滨湖区，锡山区，惠山区，新区）<br>
+                    杭州（下城区，上城区，西湖区，滨江区，江干区，拱墅区，余杭区，萧山区）<br>
+                    宁波（江北区，海曙区，江东区，鄞州区，镇海区）<br>
+                    东莞，中山，珠海，深圳，广州，佛山<br>
+                    石家庄（长安区，新华区，桥西区，桥东区，裕华区）<br>
+                    廊坊（广阳区，安次区）<br>
+                    邯郸市（复兴区、丛台区、邯山区）<br>
+                    保定市（北市区、南市区、新市区）<br>
+                    张家口市（桥东区、桥西区）<br>
+                    唐山市（路南区、路北区）<br>
+                    秦皇岛市（海港区、山海关区、北戴河区）<br>
+                    沧州市（新华区、运河区）<br>
+                    衡水市（桃城区）<br>
+                    邢台市（桥西区、桥东区）<br>
+                    <strong> 定日达（仅限周四周日）地区（当天20：00之前下单，特殊商品除外）：</strong><br>
+                    北京郊区（延庆县，密云县，怀柔区, 平谷区）<br>
+                    天津郊区（蓟县）<br>
+                    <strong> 隔日达地区（当天16:00之前下单，特殊商品除外）：</strong> <br>
+                    次日达和定日达地区之外其他地区</p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">可以选择哪些方式付款？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    1、货到付款：现金、POS机 <br>
+                    2、预存款支付<br>
+                    3、在线支付：支付宝、银联手机支付、多家银行卡
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">下错单了，该如何修改？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    <strong> 未提交订单：</strong>您可以在【填写核对订单信息】页面，选择您所要更改类别右侧的【更改】链接，直接更改即可；<br>
+                    <strong> 已提交订单：</strong>请您拨打易果客服热线400-000-7788请客服帮忙修改。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">我的历史订单为什么不见了？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    亲爱的顾客，2014年11月份之前的订单，可以在www.yiguo.com查询。若还有其他疑问，可致电客服400-000-7788进行咨询。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">如何申请注销易果账户？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    为了保护客户权益，请确保账户余额已经用完毕且账户不再使用。满足条件的，可在线联系客服申请，客服会依据实际情况受理。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">退款何时可以到账？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    付款渠道不同，退款到账时间有差异：
+                    <table class="helptable mt20">
+                        <thead>
+                            <tr>
+                                <th width="50%">
+                                    <p align="center">
+                                        <strong>付款渠道</strong>
+                                    </p>
+                                </th>
+                                <th width="50%">
+                                    <p align="center">
+                                        <strong>到账时间</strong>
+                                    </p>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> 网银/POS机 </td>
+                                <td>收到退货后的7-15个工作日</td>
+                            </tr>
+                            <tr>
+                                <td> 预存款 </td>
+                                <td>收到退货后的1-15个工作日</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">如何申请退换货？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    自客户签收商品算起的48小时内，商品在未经拆封和食用的情况下，如您对我们的商品不满意，我们将提供退换货的服务。<br>
+                    若收到的商品有质量问题，可以到我司官网【会员中心】--【售后服务】中的【在线退换货】，或者在手机APP端屏幕右下角【我的易果】--【客服中心】中的【在线退换货】进行申请。收到申请后，我司专员在一个工作日内与您联系。<br>
+                    通过退换货通道做申请，请您<strong> 上传退换货商品的整体照，并提供签收单或标签的图片且保留商品</strong>，以便于客服人员及时处理您的问题。<br>
+                    您成功申请退换货后，请手机保持通畅，以便于我们手机或短信通知您。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">哪些情况不受理退换货？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    如因客户个人原因造成质量问题的商品，恕不退换。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">哪些情况不属于质量问题?</a>
+            <div class="mui-collapse-content">
+                <p>
+                    图片及信息仅供参照，商品将以实物为准。因拍摄灯光及不同显示器色差等问题可能造成商品图片与实物有一定色差，不属质量问题。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">退货可以退运费吗？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    退货发生时，由于<strong>客户原因</strong>造成的退货，我们只退回商品的货款金额，原订单如有相应运费恕不退还，如果是上门安排退货，还需加收送货费；<br>
+                    <stong>易果原因或商品质量问题</stong>而造成的退货，易果将退还您商品的货款金额及相应运费。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">退货时，订单中的赠品如何处理？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    订单中如有特惠品，退货时，如不满足特惠品赠送条件，需将特惠品一同退回。如特惠品一经拆封或食用，则订单商品只换不退。如有不便，敬请谅解。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">退货时，发票需要一起退回吗？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    退货需要退回发票及易果配送单（客户联），请于购买商品后妥善保管购物发票及配送单，如因客户原因无法退回发票或易果配送单（客户联）的，将可能导致无法进行退货，因此而产生的不利后果，将会由您承担。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">一张订单可以多次退换货吗？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    通常情况下，一张订单只能进行一次退换货操作，所以为了确保您的权益，请您考虑周全后与我们联系。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">我的钱退到哪了？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    发生退货后，款项我们会为您存入您在易果的账户中，以便于下次订购时使用，如您需办理退回，请联系我们的客服，经客服工作人员核实后会为您办理退款。
+                </p>
+                <p> 预存款支付的只能退回预存款账户，礼品卡(抵用券)支付的金额无法兑换成现金，不能办理退款。</p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">什么是易果VIP等级制度？</a>
+            <div class="mui-collapse-content">
+                <div>
+                    <strong>会员等级依据易果会员近365天（不含消费当日）累计实付金额进行计算。超过365天的实付金额将不被计算。</strong>
+                    <p>普卡会员：实名注册易果账户的用户即成为普卡会员；<br>
+                        银卡会员：近365天（不含消费当日）累计商品实付金额满3000元的会员；<br>
+                        金卡会员：近365天（不含消费当日）累计商品实付金额满5000元的会员；<br>
+                        白金会员：近365天（不含消费当日）累计商品实付金额满10000元的会员；<br>
+                        *商品实付金额是指在易果APP/官网支付成功并正常完成签收且未发生退换货的交易订单的实付金额（不含礼品卡及运费）；<br>
+                        *会员购买礼品卡的支付金额不计入会员的累计商品实付金额。礼品卡成功绑定至相应会员账户后，该会员账户使用礼品卡成功支付订单并正常完成签收（无退换货发生）
+                        相应的商品实际支付金额（不含运费）会计入该会员账户的累计商品实付金额。<br>
+                        <strong>会员等级计算规则</strong><br>
+                        <strong>升级规则</strong><br>
+                        升级实时进行，当用户近365天累计商品实付金额达到上述标准后，系统将在1个工作日内完成升级<br>
+                        <strong>降级规则</strong><br>
+                        自2019年1月1日起，每年1月1日、4月1日、7月1日、10月1日进行降级调整。如果近365天累计商品实付金额达到当前等级标准，则等级不变；如果会员近365天累计商品实付金额未达到当前等级标准，则降至对应金额所在等级。<br>
+                        如果会员的注册时间离考评时间短于365天，则不参加当期的考评。
+                    </p>
+                </div>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">订单还没配送到？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    我们的配送时间是9：00-21：00全天配送，每日根据订单量会制定一个配送路线，师傅会在配送当日根据配送路线配送，具体送达时间目前无法保证，一般发货前2小时左右会有短信通知，建议您耐心等候。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">长时间没有发货怎么办？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    正常情况下我们会在您选择的配送时间前1天发货，您可进入订单详情了解订单发货情况，如有超时可联系易果客服为您查看催促。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">邀请码是什么？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    易果会不定时推出邀请活动（具体以最新页面展示为准），无活动期间，注册时无需填写邀请码项。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">新人优惠券怎么领取？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    同一用户只能领取一次新人礼包（同一账号，同一设备号，同一手机号均视为同一用户。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">如何注册/登录？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    您可通过易果APP或易果PC端使用手机号注册易果账户，注册成功即可下单。<br>注：每个手机仅限绑定一个易果账户。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">忘记密码？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    您可通过易果注册手机号收取短信验证码，重置登录密码。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">注册手机不使用了？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    通过PC端使用注册手机号或易果绑定邮箱修改注册手机号或联系客服处理。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">现金券如何使用？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    您可通过PC端选购未标注不支持使用现金券的商品，订单结算界面点击【优惠券】，通过【现金券】输入券号及密码，若使用多张，可验证其中一张后删除，重新输入另一张，以此类推。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">礼品卡（储值卡）如何使用？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    注册易果账户后，进入“我的易果”，点击“<strong>储值卡绑定</strong>”。输入卡号及密码，点击绑定。绑定成功后，礼品卡直接绑定在您的账户卡包中。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">提货券如何使用？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    通过易果APP点击“我的易果”-点击“提货券”进行提货。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">礼品卡（储值卡）充值后会过期吗？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    实体礼品卡（储值卡）上印有有效期日期，以券面为准，礼品卡（储值卡）充值绑定到账户后是永久有效， 不会过期。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">如何将账户余额（预存款）转换为卡包余额礼品（电子礼品卡）？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    您可通过“我的易果”-“账户余额”，点击“立即转换”将当前账户余额（预存款）转换为卡包余额（电子礼品卡）。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">配送单如何不显示价格(货到付款除外）？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    您可通过订单结算界面，自行勾选不显示价格，或在下单后联系客服修改。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">如何设置支付密码？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    首次下单使用预存款支付时，系统自动跳转设置支付密码界面，直接设置即可（不要与登录密码相同）。也可通过“我的易果”-设置-设置支付密码。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">如何开具发票？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    您可通过订单结算界面，自行勾选电子发票，或在下单后联系客服添加电子/纸质发票。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">可以补寄多久的发票？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    近半年下单后的实际未开具过发票的消费金额（预存款，现金券，提货券支付不支持开具发票）。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">商务易果合作</a>
+            <div class="mui-collapse-content">
+                <p>
+                    推广及广告合作：<br>
+                    联系邮箱：webmaster@yiguo.com<br>
+                    商品合作：<br>
+                    联系邮箱：webmaster@yiguo.com<br>
+                    以上合作请在邮件内留下您的联系方式和需合作的大概内容，我们会及时与您联系。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">什么是定时达？</a>
+            <div class="mui-collapse-content">
+                <p>
+                    定时达是易果针对上海地区（除崇明）普卡及以上，非上海地区金卡及以上登记会员推出的专享特权服务，以上用户可以选择具体配送当日的具体时间段。
+                    目前支持此服务的配送城市为：上海（除崇明）、杭州、宁波、苏州、南京、无锡（部分区域不支持）。<br>
+                    可选配送是的：<br>
+                    【上午】9:00-11：00 【下午】11:00-17：00<br>
+                    【晚上】17:00-22:00 【全天配送】9:00-21：00<br>
+                    此服务仅支持安鲜达配送商品（不含限时配送商品）。
+                </p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">易果生鲜单用途商业预付卡章程</a>
+            <div class="mui-collapse-content">
+                <div class="answer">
+                    <div class="main">
+                        <div class="subtitle">概述</div>
+                        <p class="strip">
+                            <span>第1条.</span>本章程项下的单用途商业预付卡由上海易果电子商务有限公司（以下简称上海易果）发行。为规范易果礼品卡的购买、使用和管理，上海易果根据国家法律、法规、部门规章以及行业惯例，特制定本章程。
+                        </p>
+                        <p class="strip">
+                            <span>第2条.</span>易果单用途商业预付卡（以下简称易果礼品卡）指上海易果电子商务有限公司发行的，意在于为持卡人提供在易果网（www.yiguo.com）及易果App购买商品或服务的单用途预付凭证，该预付凭证包括实体卡及/或以密码、串码、图形、生物特征信息等为载体的虚拟卡。
+                        </p>
+                        <p class="strip"><span>第3条.</span>易果礼品卡为不记名卡，不可用于提取现金或变相提取现金，不具有透支功能及其他卡外结算功能。</p>
+                        <p class="strip"><span>第4条.</span>本章程涉及的部分名词遵从如下定义：</p>
+                        <p class="strip"><span>第5条.</span>发卡人：指上海易果电子商务有限公司。</p>
+                        <p class="strip"><span>第6条.</span>购卡人：指符合本章程之规定购买易果礼品卡的单位或个人。</p>
+                        <p class="strip"><span>第7条.</span>持卡人：指使用已绑定的易果礼品卡在易果网或易果APP实际购买商品或服务的单位或个人。</p>
+                        <p class="strip"><span>第8条.</span>易果账号：用户在易果网成功完成注册以及必要手续后获得的专属账号。</p>
+                        <p class="strip"><span>第9条.</span>绑定：指使用密码与本人易果账户关联并实际启动易果礼品卡兑付功能的行为或行为过程。</p>
+                        <p class="strip"><span>第10条.</span>发卡人、购卡人、持卡人均应遵守本章程之规定，并受本章程之约束。</p>
+                    </div>
+                    <div class="main">
+                        <div class="subtitle">购买</div>
+                        <p class="strip"><span>第11条.</span>凡自愿遵守本章程，具有完全民事行为能力的购买人，均可向上海易果购买易果礼品卡。</p>
+                        <p class="strip">
+                            <span>第12条.</span>对于一次性购买金额10,000元（含）以上易果礼品卡的单位或个人，购卡人及其代理人应出示有效身份证件，售卡企业留存购卡人及其代理人姓名或单位名称、有效身份证件号码和联系方式。个人有效身份证件包括居民身份证、户口簿、军人身份证件、武警身份证件、港澳台居民通行证、护照等。单位有效身份证件包括营业执照或其他企业身份凭证。
+                        </p>
+                        <p class="strip">
+                            <span>第13条.</span>对于单位一次性购卡金额5,000元（含）以上或个人一次性购卡金额达50,000元（含）以上的，以及单位或个人采用非现场方式购卡的，将不收取现金，购卡人应以转账方式付款。在办理时，售卡企业核对转出账户所有人与购卡人身份信息一致性，并对转出、转入账户名称、账号、金额等进行逐笔登记。
+                        </p>
+                        <p class="strip">
+                            <span>第14条.</span>易果礼品卡不记名、不挂失、不用于兑换或提取现金、不具有透支功能、不可循环充值。卡内资金不产生利息、红利或任何其他收益，且不可向银行账户或网络支付账户进行转账或转移。
+                        </p>
+                        <p class="strip">
+                            <span>第15条.</span>上海易果有权对易果礼品卡的使用范围、方式或条件等作出补充规定并通过易果礼品卡本身（例如卡面、券面或电子通知等方式）向购卡人/持卡人作出说明，购卡人及持卡人亦应遵守该等规定。
+                        </p>
+                        <p class="strip"><span>第16条.</span>持卡人兑付商品时不再开具发票。</p>
+                    </div>
+                    <div class="main">
+                        <div class="subtitle">使用</div>
+                        <p class="strip"><span>第17条.</span>易果礼品卡在成功绑定后，不能解绑，不能重新绑定；</p>
+                        <p class="strip">
+                            <span>第18条.</span>持卡人可凭易果礼品卡在易果网或易果APP进行交易，使用范围以易果网上的最新信息为准，交易以联机或脱机方式完成，并即时扣除预付价值。</p>
+                        <p class="strip">
+                            <span>第19条.</span>易果礼品卡内金额可冲抵等值商品，多张易果礼品卡可累计使用，卡内金额不足以冲抵商品价款的部分需以其他易果网认可的付费方式补足差额，并即时扣除易果礼品卡内金额，卡内余额不提供兑现或找零，严禁以任何方式套现、透支。
+                        </p>
+                        <p class="strip"><span>第20条.</span>用易果礼品卡兑付的商品如发生退货时，应退资金将退回至原易果礼品卡内。</p>
+                        <p class="strip"><span>第21条.</span>已绑定的易果礼品卡不设有效期。未绑定的易果礼品卡有效期3年（以卡面有效期为准），上海易果可提供延期服务。</p>
+                    </div>
+                    <div class="main">
+                        <div class="subtitle">挂失、退卡、换卡</div>
+                        <p class="strip"><span>第22条.</span>易果礼品卡不可挂失，遗失不补，因遗失所引发的损失由持卡人自行承担。</p>
+                        <p class="strip">
+                            <span>第23条.</span>因印刷造成卡片污损、残缺或无法使用的，可致电卡片所载明的客服电话凭购卡时预留的有效证件和交易单号办理换发新卡，新卡发放时起旧卡失效，因持卡人个人原因造成卡片损坏或无法使用的，办理换发新卡时收取工本费壹拾元。
+                        </p>
+                        <p class="strip"><span>第24条.</span>依据满足以下全部限定条件提供退卡服务：</p>
+                        <p class="strip">1)退卡的易果礼品卡需未被绑定</p>
+                        <p class="strip">
+                            2)退卡人应出示有效身份证件原件，售卡企业需留存退卡人姓名、有效身份证件号码、联系方式、退卡卡号、金额等信息;企业退卡人应经由经办人处理退卡业务并提供加盖公章的退卡申请和企业
+                            身份凭证。</p>
+                        <p class="strip">3)退卡人应是易果礼品卡的原购卡人。如退卡人与原购卡人不一致的，退卡人还需出示原购卡人有效身份证原件，并出具书面说明阐述 持卡人与原购卡人二者关联性；</p>
+                        <p class="strip">
+                            4)退卡人还应出示并交还购卡原始发票原件，且退卡要求限于购卡交付（“交付”将电子卡通过数据电文方式发送给购买人或购买人指定的接收人或将实体卡交付给配送商时转移给易果礼品卡购买人）日起3个月内提出申请。
+                        </p>
+                        <p class="strip">5)实体卡卡体应完好，且卡号密码覆盖区应未刮开或毁损。</p>
+                        <p class="strip">6)退卡人应自费（承担取件费用等形式）退还购卡的原始发票以及相关的付款凭证。双方另行约定退卡手续费的依据另行约定履行。</p>
+                        <p class="strip">7)退卡后，易果网将会把退卡金额退至原购卡时付款的原账户。</p>
+                        <p class="strip"><span>第25条.</span>若易果网终止兑付未到期易果礼品卡，易果网将向原购卡人提供无偿退卡服务，并将在终止兑付日前30日于备案机关指定媒体进行公示。
+                        </p>
+                    </div>
+                    <div class="main">
+                        <div class="subtitle">当事人权利义务</div>
+                        <p class="headings">发卡人的权利</p>
+                        <p class="strip">
+                            <span>第26条.</span>上海易果或相关售卡企业有权要求购卡人按法律法规之规定提供真实有效的个人、单位的身份信息及证明文件，对于提供虚假或伪造、变造的身份证明文件的个人、单位，易果网或关联公司有权暂停其所购易果礼品卡的使用。
+                        </p>
+                        <p class="strip"><span>第27条.</span>对于违反本章程使用易果礼品卡的，易果网有权暂停或终止易果礼品卡的使用。</p>
+                        <p class="strip"><span>第28条.</span>若存在以下情形的，发卡人/易果网有权暂停或终止易果礼品卡的使用，并有权进一步要求购卡人/持卡人承担损害赔偿责任：</p>
+                        <p class="strip">1)购卡人/持卡人在购买、使用、挂失补办易果礼品卡及办理换发新卡、办理退卡时存在欺诈或其他不诚实行为，或其通过不正当手段获取的易果礼品卡及卡内金额的；</p>
+                        <p class="strip">2)购卡人/持卡人违反国家法律法规规定进行非法交易的；</p>
+                        <p class="strip">3)本公司依法核实购卡人/持卡人身份信息及易果礼品卡交易信息等， 遭拒绝的；</p>
+                        <p class="strip">4)如在易果网使用通过不正当手段获得的易果礼品卡购物，本公司有权利关闭该使用人的帐户或要求其通过其它方式支付货款，并保留追究持卡人法律责任的权利；</p>
+                        <p class="strip">5)使用伪造、变造、残缺不全的易果礼品卡；或有其他损害上海易果、售卡企业或其他购卡人/持卡人的合法权益的情形。</p>
+                        <p class="strip">6)购卡人/持卡人有其他损害本公司及其他合法购卡人/持卡人合法权 益的行为的。</p>
+                        <p class="strip">
+                            <span>第29条.</span>若存在以下情形的，致使持卡人不能正常使用易果礼品卡的，发卡人/易果网可为协助持卡人解决问题提供必要的帮助，但无需就易果礼品卡的不正常使用及持卡人的损失承担任何责任：
+                        </p>
+                        <p class="strip">1)经公示后的系统停机维护的；</p>
+                        <p class="strip">2)电信、电力、银行或第三方数据处理平台的系统、设备、网站故障、不稳定、升级维护等原因导致的数据传输及处理的失败、中断或不稳定的；</p>
+                        <p class="strip">3)因台风、地震、海啸、洪水、停电、战争、恐怖袭击等不可抗力原因，造成系统障碍不能运行业务的。</p>
+                        <p class="strip">
+                            <span>第30条.</span>除本预付卡章程外，易果网公示的各项规则同样适用于易果礼品卡。此外，易果礼品卡购买人就易果礼品卡所签订的购买合同中的相应约定也将适用于易果礼品卡。各项规则、本章程、购买合同的解释及履行，其效力的优先性按时间先后递增，在后的高于在先的。如各文件或相关条款之间存在冲突，以效力较高文件之规定为准。易果网保留随时修改上述条款和条件的权利，所有条款和条件将在法律允许的限度内适用。
+                        </p>
+                        <p class="strip"><span>第31条.</span>上海易果为购卡人提供的各种免费增值服务，有单方终止的权利，且无须事先征得购卡人同意。</p>
+                    </div>
+                    <div class="main">
+                        <p class="headings">发卡人的义务</p>
+                        <p class="strip">
+                            <span>第32条.</span>上海易果或相关售卡企业将以通过网站公示等方式提供开展易果礼品卡业务的相关资料，包括章程、购买协议、使用说明、收费项目及标准等。</p>
+                        <p class="strip"><span>第33条.</span>上海易果或相关售卡企业应依照法律法规之规定开展易果礼品卡业务，切实保障购卡人/持卡人权益，建立健全业务流程及资金管理流程。
+                        </p>
+                        <p class="strip">
+                            <span>第34条.</span>上海易果或相关售卡企业对购卡人/持卡人身份信息和交易信息保密，未经当事人同意不得向第三方披露，但应法律法规或任何政府部门、司法机构或有关机关的要求或经购卡人/持卡人许可的除外。
+                        </p>
+                    </div>
+                    <div class="main">
+                        <p class="headings">购卡人的权利</p>
+                        <p class="strip"><span>第35条.</span>购卡人享有按法律法规之规定购买、使用易果礼品卡的权利。</p>
+                        <p class="strip"><span>第36条.</span>购卡人/持卡人有权知悉易果礼品卡的功能、使用方法、收费项目及标准。</p>
+                        <p class="strip"><span>第37条.</span>购卡人/持卡人对本公司易果礼品卡交易有疑问的，有权在规定时间内向本公司或相关售卡企业提出查询或更正要求。</p>
+                    </div>
+                    <div class="main">
+                        <p class="headings">购卡人的义务</p>
+                        <p class="strip"><span>第38条.</span>购卡人应当向上海易果或相关售卡企业提供真实有效的身份信息及证明文件，不得冒用他人身份或使用伪造、变造身份证明文件；</p>
+                        <p class="strip">
+                            <span>第39条.</span>购卡人不得在上海易果或相关售卡企业公示之购买渠道以外进行购买，因此造成经济损失的，购卡人/持卡人应当自行承担其损失。购卡人/持卡人不得转售易果礼品卡。
+                        </p>
+                        <p class="strip"><span>第40条.</span>购卡人/持卡人未妥善保管易果礼品卡，导致不记名易果礼品卡遗失、被窃、灭失、他人冒用的，应当自行承担经济损失。</p>
+                        <p class="strip">
+                            <span>第41条.</span>购卡人/持卡人对易果礼品卡、密码或密钥、相关身份信息保管不善，导致易果礼品卡未经授权使用、或密码被恶意篡改、或卡片被恶意挂失冻结等情形的，应当由购卡人/持卡人自行承担经济损失。
+                        </p>
+                        <p class="strip"><span>第42条.</span>购卡人未按约定进行交易造成经济损失的，应当自行承担。</p>
+                        <p class="strip">
+                            <span>第43条.</span>在适用法律允许的最大范围内，无论是基于侵权、违约还是其他诉由，上海易果、售卡企业不对购卡人、持卡人或任何第三人因易果礼品卡引起的任何直接或间接的损失或损害承担任何责任，包括但不限于任何收入损失、利润损失、商誉损失、数据损失、资金使用损失等。本条之规定不排除或限制上海易果、售卡企业在如下方面的责任：
+                        </p>
+                        <p class="strip">（1）欺诈行为引起的责任；</p>
+                        <p class="strip">（2）适用法律规定不应排除或限制的责任。</p>
+                    </div>
+                    <div class="main">
+                        <div class="subtitle">附则</div>
+                        <p class="strip"><span>第44条.</span>本章程未尽事宜按照国家有关法律、法规、规章及行业惯例执行，如发行机构与购买人另有约定的，遵从双方约定。</p>
+                        <p class="strip">
+                            <span>第45条.</span>任何由本章程引起的争议，双方应协商解决。若自一方书面通知另一方要求协商之日起15日内未能解决，则该等争议应交由上海仲裁委员会根据其当时有效的仲裁规则仲裁解决。仲裁庭应由一名仲裁员组成。仲裁应使用中文。仲裁裁决是终局的，对双方均具有法律约束力。
+                        </p>
+                        <p class="strip">
+                            <span>第46条.</span>在争议解决过程中，除正在进行仲裁的部分外，本章程的其他部分仍应继续执行。仲裁程序中的任何一方应对仲裁保密，不应将仲裁的内容、仲裁结果或仲裁本身披露给任何第三方，但法律要求披露的除外。
+                        </p>
+                        <p class="strip">
+                            <span>第47条.</span>易果网有权对本章程进行修订，并在修改生效前七个工作日予以公示。如当事人不接受修改的，有权选择是否继续购买及使用易果礼品卡；若当事人在本章程修改之后仍继续购买及使用易果礼品卡的，即视为当事人接受章程的修改。
+                        </p>
+                        <p class="strip"><span>第48条.</span></p>
+                        <p class="strip">易果礼品卡服务中心地址：上海市长宁区金钟路999号3幢701室</p>
+                        <p class="strip">服务热线：<a href="tel:400-000-7788">400-000-7788</a></p>
+                        <p class="strip">本章程自发布之日起正式实施。</p>
+                        <p class="firm">上海易果电子商务有限公司</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <script src="../../js/mui.min.js"></script>
+</body>
+
+</html>
