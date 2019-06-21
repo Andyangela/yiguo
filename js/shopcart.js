@@ -1,5 +1,6 @@
 $(function() {
     // ======判断用户是否登录======
+
     var userLogin = cookie.getCookies("username");
     if (userLogin) { //已登录
         $("header").show();
