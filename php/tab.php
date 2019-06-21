@@ -1,11 +1,11 @@
 <?php
 	header("Content-Type:text/html;charset=utf-8");
-    $test=$_POST["test"];
+    $sort=$_POST["tab_num"];
     $mysqli=new Mysqli("localhost","root","root","yiguo");
     if($mysqli->connect_errno){
         die();
     }
-    $sql="select * from new where sort=$test";
+    $sql="select * from tab where sort=$sort";
     $result=$mysqli->query($sql);
     while($rows=Mysqli_fetch_assoc($result)){
         $data[]=$rows;

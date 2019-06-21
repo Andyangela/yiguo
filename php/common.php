@@ -5,7 +5,7 @@
     if($mysqli->connect_errno){
         die();
     }
-    $sql="select * from new where sort=$test";
+    $sql="select * from seafood where sort=$test";
     $result=$mysqli->query($sql);
     while($rows=Mysqli_fetch_assoc($result)){
         $data[]=$rows;

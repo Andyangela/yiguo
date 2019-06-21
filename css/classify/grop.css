@@ -181,7 +181,7 @@ li {
 }
 .list_content .list_shop {
     width: 2.76rem;
-    height: 3.18rem;
+    height: 4.0rem;
     text-align: center;
     /*padding: .5rem .6rem 50px .6rem;*/
     padding: .3rem .3rem 0.4rem 0.2rem;
@@ -192,7 +192,7 @@ li {
 	width: 1.89rem;
     height: 1.89rem;
 }
-.list_content .list_shop p{
+.list_content .list_shop .title{
 	font-size: 0.4rem;
 	padding-top: 0.2rem;
 }

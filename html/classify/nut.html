@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 	<script src="../../js/rem.js" type="text/javascript" charset="utf-8"></script>
-	<link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+	<link rel="stylesheet" type="text/css" href="../../mui.min.css" />
 	<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="../../css/classify/in.css" />
 	<link rel="stylesheet" href="../../css/classify/loading.css">
@@ -27,8 +27,43 @@
 				<i class=""></i></div>
 		</div>
 	</div>
-	<!-- <div class="outermost">
-		<div class="productList line-bottom">
+	<!-- <div class="mui-slider"> -->
+		<!-- <div class="tabNav line-bottom mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+			<div class="tabMain">
+				<div class="active">
+					<a class="mui-control-item mui-active" href="#item1">销量</a>
+				</div>
+				<div class="">
+					<a class="mui-control-item " href="#item2">新品</a>
+				</div>
+				<div class="">
+					<a class="mui-control-item " href="#item3">价格</a>
+					<i class=""></i></div>
+			</div>
+		</div>
+		<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
+		<div class="outermost mui-slider-group">
+			<div id="item1" class="productList line-bottom mui-slider-item mui-control-content mui-active">
+				<div class="mui-table-view">
+					<div class="shop_info">
+						<div class="img"><img src="../../images/grop/binggan/170427094654078_1247049_300.jpg" alt="">
+						</div>
+						<div class="info">
+							<p class="title">美心礼盒装香脆甜心酥212g</p>
+							<p class="txt">满口绵密酥香</p>
+							<p class="price">
+								<span class="pricrRed">¥138</span>
+								<span class="standard">212g/盒</span>
+								<span class="addCart"></span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+	<!-- </div> -->
+	<div class="outermost">
+        <!-- <div class="productList line-bottom">
 			<div class="shop_info">
 				<div class="img"><img src="../../images/grop/binggan/170427094654078_1247049_300.jpg" alt=""></div>
 				<div class="info">
@@ -41,11 +76,11 @@
 					</p>
 				</div>
 			</div>
-		</div>
-	</div> -->
+		</div> -->
+    </div>
 	<!-- 购物车 -->
 	<div class="option">
-		<a class="num"><i>1</i></a>
+		<a class="num"><i id="shop_num">1</i></a>
 		<a href="#" id="gotop" class="top"></a>
 	</div>
 	<!-- 没有更多了 -->
@@ -61,13 +96,93 @@
 
 	<script src="../../js/jquery/jquery-1.12.1.js"></script>
 	<script type="text/javascript" src="../../js/mui.min.js"></script>
+	<script src="../../js/car.js"></script>
 	<script>
 		$(function () {
 			$(".tabMain div").on("click", function () {
+				console.log($(this).index())
 				$(this).addClass("active").siblings().removeClass("active")
-				$(".on_loading").css({
-					"display": "block"
-				})
+				// 判断当点击 新品时请求新品的内容
+
+				if ($(this).index() == 1) {
+					$.ajax({
+						url: "../../php/new.php",
+						type: "POST",
+						dataType: "json",
+						data: 'test=1',
+						success: function (data) {
+							console.log(data)
+							var html = "";
+							for (var j = 0; j < data.length; j++) {
+								html += '<div class="productList line-bottom"><a herf="../details/particulars.html"><div class="shop_info"><div class="img"><img src="' + data[j].img + '" alt=""></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+							}
+							$(".outermost").html(html);
+							console.log(html)
+							$(".addCart").on("click", function () {
+								$("#shop_num").text() + 1
+								var num = $("#shop_num").text();
+								console.log($("#shop_num").text())
+								num++;
+								$("#shop_num").text(num);
+							})
+						}
+					})
+				}
+				// if ($(this).text() == "销量") {
+				if ($(this).index() == 2) {
+					function nut() {
+						$.ajax({
+							url: "../../php/new.php",
+							type: "POST",
+							dataType: "json",
+							data: 'test=2',
+							success: function (data) {
+								// console.log(data)
+								var html = "";
+								for (var j = 0; j < data.length; j++) {
+									html += '<div class="productList line-bottom"><a herf="../details/particulars.html"><div class="shop_info"><div class="img"><img src="' + data[j].img + '" alt=""></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+								}
+								$(".outermost").html(html);
+								// console.log(html)
+								$(".addCart").on("click", function () {
+									$("#shop_num").text() + 1
+									var num = $("#shop_num").text();
+									console.log($("#shop_num").text())
+									num++;
+									$("#shop_num").text(num);
+								})
+							}
+						})
+					}
+					nut()
+				}
+				if ($(this).text() == "价格") {
+					function nut() {
+						$.ajax({
+							url: "../../php/new.php",
+							type: "POST",
+							dataType: "json",
+							data: 'test=3',
+							success: function (data) {
+								console.log(data)
+								var html = "";
+								for (var j = 0; j < data.length; j++) {
+									html += '<div class="productList line-bottom"><a herf="../details/particulars.html"><div class="shop_info"><div class="img"><img src="' + data[j].img + '" alt=""></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+								}
+								$(".outermost").html(html);
+								// console.log(html)
+								$(".addCart").on("click", function () {
+									$("#shop_num").text() + 1
+									var num = $("#shop_num").text();
+									console.log($("#shop_num").text())
+									num++;
+									$("#shop_num").text(num);
+								})
+							}
+						})
+					}
+					nut()
+				}
 			})
 			// 价格
 			var i = 1;
@@ -85,26 +200,67 @@
 			})
 			// 新品
 		})
-		function pullfresh() {
-			function nut() {
-				$.ajax({
-					url: "../../php/nut.php",
-					type: "POST",
-					dataType: "json",
-					success: function (data) {
-						// console.log(data)
-						var html = "";
-						for (var j = 0; j < data.length; j++) {
-							html += '<div class="productList line-bottom"><div class="shop_info"><div class="img"><img src="' + data[j].img + '" alt=""></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></div>';
+		$.ajax({
+			url: "../../php/nut.php",
+			type: "POST",
+			dataType: "json",
+			success: function (data) {
+				// console.log(data)
+				var html = "";
+				for (var j = 0; j < data.length; j++) {
+					html += '<div class="productList line-bottom"><a herf="../details/particulars.html"><div class="shop_info"><div class="img"><img src="' + data[j].img + '" alt=""></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+				}
+				$(".outermost").html(html);
+				// console.log(html)
+				//加入购物车
+				// 添加购物车数量
+				$(".addCart").on("click", function () {
+					var title = $(this).parents(".info").children(".title").text(),
+						goodsName = $(this).parents(".info").children(".txt").text(),
+						// // 声明获取数据
+						img_url = $(this).parents(".info").siblings(".img").children("img").attr('src'),
+						price = $(this).siblings(".pricrRed").text()
+					username = '15938722869';
+					console.log(this)
+
+
+					console.log(goodsName)
+					console.log(img_url)
+					console.log(price)
+					console.log(this)
+					$.ajax({
+						url: '../../php/shop-car.php',
+						type: "POST",
+						data: 'title="' + title + '&img_url=' + img_url + "&goodsName=" + goodsName + "&price=" + price + "&username=" + username,
+						success: function (data) {
+							console.log(data)
 						}
-						$(".outermost").html(html);
-						console.log(html)
-					}
+					})
+					$("#shop_num").text() + 1
+					var num = $("#shop_num").text();
+					// console.log($("#shop_num").text())
+					num++;
+					$("#shop_num").text(num);
 				})
 			}
-			nut()
-		}
+		})
 
+	</script>
+	<script>
+		//加入购物车
+		// $(".info .txt").on("click", function () {
+		// 	console.log('添加')
+		// })
+		// $(".addCart").on("click", function () {
+
+		// 	console.log('添加')
+		// 	// 添加购物车数量
+		// 	$("#shop_num").text() + 1
+		// 	var num = $("#shop_num").text();
+		// 	console.log($("#shop_num").text())
+		// 	num++;
+		// 	$("#shop_num").text(num);
+		// })
 	</script>
 </body>
 
