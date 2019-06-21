@@ -6,6 +6,10 @@ code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
 small{ font-size:12px; } 
 ul, ol { list-style:none; } 
 a { text-decoration:none; } 
+<<<<<<< HEAD
+/* a:hover { text-decoration:underline; }  */
+=======
+>>>>>>> b0e12323abb9b6c552d9091fa8ffa0afc168c602
 sup { vertical-align:text-top; } 
 sub{ vertical-align:text-bottom; } 
 legend { color:#000; } 

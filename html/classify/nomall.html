@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/classify/in.css" />
+    <link rel="stylesheet" href="../../css/classify/loading.css">
+</head>
+
+<body>
+    <div class="tabNav line-bottom">
+        <div class="tabMain">
+            <div class="active">
+                销量
+            </div>
+            <div class="">
+                新品
+            </div>
+            <div class="">
+                价格
+                <i class=""></i></div>
+        </div>
+    </div>
+    <div class="sorry">
+        <div class="noProduct"><img src="../../images/grop/noting@3x.png" alt="">
+            <p class="hint">抱歉，没有找到您要的商品</p>
+        </div>
+    </div>
+    <!-- 弹出层 -->
+    <div class="on_loading">
+        <div class="loading">
+            <img src="../../images/grop/1.gif" alt="">
+        </div>
+    </div>
+    <script src="../../js/jquery/jquery-1.12.1.js"></script>
+    <script type="text/javascript" src="../../js/mui.min.js"></script>
+    <script>
+        $(function () {
+            $(".tabMain div").on("click", function () {
+                $(this).addClass("active").siblings().removeClass("active")
+            })
+            // 价格
+            var i = 1;
+            $(".tabMain i").on("click", function () {
+                // $(this).addClass("drop").siblings().removeClass("drop")
+                // $(this).toggle(function () {
+                //     $(this).attr("src", "../../images/grop/pricethree.png");
+                // }, function () {
+                //     $(this).attr("src", "图片1.jpg");
+                // }).attr("src", "../../images/grop/pricetwo.png");
+                i++;
+                if (i % 2 == 0) {
+                    $(this).addClass("drop").siblings().removeClass("drop");
+                    // i = 2;
+                    console.log(1)
+
+                } else {
+                    $(this).addClass("litre").siblings().removeClass("litre")
+                    // i=1;
+                    console.log(2)
+                }
+            })
+            function nut() {
+                $.ajax({
+                    url: "../../php/nomall.php",
+                    type: "POST",
+                    dataType: "json",
+                    success: function (data) {
+                        // console.log(data)
+                        var html = "";
+                        for (var j = 0; j < data.length; j++) {
+                            html += '<div class="noProduct"><img src="' + data[j].img + '" alt=""><p class="hint">' + data[j].hint + '</p></div>'
+                        }
+                        $(".sorry").html(html);
+                        console.log(html)
+                    }
+                })
+            }
+            nut()
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../../css/classify/in.css" />
+    <link rel="stylesheet" href="../../css/classify/loading.css">
+</head>
+
+<body>
+    <div class="tabNav line-bottom">
+        <div class="tabMain">
+            <div class="active">销量</div>
+            <div class="">新品</div>
+            <div class="">价格<i class=""></i></div>
+        </div>
+    </div>
+    <div class="outermost">
+        <div class="productList line-bottom">
+            <div class="shop_info">
+                <div class="img">
+                    <i class="not">抢光了</i>
+                    <img class="shop_img" src="https://img10.yiguoimg.com/d/items/2018/181203/9288734965900675_300.jpg"
+                        alt=""></div>
+                <div class="info">
+                    <p class="title">农百鲜草麻鸭1kg</p>
+                    <p class="txt">食材新鲜，肉质美味</p>
+                    <p class="price">
+                        <span class="pricrRed">¥59.9</span>
+                        <span class="standard">1kg/袋</span>
+                        <span class="addCart"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 购物车 -->
+    <div class="option">
+        <a class="num"><i id="shop_num">0</i></a>
+        <a href="#" id="gotop" class="top"></a>
+    </div>
+    <!-- 没有更多了 -->
+    <div class="noMore">
+        <p>没有更多了</p>
+    </div>
+    <!-- 弹出层 -->
+    <div class="on_loading" id="loading">
+        <div class="loading">
+            <img src="../../images/grop/1.gif" alt="">
+        </div>
+    </div>
+    <script src="../../js/jquery/jquery-1.12.1.js"></script>
+    <script type="text/javascript" src="../../js/mui.min.js"></script>
+    <script>
+        $(function () {
+            $(".tabMain div").on("click", function () {
+                $(this).addClass("active").siblings().removeClass("active")
+            })
+        })
+    </script>
+</body>
+
+</html>

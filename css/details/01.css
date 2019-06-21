@@ -1,0 +1,434 @@
+/*.backgoud{
+    		
+    	}*/
+    	*{
+    		margin: 0;
+    		padding: 0;
+    	}
+    	.back{
+    		position: absolute;
+    		z-index: 10;
+    		/*background-color: red;*/
+    		/*width: 2rem;
+    		height: 30px;*/
+    	}
+    	.back img{
+    		margin-top: 0.5rem;
+    		margin-left: 0.5rem;
+    		width:1rem;
+    		height:1rem;
+    	}
+    	.product{
+    		    padding: .45rem 0 0.4rem 0rem;
+    			background: #fff;
+    			margin-bottom: .3rem;
+    			padding-bottom: 0;
+    	}
+    	.title{
+    		line-height: .8rem;
+    		padding-right: .53rem;
+    		font-size: .53rem;
+    		font-weight: 500;
+    		color: #333;
+    		overflow: hidden;
+    		text-overflow: ellipsis;
+    		display: -webkit-box;
+    		-webkit-line-clamp: 1;
+    		-webkit-box-orient: vertical;
+    		padding-left: .53rem;
+    		/*background-color: #FFF;*/
+    	}
+    	.subhead{
+    		    padding-right: .53rem;
+    			font-size: .38rem;
+    			color: #808080;
+    			padding-top: .25rem;
+    			line-height: .8rem;
+    			overflow: hidden;
+    			text-overflow: ellipsis;
+    			display: -webkit-box;
+    			-webkit-line-clamp: 1;
+    			-webkit-box-orient: vertical;
+    			padding-left: .53rem;
+    			height: .8rem;
+    	}
+    	.shade{
+    		background-color: #EFEFF4;
+    		width: 100%;
+    		height: 0.3rem;
+    	}
+    	.price{
+    		position: relative;
+    		padding: 0rem 0 0rem;
+    		overflow: hidden;
+    		padding: .4rem 0 .39rem;
+    		padding-left: .53rem;
+    		padding-right: .53rem;
+    	}
+    	.pricein{
+    		float: left;
+    	}
+    	.pricein span{
+    		font-size: .66rem;
+    		color: #EB3939;
+    	}
+    	.pricein span i{
+    		font-style: normal;
+    	}
+    	.sera{
+    		float: right;
+    		font-size: .4rem;
+    		color: #999999;
+    		margin-top: .22rem;
+    	}
+    	.sera span{
+    		-webkit-tap-highlight-color: rgba(255,255,255,0);
+    	}
+    	.sevenday{
+    		position: relative;
+    		height: 1.67rem;
+    		line-height: 1.67rem;
+    		padding: 0 .53rem;
+    		color: #aaaaaa;
+    		font-size: .4rem;
+    		padding: 0 .53rem;
+    	}
+    	.sevenday span{
+    		display: inline-block;
+    		width: .33rem;
+    		height: .33rem;
+    		border-radius: 50%;
+    		margin-right: .2rem;
+    		border: 1px solid;
+    		/*float: left;*/
+    	}
+    	.sevenday span:after{
+    		content: '\FF01';
+    		position: absolute;
+    		left: 0.5rem;
+    		top: .4rem;
+    		-webkit-transform: scaleY(0.5);
+    		transform: scaleY(0.5);
+    		-webkit-transform-origin: 0 0;
+    		transform-origin: 0 0;
+    	}
+    	.sevenday:after{
+    		content: '';
+    		position: absolute;
+    		left: 0;
+    		top: 0;
+    		width: 100%;
+    		height: 1px;
+    		background: #ddd;
+    		-webkit-transform: scaleY(0.5);
+    		transform: scaleY(0.5);
+    		-webkit-transform-origin: 0 0;
+    		transform-origin: 0 0;
+    	}
+    	.foot{
+    		height: 1.6rem;
+    		padding-left: .32rem;
+    		padding-right: 0;
+    		position: fixed;
+    		z-index: 201;
+    		bottom: 0;
+    		left: 0;
+    		width: 100%;
+    		height: 50px;
+    		background: #fff;
+    	}
+    	.btn{
+    		position: relative;
+    		width: 15%;
+    		height: 1.6rem;
+    		text-align: center;
+    		font-size: .33rem;
+    		color: #8d8a8a;
+    		padding-top: 1rem;
+    	}
+    	.foot a{
+    		position: relative;
+    		display: block;
+    		float: left;
+    		/*width: 20%;*/
+    		height: 50px;
+    		color: #FFF;
+    		font-size: 12px;
+    		color: #8d8a8a;
+    		text-align: center;
+    	}
+    	a{
+    		text-decoration: none;
+    		outline: 0;
+    	}
+    	.home{
+    		position: absolute;
+    		top: .28rem;
+    		left: 50%;
+    		margin-left: -.345rem;
+    		display: inline-block;
+    		width: .69rem;
+    		height: .61rem;
+    		background: url(../../images/detalis/home.png) no-repeat;
+    		background-size: 100% 100%;
+    	}
+    	.car{
+    		position: absolute;
+    		top: .28rem;
+    		left: 50%;
+    		margin-left: -.35rem;
+    		display: inline-block;
+    		width: .7rem;
+    		height: .7rem;
+    		background: url(../../images/detalis/nav_list.png) no-repeat;
+    		background-size: 100% 100%;
+    	}
+    	.foot .but1{
+    		float: right;
+    		background: #FB3D3D;
+    		color: #fff;
+    		width: 68%;
+    		font-size: .6rem;
+    		/*color: #b09059;*/
+    		text-align: center;
+    		height: 1.6rem;
+    		line-height: 1.6rem;
+    		box-sizing: border-box;
+    	}
+    	.norms{
+    		background: #fff;
+    		margin-bottom: 0rem;
+    	}
+		.normstitle{
+			position: relative;
+    		color: #999999;
+    		font-size: .43rem;
+    		line-height: 1.2rem;
+    		padding: .35rem .53rem;
+		}
+		.normstitle .normsactive{
+			color: #01B27A;
+    		font-size: .46rem;
+    		padding: .23rem .5rem;
+    		box-sizing: border-box;
+    		border: 1px solid #01B27A;
+    		margin-left: 0.4rem;
+    		height: .47rem;
+    		line-height: .47rem;
+    		/*border-radius: .92rem;*/
+    		/*margin: 0 .05rem;*/
+		}
+		.chouse{
+			color: #999999;
+    		font-size: .46rem;
+    		padding: .23rem .53rem .23rem .49rem;
+    		box-sizing: border-box;
+    		border: 1px solid #aaaaaa;
+    		border-radius: .92rem;
+   			margin: 0 .05rem;
+    		margin-left: .4rem;
+		}
+		.normstitle:after{
+			content: '';
+    		position: absolute;
+    		left: 0;
+    		bottom: 0;
+    		width: 100%;
+    		height: 1px;
+    		background: #ddd;
+    		-webkit-transform: scaleY(0.5);
+    		transform: scaleY(0.5);
+   		 	-webkit-transform-origin: 0 100%;
+   			transform-origin: 0 100%;
+		}
+		.num{
+			position: absolute;
+    		left: 1.5rem;
+    		top: .5rem;
+    		width: 2.6rem;
+    		height: .92rem;
+    		margin-left: .35rem;
+		}
+		.cut{
+			float: left;
+    		position: relative;
+    		width: .75rem;
+    		height: .92rem;
+		}
+		.cut i{
+			position: absolute;
+    		left: .21rem;
+    		top: .28rem;
+    		width: .33rem;
+    		height: .33rem;
+    		/* background: url(../../images/detalis/cut2.png) no-repeat; */
+    		background-size: 100%;
+			/*background-image: url(../img/cut2.png);*/
+		}
+		/*.numcut i{
+			background: url(../img/cut1.png) no-repeat;
+		}*/
+		.cut:after{
+			content: '';
+    		position: absolute;
+    		left: 0;
+    		top: 0;
+    		width: 200%;
+    		height: 200%;
+    		border: 1px solid #ddd;
+    		box-sizing: border-box;
+    		-webkit-transform: scale(0.5);
+    		transform: scale(0.5);
+    		-webkit-transform-origin: 0 0;
+    		transform-origin: 0 0;
+		}
+		.ber{
+			float: left;
+    		position: relative;
+    		width: 1.04rem;
+    		height: .93rem;
+    		line-height: .93rem;
+    		color: #333;
+    		text-align: center;
+		}
+		.ber:before{
+			content: '';
+    		position: absolute;
+    		left: 0;
+    		top: 0;
+    		width: 100%;
+    		height: 1px;
+    		background: #ddd;
+    		-webkit-transform: scaleY(0.5);
+    		transform: scaleY(0.5);
+    		-webkit-transform-origin: 0 0;
+    		transform-origin: 0 0;
+		}
+		.ber:after{
+			content: '';
+    		position: absolute;
+    		left: 0;
+    		bottom: 0;
+    		width: 100%;
+    		height: 1px;
+    		background: #ddd;
+    		-webkit-transform: scaleY(0.5);
+    		transform: scaleY(0.5);
+    		-webkit-transform-origin: 0 100%;
+    		transform-origin: 0 100%;
+		}
+		.add{
+			float: left;
+    		position: relative;
+    		width: .75rem;
+    		height: .92rem;
+		}
+		.add i{
+			position: absolute;
+    		left: .21rem;
+    		top: .28rem;
+    		width: .33rem;
+   			height: .33rem;
+    		/* background: url(../../images/detalis/add2.png) no-repeat; */
+    		background-size: 100%;
+		}
+		.add:after{
+			content: '';
+    		position: absolute;
+    		left: 0;
+    		top: 0;
+    		width: 200%;
+    		height: 200%;
+    		border: 1px solid #ddd;
+    		box-sizing: border-box;
+    		-webkit-transform: scale(0.5);
+    		transform: scale(0.5);
+    		-webkit-transform-origin: 0 0;
+    		transform-origin: 0 0;
+		}
+		.address{
+			background: #fff;
+    		padding: .45rem .53rem;
+    		margin-bottom: .3rem;
+    		height: 2.5rem;
+		}
+		.address normstitle{
+			float: left;
+    		color: #999999;
+    		font-size: .43rem;
+    		padding-right: .4rem;
+    		line-height: .5rem;
+		}
+		.addressdate{
+			float: left;
+		}
+		.ress{
+			position: relative;
+    		padding-left: .4rem;
+    		font-size: .46rem;
+    		color: #333;
+    		line-height: .5rem;
+    		width: 9.5rem;
+    		padding-bottom: .4rem;
+		}
+		.ress span{
+			position: absolute;
+    		top: .03rem;
+    		left: 0;
+    		display: inline-block;
+    		width: .33rem;
+    		height: .39rem;
+			background: url(../../images/detalis/dw.png) no-repeat;			
+    		background-size: 100% 100%;
+		}
+		.infor{
+			float: left;
+			line-height: .7rem;
+    		color: #333;
+    		font-size: .4rem;
+		}
+		.infor span{
+			float: left;
+			color: #01B27A;
+    		padding-right: .2rem;
+		}
+		.normstitle1{
+			float: left;
+    		color: #999999;
+    		font-size: .43rem;
+    		padding-right: .4rem;
+    		line-height: .5rem;
+    		float: left;
+		}
+		.evaluate{
+			background: #fff;
+    		/*margin-bottom: .3rem;*/
+		}
+.notext{
+	    font-size: .38rem;
+    color: #808080;
+    margin: 0;
+    padding: .3rem .53rem;
+}
+.detail{
+	    padding: .7rem 0 2.35rem;
+    background: #FFF;
+}
+.detail a{
+	    display: block;
+    width: 4rem;
+    padding: .22rem .28rem;
+    border: 1px solid #aaa;
+    color: #999;
+    font-size: .46rem;
+    margin: 0 auto;
+    border-radius: 3px;
+    text-align: center;
+}
+.mui-badge {
+    padding: 3px 3px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
