@@ -161,6 +161,7 @@
 	<script src="../../js/car.js"></script>
 	<script>
 		$(function () {
+			$(".on_loading img").show()
 			$.ajax({
 				url: "../../php/tab.php",
 				type: "POST",
@@ -179,7 +180,7 @@
 				$(this).addClass("active").siblings().removeClass("active")
 				// console.log(window.location.search.split('=')[1])
 				// var item_id = window.location.search.split('=')[1]
-				$(".on_loading img").show()
+				
 				if ($(this).index() == 0) {
 					$.ajax({
 						url: "../../php/tab.php",
@@ -221,77 +222,7 @@
 						}
 					})
 				}
-				else if ($(this).index() == 2) {
-					$.ajax({
-						url: "../../php/tab.php",
-						type: "POST",
-						dataType: "json",
-						data: 'tab_num=2',
-						success: function (data) {
-							console.log(data)
-							var html = "";
-							for (var j = 0; j < data.length; j++) {
-								html += '<li><div class="list_shop"><a href="./common.html"?item_id=2><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
-							}
-							$(".list_content").html(html);
-							$("img.lazy").lazyload({ effect: "fadeIn" })
-							$(".on_loading img").hide()
-						}
-					})
-				}
-				else if ($(this).index() == 3) {
-					$.ajax({
-						url: "../../php/tab.php",
-						type: "POST",
-						dataType: "json",
-						data: 'tab_num=4',
-						success: function (data) {
-							console.log(data)
-							var html = "";
-							for (var j = 0; j < data.length; j++) {
-								html += '<li><div class="list_shop"><a href="./common.html"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
-							}
-							$(".list_content").html(html);
-							$("img.lazy").lazyload({ effect: "fadeIn" })
-							$(".on_loading img").hide()
-						}
-					})
-				}
-				else if ($(this).index() == 4) {
-					$.ajax({
-						url: "../../php/tab.php",
-						type: "POST",
-						dataType: "json",
-						data: 'tab_num=5',
-						success: function (data) {
-							console.log(data)
-							var html = "";
-							for (var j = 0; j < data.length; j++) {
-								html += '<li><div class="list_shop"><a href="./common.html"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
-							}
-							$(".list_content").html(html);
-							$("img.lazy").lazyload({ effect: "fadeIn" })
-							$(".on_loading img").hide()
-						}
-					})
-				}
-				else if ($(this).index() == 5) {
-					$.ajax({
-						url: "../../php/tab.php",
-						type: "POST",
-						dataType: "json",
-						data: 'tab_num=6',
-						success: function (data) {
-							var html = "";
-							for (var j = 0; j < data.length; j++) {
-								html += '<li><div class="list_shop"><a href="./common.html"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
-							}
-							$(".list_content").html(html);
-							$("img.lazy").lazyload({ effect: "fadeIn" })
-							$(".on_loading img").hide()
-						}
-					})
-				}
+				
 			})
 			$(".nav_list li").on("click", function () {
 				$(this).addClass("active").siblings().removeClass("active")
