@@ -1,5 +1,5 @@
 <?php
-require confin.php;
+require 'confin.php';
  $sql="select * from shopcart";
     $result=$mysqli->query($sql);
     while($rows=Mysqli_fetch_assoc($result)){

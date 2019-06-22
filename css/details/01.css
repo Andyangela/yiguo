@@ -405,17 +405,17 @@
     		/*margin-bottom: .3rem;*/
 		}
 .notext{
-	    font-size: .38rem;
+	font-size: .38rem;
     color: #808080;
     margin: 0;
     padding: .3rem .53rem;
 }
 .detail{
-	    padding: .7rem 0 2.35rem;
+	padding: .7rem 0 2.35rem;
     background: #FFF;
 }
 .detail a{
-	    display: block;
+	display: block;
     width: 4rem;
     padding: .22rem .28rem;
     border: 1px solid #aaa;
@@ -425,10 +425,16 @@
     border-radius: 3px;
     text-align: center;
 }
-.mui-badge {
-    padding: 3px 3px;
+.badge {
+	display: inline-block;
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 50%;
+    /* padding: 3px 3px; */
     position: absolute;
     top: 0;
     right: 0;
-    display: none;
+	display: none;
+	background: #EB3939;
+	color: #EFEFF4;
 }
