@@ -1,12 +1,11 @@
 $(function() {
     // ======判断用户是否登录======
-
     var userLogin = cookie.getCookies("username");
-    if (userLogin) { //已登录
-        $("header").show();
+    if (userLogin == true) { //已登录
+        $(".mui-bar").show();
         $(".cart_login").hide();
     } else { //未登录
-        $("header").hide();
+        $(".mui-bar").hide();
         $(".cart_login").show();
     };
     //======商品列表渲染======
@@ -113,10 +112,10 @@ $(function() {
     //======结算时判断是否登录======
     function login() {
         $(".total_cart .btn a").on("click", function() { //选购商品，进行结算时，要先判断用户是否登录
-            if (userLogin) {
+            if (userLogin == true) {
                 location.href = "settle.html"; //已登录跳转到下一个页面
             } else {
-                location.href = "../../html/login.html"; //未登录，跳转到登录页面
+                location.href = "../index/login.html"; //未登录，跳转到登录页面
             }
         })
     };
