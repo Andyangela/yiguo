@@ -49,7 +49,7 @@
     position: relative;
     z-index: 10;
     position: relative;
-    padding: .5rem .32rem;
+    padding: .5rem 0rem;
     box-sizing: border-box;
     overflow: hidden;
     background: #fff;
@@ -57,6 +57,23 @@
 .productList .shop_info {
     padding-top: 1.36rem;
     position: relative; 
+    height: 5rem;
+}
+.productList .img .not {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -.76rem 0 0 -.76rem;
+    font-size: .38rem;
+    font-style: normal;
+    color: #fff;
+    text-align: center;
+    line-height: 1.52rem;
+    display: block;
+    width: 1.52rem;
+    height: 1.52rem;
+    background: rgba(0,0,0,.4);
+    border-radius: 50%;
 }
 .shop_info{
     /* float: right; */
