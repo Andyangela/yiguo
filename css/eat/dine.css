@@ -96,10 +96,10 @@ ul{
     color: #656565;
     font-size: 12px;
 }
-.box-img  .num .icon{
+/* .box-img  .num .icon{
 	background: url(../../images/eat/586030925119660379_120x96.png)no-repeat;
 	background-size: 100px;
-}
+} */
 .box-img .num .right{
 	position: absolute;
     left: 6px;

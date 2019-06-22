@@ -74,7 +74,7 @@
                 success: function (data) {
                     var html = "";
                     for (var i = 0; i < data.length; i++) {
-                        html += '<a href="./particulars.html"><div class="zongzi-content"><div class="box-img"><span class="text live">'+data[i].hat+'</span><span class="num"><i class="icon right">'+data[i].background+'</i></span><img data-original="'+data[i].img+'" class="lazy"/></div><p class="tit1">'+data[i].con+'</p><p class="tit2"></p><div class="time"><img data-original="'+data[i].icon+'" class="lazy"/><span class="name">'+data[i].merchant+'&nbsp;</span><span class="time-new">'+data[i].data+'</span></div></div></a>'
+                        html += '<a href="./particulars.html"><div class="zongzi-content"><div class="box-img"><span class="text live">'+data[i].hat+'</span><img data-original="'+data[i].img+'" class="lazy"/></div><p class="tit1">'+data[i].con+'</p><p class="tit2"></p><div class="time"><img data-original="'+data[i].icon+'" class="lazy"/><span class="name">'+data[i].merchant+'&nbsp;</span><span class="time-new">'+data[i].data+'</span></div></div></a>'
                     }
 					$(".zongzi").html(html)
 					$("img.lazy").lazyload({effect:"fadeIn"})
