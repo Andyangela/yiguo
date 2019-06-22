@@ -2,11 +2,9 @@ $(function() {
     // ======判断用户是否登录======
     var userLogin = $.cookie("username");
     if (userLogin) {
-        console.log(userLogin, "已登录")
         $(".mui-bar").show();
         $(".cart_login").hide();
     } else {
-        console.log(userLogin, "未登录")
         $(".mui-bar").hide();
         $(".cart_login").show();
     };
