@@ -159,11 +159,12 @@
 							count=$('.mui-numbox-input').val()
 						console.log(count)
 						$.ajax({
-							url: "../../php/index_addcart.php",
+							url: "../../php/adddetails.php",
 							type: "POST",
-							data:"img="+img+"&title="+title+"&money="+money+"&count="+count,
+							data:"img_url="+img+"&title="+title+"&money="+money+"&count="+count,
 							success: function (data) {
-
+								alert(data);
+								cursor()
 							}
 						})
 					})
