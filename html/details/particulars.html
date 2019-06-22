@@ -7,12 +7,12 @@
 		content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 	<title></title>
 	<script src="../../js/details/jquery-1.12.1.js" type="text/javascript" charset="utf-8"></script>
-	<script src="../../js/details/mui.min.js"></script>	
-	<script src="../../js/details/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>	
-	<script src="../../js/details/rem.js" type="text/javascript" charset="utf-8"></script>	
+	<script src="../../js/details/mui.min.js"></script>
+	<script src="../../js/details/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/details/rem.js" type="text/javascript" charset="utf-8"></script>
 	<link rel="stylesheet" href="../../css/details/mui.min.css">
-	<link rel="stylesheet" type="text/css" href="../../css/details/mui.picker.min.css"/>	
-	<link rel="stylesheet" type="text/css" href="../../css/details/01.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/details/mui.picker.min.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/details/01.css" />
 	<script type="text/javascript" charset="utf-8">
 		mui.init();
 		var gallery = mui('.mui-slider');
@@ -24,13 +24,13 @@
 
 <body>
 	<div class="background">
-<!-- <img src="../../images/detalis/" alt=""> -->
-<!-- <a href="../details/minisite.html">查看图文详情</a> -->
-		<!-- <div class="back">
-			<img src="img/goback.png" />
-			
-		</div> -->
-		<!-- <div class="mui-slider">
+		<!-- <img src="../../images/detalis/" alt="">
+<a href="../details/minisite.html">查看图文详情</a> -->
+		<!-- <div class="back"> -->
+		<!-- <a href="../index/index.html"><img src="../../images/detalis/goback.png" /></a>  -->
+
+	</div>
+	<!-- <div class="mui-slider">
 				<div class="mui-slider-group mui-slider-loop">
 
 					<div class="mui-slider-item mui-slider-item-duplicate">
@@ -114,48 +114,83 @@
 			</div>
 			<div class="foot">
 				<a href="" class="btn"><i class="home"></i>首页</a>
-				<a href="" class="btn"><span class="mui-badge mui-badge-danger">5</span><i class="car"></i>购物车</a>
+				<a href="" class="btn"><span class="mui-badge mui-badge-danger"></span><i class="car"></i>购物车</a>
 				<a href="" class="but1">加入购物车</a>
+				<a href="../index/index.html" class="btn"><i class="home"></i>首页</a>
+				<a href="../shopcart/shopcart.html" class="btn">
+					<span class='badge'></span><i class="car"></i>购物车</a>
+				<a href="#" class="but1">加入购物车</a></span>
 			</div>-->
 	</div>
 	<script type="text/javascript">
-		// $(function () {
-
-			// $.ajax({
-			// 	url: "./php/gouwuche.php",
-			// 	type: "GET",
-			// 	dataType: "json",
-			// 	success: function(data) {
-			// 		console.log(data.length)
-			// 		$('.mui-badge').text(data.length);
-
-			// 		if(data.length > 0) {
-			// 			$('.mui-badge').css({
-			// 				'display': 'block'
-			// 			})
-			// 		}
-			// 	}
-
-			// 	$('but1').on('click',function{
-
-			// 	})
-			// })
-
+		$(function () {
 			$.ajax({
 				url: "../../php/details/two.php",
 				type: "GET",
 				dataType: "json",
 				success: function (data) {
-					console.log(data)
+					// console.log(data)
 					var html = "";
 					for (var i = 0; i < data.length; i++) {
-						html += '<div class="back"><img src="../../images/detalis/goback.png" /></div><div class="mui-slider"><div class="mui-slider-group mui-slider-loop"><div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="' + data[i].img4 + '" /></a></div><div class="mui-slider-item"><a href="#"><img src="' + data[i].img1 + '" /></a></div><div class="mui-slider-item"><a href="#"><img src="' + data[i].img2 + '" /></a></div><div class="mui-slider-item"><a href="#"><img src="' + data[i].img3 + '" /></a></div><div class="mui-slider-item"><a href="#"><img src="' + data[i].img4 + '" /></a></div><div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="' + data[i].img1 + '" /></a></div></div></div><div class="product"><p class="title">' + data[i].title + '</p><p class="subhead"><span>' + data[i].subhead + '</span></p><div class="price"><p class="pricein"><span><i>￥</i>' + data[i].price + '</span></p><p class="sera">产地：<span>' + data[i].sera + '</span></p></div><div class="sevenday"><span></span>' + data[i].sevenday + '</div><div class="shade"></div><div class="norms"><div class="normstitle">规格<span class="normsactive chouse">' + data[i].chouse + '</span></div><div class="normstitle">数量<div class="mui-numbox" data-numbox-min="0"><button class="mui-btn mui-numbox-btn-minus" type="button">-</button><input class="mui-numbox-input" type="number" /><button class="mui-btn mui-numbox-btn-plus" type="button">+</button></div></div><div class="shade"></div><div class="address"><p class="normstitle1">送至</p><div class="addressdate"><p class="ress"><span></span>' + data[i].ress + '</p><p class="infor"><span>有货</span>' + data[i].infor + '</p></div></div><div class="shade"></div><div class="evaluate"><p class="notext">' + data[i].notext + '</p></div><div class="shade"></div><div class="detail"><a href="details.html">' + data[i].detail + '</a></div></div></div><div class="foot"><a href="" class="btn"><i class="home"></i>首页</a><a href="" class="btn"><i class="car"></i>购物车</a><a href="" class="but1">加入购物车</a></div>'
+						html += '<div class="back"><a href="../index/index.html"><img src="../../images/detalis/goback.png" /></a></div><div class="mui-slider"><div class="mui-slider-group mui-slider-loop"><div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="' + data[i].img4 + '" /></a></div><div class="mui-slider-item"><a href="#"><img id="getimg" src="' + data[i].img1 + '" /></a></div><div class="mui-slider-item"><a href="#"><img src="' + data[i].img2 + '" /></a></div><div class="mui-slider-item"><a href="#"><img src="' + data[i].img3 + '" /></a></div><div class="mui-slider-item"><a href="#"><img src="' + data[i].img4 + '" /></a></div><div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="' + data[i].img1 + '" /></a></div></div></div><div class="product"><p class="title">' + data[i].title + '</p><p class="subhead"><span>' + data[i].subhead + '</span></p><div class="price"><p class="pricein"><span><i>￥</i>' + data[i].price + '</span></p><p class="sera">产地：<span>' + data[i].sera + '</span></p></div><div class="sevenday"><span></span>' + data[i].sevenday + '</div><div class="shade"></div><div class="norms"><div class="normstitle">规格<span class="normsactive chouse">' + data[i].chouse + '</span></div><div class="normstitle">数量<div class="mui-numbox" data-numbox-min="0"><button class="mui-btn mui-numbox-btn-minus btnipt" type="button">-</button><input class="mui-numbox-input" type="number"  value="1"/><button class="mui-btn mui-numbox-btn-plus" type="button">+</button></div></div><div class="shade"></div><div class="address"><p class="normstitle1">送至</p><div class="addressdate"><p class="ress"><span></span>' + data[i].ress + '</p><p class="infor"><span>有货</span>' + data[i].infor + '</p></div></div><div class="shade"></div><div class="evaluate"><p class="notext">' + data[i].notext + '</p></div><div class="shade"></div><div class="detail"><a href="details.html">' + data[i].detail + '</a></div></div></div><div class="foot"><a href="../index/index.html" class="btn"><i class="home"></i>首页</a><a href="../shopcart/shopcart.html" class="btn"><span class="badge"></span><i class="car"></i>购物车</a><a href="javascript:;" class="but1">加入购物车</a></div>'
 					}
-					console.log(html)
+					// console.log(html)
 					$(".background").html(html)
+					$index = 1
+					$('.mui-numbox-btn-plus').click(function () {
+						$index++
+						$('.mui-numbox-input').val($index)
+						console.log($('.mui-numbox-input'))
+					})
+					$('.btnipt').click(function () {
+						$index--
+						if ($index <= 1) {
+							$index = 1
+						}
+						$('.mui-numbox-input').val($index)
+					})
+					// 光标显示
+					cursor()
+					// 加入购物车
+					$('.but1').on('click', function () {
+						var img = $("#getimg").attr('src'),
+						    title=$('.title').text(),
+							money=$('.pricein').text().substr(1),
+							count=$('.mui-numbox-input').val()
+						console.log(count)
+						$.ajax({
+							url: "../../php/adddetails.php",
+							type: "POST",
+							data:"img_url="+img+"&title="+title+"&money="+money+"&count="+count,
+							success: function (data) {
+								alert(data);
+								cursor()
+							}
+						})
+					})
 				}
 			})
-		// })
+
+			function cursor() {
+				$.ajax({
+					url: "../../php/details/gouwuche.php",
+					type: "GET",
+					dataType: "json",
+					success: function (data) {
+						$('.badge').text(data.length);
+
+						if (data.length > 0) {
+							$('.badge').css({
+								'display': 'block'
+							})
+						}
+					}
+
+				})
+			}
+
+
+		})
 	</script>
 </body>
 
