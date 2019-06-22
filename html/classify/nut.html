@@ -63,24 +63,11 @@
 		</div> -->
 	<!-- </div> -->
 	<div class="outermost">
-        <!-- <div class="productList line-bottom">
-			<div class="shop_info">
-				<div class="img"><img src="../../images/grop/binggan/170427094654078_1247049_300.jpg" alt=""></div>
-				<div class="info">
-					<p class="title">美心礼盒装香脆甜心酥212g</p>
-					<p class="txt">满口绵密酥香</p>
-					<p class="price">
-						<span class="pricrRed">¥138</span>
-						<span class="standard">212g/盒</span>
-						<span class="addCart"></span>
-					</p>
-				</div>
-			</div>
-		</div> -->
+       
     </div>
 	<!-- 购物车 -->
 	<div class="option">
-		<a class="num"><i id="shop_num">1</i></a>
+		<a class="num"><i id="shop_num">5</i></a>
 		<a href="#" id="gotop" class="top"></a>
 	</div>
 	<!-- 没有更多了 -->
@@ -95,12 +82,12 @@
 	</div>
 
 	<script src="../../js/jquery/jquery-1.12.1.js"></script>
+	<script src="../../js/jquery.lazyload.min.js"></script>
 	<script type="text/javascript" src="../../js/mui.min.js"></script>
 	<script src="../../js/car.js"></script>
 	<script>
 		$(function () {
 			$(".tabMain div").on("click", function () {
-				console.log($(this).index())
 				$(this).addClass("active").siblings().removeClass("active")
 				// 判断当点击 新品时请求新品的内容
 
@@ -114,10 +101,10 @@
 							console.log(data)
 							var html = "";
 							for (var j = 0; j < data.length; j++) {
-								html += '<div class="productList line-bottom"><a herf="../details/particulars.html"><div class="shop_info"><div class="img"><img src="' + data[j].img + '" alt=""></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+								html += '<div class="productList line-bottom"><a herf="../details/particulars.html"><div class="shop_info"><div class="img"><img data-original="' + data[j].img + '" alt="" class="lazy"></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
 							}
 							$(".outermost").html(html);
-							console.log(html)
+							$("img.lazy").lazyload({effect:"fadeIn"})
 							$(".addCart").on("click", function () {
 								$("#shop_num").text() + 1
 								var num = $("#shop_num").text();
@@ -140,10 +127,10 @@
 								// console.log(data)
 								var html = "";
 								for (var j = 0; j < data.length; j++) {
-									html += '<div class="productList line-bottom"><a herf="../details/particulars.html"><div class="shop_info"><div class="img"><img src="' + data[j].img + '" alt=""></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+									html += '<div class="productList line-bottom"><a herf="../details/particulars.html"><div class="shop_info"><div class="img"><img data-original="' + data[j].img + '" alt="" class="lazy"></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
 								}
 								$(".outermost").html(html);
-								// console.log(html)
+								$("img.lazy").lazyload({effect:"fadeIn"})
 								$(".addCart").on("click", function () {
 									$("#shop_num").text() + 1
 									var num = $("#shop_num").text();
@@ -167,10 +154,10 @@
 								console.log(data)
 								var html = "";
 								for (var j = 0; j < data.length; j++) {
-									html += '<div class="productList line-bottom"><a herf="../details/particulars.html"><div class="shop_info"><div class="img"><img src="' + data[j].img + '" alt=""></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+									html += '<div class="productList line-bottom"><a herf="../details/particulars.html"><div class="shop_info"><div class="img"><img data-original="' + data[j].img + '" alt="" class="lazy"></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
 								}
 								$(".outermost").html(html);
-								// console.log(html)
+								$("img.lazy").lazyload({effect:"fadeIn"})
 								$(".addCart").on("click", function () {
 									$("#shop_num").text() + 1
 									var num = $("#shop_num").text();
@@ -190,12 +177,10 @@
 				if (i % 2 == 0) {
 					$(this).addClass("drop").siblings().removeClass("drop");
 					// i = 2;
-					console.log(1)
 
 				} else {
 					$(this).addClass("litre").siblings().removeClass("litre")
 					// i=1;
-					console.log(2)
 				}
 			})
 			// 新品
@@ -208,10 +193,10 @@
 				// console.log(data)
 				var html = "";
 				for (var j = 0; j < data.length; j++) {
-					html += '<div class="productList line-bottom"><a herf="../details/particulars.html"><div class="shop_info"><div class="img"><img src="' + data[j].img + '" alt=""></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+					html += '<div class="productList line-bottom"><a herf="../details/particulars.html"><div class="shop_info"><div class="img"><img data-original="' + data[j].img + '" alt="" class="lazy"></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
 				}
 				$(".outermost").html(html);
-				// console.log(html)
+				$("img.lazy").lazyload({effect:"fadeIn"})
 				//加入购物车
 				// 添加购物车数量
 				$(".addCart").on("click", function () {
@@ -220,14 +205,7 @@
 						// // 声明获取数据
 						img_url = $(this).parents(".info").siblings(".img").children("img").attr('src'),
 						price = $(this).siblings(".pricrRed").text()
-					username = '15938722869';
-					console.log(this)
-
-
-					console.log(goodsName)
-					console.log(img_url)
-					console.log(price)
-					console.log(this)
+						username = '15938722869';
 					$.ajax({
 						url: '../../php/shop-car.php',
 						type: "POST",
@@ -238,29 +216,12 @@
 					})
 					$("#shop_num").text() + 1
 					var num = $("#shop_num").text();
-					// console.log($("#shop_num").text())
 					num++;
 					$("#shop_num").text(num);
 				})
 			}
 		})
 
-	</script>
-	<script>
-		//加入购物车
-		// $(".info .txt").on("click", function () {
-		// 	console.log('添加')
-		// })
-		// $(".addCart").on("click", function () {
-
-		// 	console.log('添加')
-		// 	// 添加购物车数量
-		// 	$("#shop_num").text() + 1
-		// 	var num = $("#shop_num").text();
-		// 	console.log($("#shop_num").text())
-		// 	num++;
-		// 	$("#shop_num").text(num);
-		// })
 	</script>
 </body>
 

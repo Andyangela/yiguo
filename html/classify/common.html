@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/classify/in.css" />
+    <link rel="stylesheet" href="../../css/classify/loading.css">
+</head>
+
+<body>
+    <div class="tabNav line-bottom">
+        <div class="tabMain">
+            <div class="active">
+                销量
+            </div>
+            <div class="">
+                新品
+            </div>
+            <div class="">
+                价格
+                <i class=""></i></div>
+        </div>
+    </div>
+    <div class="outermost">
+        <!-- <div class="productList line-bottom">
+			<div class="shop_info">
+				<div class="img"><img src="../../images/grop/binggan/170427094654078_1247049_300.jpg" alt=""></div>
+				<div class="info">
+					<p class="title">美心礼盒装香脆甜心酥212g</p>
+					<p class="txt">满口绵密酥香</p>
+					<p class="price">
+						<span class="pricrRed">¥138</span>
+						<span class="standard">212g/盒</span>
+						<span class="addCart"></span>
+					</p>
+				</div>
+			</div>
+		</div> -->
+    </div>
+    <!-- 购物车 -->
+    <div class="option">
+        <a class="num"><i id="shop_num">5</i></a>
+        <a href="#" id="gotop" class="top"></a>
+    </div>
+    <!-- 没有更多了 -->
+    <div class="noMore">
+        <p>没有更多了</p>
+    </div>
+    <!-- 弹出层 -->
+    <div class="on_loading">
+        <div class="loading">
+            <img src="../../images/grop/1.gif" alt="">
+        </div>
+    </div>
+    <script src="../../js/jquery/jquery-1.12.1.js"></script>
+    <script src="../../js/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="../../js/mui.min.js"></script>
+    <script src="../../js/grop.js"></script>
+    <script>
+        $(function () {
+            // 截取url id
+            var item_id = window.location.search.split('=')[1]
+            $(".tabMain div").on("click", function () {
+                
+                $(this).addClass("active").siblings().removeClass("active")
+                
+                // 判断当点击 新品时请求新品的内容
+                $.ajax({
+                        url: "../../php/seafood.php",
+                        type: "POST",
+                        dataType: "json",
+                        data: 'item_id=' + item_id,
+                        success: function (data) {
+                            var html = "";
+                            for (var j = 0; j < data.length; j++) {
+                                html += '<div class="productList line-bottom"><a href="../details/particulars.html"><div class="shop_info"><div class="img"><img data-original="' + data[j].img + '" alt="" class="lazy"></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+                            }
+                            $(".outermost").html(html);
+                            $("img.lazy").lazyload({effect:"fadeIn"})
+                            $(".addCart").on("click", function () {
+                                $("#shop_num").text() + 1
+                                var num = $("#shop_num").text();
+                                console.log($("#shop_num").text())
+                                num++;
+                                $("#shop_num").text(num);
+                            })
+                        }
+                    })
+                if ($(this).index() == 0) {
+                    $.ajax({
+                        url: "../../php/seafood.php",
+                        type: "POST",
+                        dataType: "json",
+                        data: 'item_id=' + item_id,
+                        success: function (data) {
+                            var html = "";
+                            for (var j = 0; j < data.length; j++) {
+                                html += '<div class="productList line-bottom"><a href="../details/particulars.html"><div class="shop_info"><div class="img"><img data-original="' + data[j].img + '" alt="" class="lazy"></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+                            }
+                            $(".outermost").html(html);
+                            $("img.lazy").lazyload({effect:"fadeIn"})
+                            $(".addCart").on("click", function () {
+                                $("#shop_num").text() + 1
+                                var num = $("#shop_num").text();
+                                console.log($("#shop_num").text())
+                                num++;
+                                $("#shop_num").text(num);
+                            })
+                        }
+                    })
+                }
+                else if($(this).index() == 2){
+                    $.ajax({
+                        url: "../../php/seafood.php",
+                        type: "POST",
+                        dataType: "json",
+                        data: 'item_id=' + item_id,
+                        success: function (data) {
+                            console.log(data)
+                            var html = "";
+                            for (var j = 0; j < data.length; j++) {
+                                html += '<div class="productList line-bottom"><a href="../details/particulars.html"><div class="shop_info"><div class="img"><img data-original="' + data[j].img + '" alt="" class="lazy"></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+                            }
+                            $(".outermost").html(html);
+                            $("img.lazy").lazyload({effect:"fadeIn"})
+                            $(".addCart").on("click", function () {
+                                $("#shop_num").text() + 1
+                                var num = $("#shop_num").text();
+                                console.log($("#shop_num").text())
+                                num++;
+                                $("#shop_num").text(num);
+                            })
+                        }
+                    })
+                }
+                if ($(this).index() == 1) {
+                    $.ajax({
+                        url: "../../php/seafood.php",
+                        type: "POST",
+                        dataType: "json",
+                        data: 'test=1',
+                        // data:'item_id='+item_id,
+                        success: function (data) {
+                            console.log(data)
+                            var html = "";
+                            for (var j = 0; j < data.length; j++) {
+                                html += '<div class="productList line-bottom"><a  href="../details/particulars.html"><div class="shop_info"><div class="img"><img data-original="' + data[j].img + '" alt="" class="lazy"></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+                            }
+                            $(".outermost").html(html);
+                            $("img.lazy").lazyload({effect:"fadeIn"})
+                            $(".addCart").on("click", function () {
+                                $("#shop_num").text() + 1
+                                var num = $("#shop_num").text();
+                                console.log($("#shop_num").text())
+                                num++;
+                                $("#shop_num").text(num);
+                            })
+                        }
+                    })
+                }
+                // if ($(this).text() == "销量") {
+                if ($(this).index() == 2) {
+                    function nut() {
+                        $.ajax({
+                            url: "../../php/new.php",
+                            type: "POST",
+                            dataType: "json",
+                            data: 'test=2',
+                            success: function (data) {
+   
+                                var html = "";
+                                for (var j = 0; j < data.length; j++) {
+                                    html += '<div class="productList line-bottom"><a  href="../details/particulars.html"><div class="shop_info"><div class="img"><img data-original="' + data[j].img + '" alt="" class="lazy"></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+                                }
+                                $(".outermost").html(html);
+                                $("img.lazy").lazyload({effect:"fadeIn"})
+                                $(".addCart").on("click", function () {
+                                    $("#shop_num").text() + 1
+                                    var num = $("#shop_num").text();
+                                   
+                                    num++;
+                                    $("#shop_num").text(num);
+                                })
+                            }
+                        })
+                    }
+                    nut()
+                }
+                if ($(this).text() == "价格") {
+                    function nut() {
+                        $.ajax({
+                            url: "../../php/seafood.php",
+                            type: "POST",
+                            dataType: "json",
+                            data: 'test=3',
+                            success: function (data) {
+                                var html = "";
+                                for (var j = 0; j < data.length; j++) {
+                                    html += '<div class="productList line-bottom"><a  href="../details/particulars.html"><div class="shop_info"><div class="img"><img data-original="' + data[j].img + '" alt="" class="lazy"></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+                                }
+                                $(".outermost").html(html);
+                                $("img.lazy").lazyload({effect:"fadeIn"})
+                                $(".addCart").on("click", function () {
+                                    $("#shop_num").text() + 1
+                                    var num = $("#shop_num").text();
+                                    console.log($("#shop_num").text())
+                                    num++;
+                                    $("#shop_num").text(num);
+                                })
+                            }
+                        })
+                    }
+                    nut()
+                }
+            })
+            // 价格
+            var i = 1;
+            $(".tabMain i").on("click", function () {
+                if (i % 2 == 0) {
+                    $(this).addClass("drop").siblings().removeClass("drop");
+                    // i = 2;
+                    console.log(1)
+
+                } else {
+                    $(this).addClass("litre").siblings().removeClass("litre")
+                    // i=1;
+                    console.log(2)
+                }
+            })
+            // 新品
+        })
+        $.ajax({
+            url: "../../php/seafood.php",
+            type: "POST",
+            dataType: "json",
+            success: function (data) {
+                var html = "";
+                for (var j = 0; j < data.length; j++) {
+                    html += '<div class="productList line-bottom"><a  href="../details/particulars.html"><div class="shop_info"><div class="img"><img data-original="' + data[j].img + '" alt="" class="lazy"></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+                }
+                $(".list_content").html(html);
+                $("img.lazy").lazyload({effect:"fadeIn"})
+                //加入购物车
+                // 添加购物车数量
+                $(".addCart").on("click", function () {
+                    $("#shop_num").text() + 1
+                    var num = $("#shop_num").text();
+                    console.log($("#shop_num").text())
+                    num++;
+                    $("#shop_num").text(num);
+                })
+            }
+        })
+
+    </script>
+</body>
+
+</html>
