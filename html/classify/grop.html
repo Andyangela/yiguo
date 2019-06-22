@@ -156,31 +156,43 @@
 		</div>
 	</div>
 	<script src="../../js/jquery/jquery-1.12.1.js"></script>
+	<script src="../../js/jquery.lazyload.min.js"></script>
 	<script type="text/javascript" src="../../js/mui.min.js"></script>
 	<script src="../../js/car.js"></script>
 	<script>
 		$(function () {
-			
+			$.ajax({
+				url: "../../php/tab.php",
+				type: "POST",
+				dataType: "json",
+				data: 'tab_num=1',
+				success: function (data) {
+					var html = "";
+					for (var j = 0; j < data.length; j++) {
+						html += '<li><div class="list_shop"><a href="./common.html?item_id=1"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
+					}
+					$(".list_content").html(html);
+					$("img.lazy").lazyload({ effect: "fadeIn" })
+				}
+			})
 			$(".nav_list li").on("click", function () {
 				$(this).addClass("active").siblings().removeClass("active")
 				// console.log(window.location.search.split('=')[1])
 				// var item_id = window.location.search.split('=')[1]
 				$(".on_loading img").show()
-				// console.log($(this).index())
 				if ($(this).index() == 0) {
 					$.ajax({
 						url: "../../php/tab.php",
 						type: "POST",
 						dataType: "json",
 						data: 'tab_num=1',
-						// data: 'item_id=' + item_id,
 						success: function (data) {
 							var html = "";
 							for (var j = 0; j < data.length; j++) {
-								html += '<li><div class="list_shop"><a href="./common.html?item_id=1"><img src="' + data[j].img + '"><p class="title">' + data[j].title + '</p></a></div></li>'
-								// html += '<div class="productList line-bottom"><a herf=""><div class="shop_info"><div class="img"><img src="' + data[j].img + '" alt=""></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+								html += '<li><div class="list_shop"><a href="./common.html?item_id=1"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
 							}
 							$(".list_content").html(html);
+							$("img.lazy").lazyload({ effect: "fadeIn" })
 							$(".list_content li").on("click", function () {
 								// console.log($(this).index())
 							})
@@ -188,34 +200,27 @@
 							// 点击精选肉类的 商品
 							$(".list_content li").on("click", function () {
 								if ($(this).index() == 0) {
-
 									$.ajax({
 										url: "../../php/seafood.php",
 										type: "POST",
 										dataType: "json",
 										// data: 'test=1',
 										success: function (data) {
-
 											var html = "";
 											for (var j = 0; j < data.length; j++) {
-												html += '<li><div class="list_shop"><a href="./common.html?item_id=1"><img src="' + data[j].img + '"><p class="title">' + data[j].title + '</p></a></div></li>'
+												html += '<li><div class="list_shop"><a href="./common.html?item_id=1"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
 											}
 											$(".list_content").html(html);
-											// console.log(html)
-											$(".list_content li").on("click", function () {
-												console.log($(this).index())
-											})
+											$("img.lazy").lazyload({ effect: "fadeIn" })
 											$(".on_loading img").hide()
 										}
 									})
 								}
-								
+
 							})
 						}
 					})
 				}
-
-
 				else if ($(this).index() == 2) {
 					$.ajax({
 						url: "../../php/tab.php",
@@ -226,10 +231,10 @@
 							console.log(data)
 							var html = "";
 							for (var j = 0; j < data.length; j++) {
-								html += '<li><div class="list_shop"><a href="./common.html"?item_id=2><img src="' + data[j].img + '"><p class="title">' + data[j].title + '</p></a></div></li>'
+								html += '<li><div class="list_shop"><a href="./common.html"?item_id=2><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
 							}
 							$(".list_content").html(html);
-							// console.log(html)
+							$("img.lazy").lazyload({ effect: "fadeIn" })
 							$(".on_loading img").hide()
 						}
 					})
@@ -244,10 +249,10 @@
 							console.log(data)
 							var html = "";
 							for (var j = 0; j < data.length; j++) {
-								html += '<li><div class="list_shop"><a href="./common.html"><img src="' + data[j].img + '"><p class="title">' + data[j].title + '</p></a></div></li>'
+								html += '<li><div class="list_shop"><a href="./common.html"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
 							}
 							$(".list_content").html(html);
-							// console.log(html)
+							$("img.lazy").lazyload({ effect: "fadeIn" })
 							$(".on_loading img").hide()
 						}
 					})
@@ -262,10 +267,10 @@
 							console.log(data)
 							var html = "";
 							for (var j = 0; j < data.length; j++) {
-								html += '<li><div class="list_shop"><a href="./common.html"><img src="' + data[j].img + '"><p class="title">' + data[j].title + '</p></a></div></li>'
+								html += '<li><div class="list_shop"><a href="./common.html"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
 							}
 							$(".list_content").html(html);
-							// console.log(html)
+							$("img.lazy").lazyload({ effect: "fadeIn" })
 							$(".on_loading img").hide()
 						}
 					})
@@ -277,13 +282,12 @@
 						dataType: "json",
 						data: 'tab_num=6',
 						success: function (data) {
-							console.log(data)
 							var html = "";
 							for (var j = 0; j < data.length; j++) {
-								html += '<li><div class="list_shop"><a href="./common.html"><img src="' + data[j].img + '"><p class="title">' + data[j].title + '</p></a></div></li>'
+								html += '<li><div class="list_shop"><a href="./common.html"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
 							}
 							$(".list_content").html(html);
-							// console.log(html)
+							$("img.lazy").lazyload({ effect: "fadeIn" })
 							$(".on_loading img").hide()
 						}
 					})
@@ -304,10 +308,10 @@
 							// console.log(data)
 							var html = "";
 							for (var j = 0; j < data.length; j++) {
-								html += '<li><div class="list_shop"><a href="./common.html?item_id=2"><img src="' + data[j].img + '"><p class="title">' + data[j].title + '</p></a></div></li>'
+								html += '<li><div class="list_shop"><a href="./common.html?item_id=2"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
 							}
 							$(".list_content").html(html);
-							// console.log(html)
+							$("img.lazy").lazyload({ effect: "fadeIn" })
 							$(".list_content li").on("click", function () {
 								// console.log($(this).index())
 							})
@@ -325,10 +329,10 @@
 
 											var html = "";
 											for (var j = 0; j < data.length; j++) {
-												html += '<li><div class="list_shop"><a href="./common.html?item_id=2"><img src="' + data[j].img + '"><p class="title">' + data[j].title + '</p></a></div></li>'
+												html += '<li><div class="list_shop"><a href="./common.html?item_id=2"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
 											}
 											$(".list_content").html(html);
-											// console.log(html)
+											$("img.lazy").lazyload({ effect: "fadeIn" })
 											$(".list_content li").on("click", function () {
 												console.log($(this).index())
 											})
@@ -344,22 +348,19 @@
 			$(".nav_list li").on("click", function () {
 				$(this).addClass("active").siblings().removeClass("active")
 				$(".on_loading img").show()
-				// console.log($(this).index())
 				if ($(this).index() == 2) {
 					$.ajax({
 						url: "../../php/tab.php",
 						type: "POST",
 						dataType: "json",
 						data: 'tab_num=3',
-						// data: 'item_id=' + item_id,
 						success: function (data) {
-							// console.log(data)
 							var html = "";
 							for (var j = 0; j < data.length; j++) {
-								html += '<li><div class="list_shop"><a href="./common.html?item_id=3"><img src="' + data[j].img + '"><p class="title">' + data[j].title + '</p></a></div></li>'
+								html += '<li><div class="list_shop"><a href="./common.html?item_id=3"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
 							}
 							$(".list_content").html(html);
-							// console.log(html)
+							$("img.lazy").lazyload({ effect: "fadeIn" })
 							$(".list_content li").on("click", function () {
 								// console.log($(this).index())
 							})
@@ -374,15 +375,14 @@
 										dataType: "json",
 										// data: 'test=1',
 										success: function (data) {
-
 											var html = "";
 											for (var j = 0; j < data.length; j++) {
-												html += '<li><div class="list_shop"><a href="./common.html?item_id=3"><img src="' + data[j].img + '"><p class="title">' + data[j].title + '</p></a></div></li>'
+												html += '<li><div class="list_shop"><a href="./common.html?item_id=3"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
 											}
 											$(".list_content").html(html);
-											// console.log(html)
+											$("img.lazy").lazyload({ effect: "fadeIn" })
 											$(".list_content li").on("click", function () {
-												console.log($(this).index())
+												// console.log($(this).index())
 											})
 											$(".on_loading img").hide()
 										}
@@ -396,7 +396,6 @@
 			$(".nav_list li").on("click", function () {
 				$(this).addClass("active").siblings().removeClass("active")
 				$(".on_loading img").show()
-				// console.log($(this).index())
 				if ($(this).index() == 3) {
 					$.ajax({
 						url: "../../php/tab.php",
@@ -405,13 +404,12 @@
 						data: 'tab_num=4',
 						// data: 'item_id=' + item_id,
 						success: function (data) {
-							// console.log(data)
 							var html = "";
 							for (var j = 0; j < data.length; j++) {
-								html += '<li><div class="list_shop"><a href="./common.html?item_id=4"><img src="' + data[j].img + '"><p class="title">' + data[j].title + '</p></a></div></li>'
+								html += '<li><div class="list_shop"><a href="./common.html?item_id=4"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
 							}
 							$(".list_content").html(html);
-							// console.log(html)
+							$("img.lazy").lazyload({ effect: "fadeIn" })
 							$(".list_content li").on("click", function () {
 								// console.log($(this).index())
 							})
@@ -429,10 +427,10 @@
 
 											var html = "";
 											for (var j = 0; j < data.length; j++) {
-												html += '<li><div class="list_shop"><a href="./common.html?item_id=4"><img src="' + data[j].img + '"><p class="title">' + data[j].title + '</p></a></div></li>'
+												html += '<li><div class="list_shop"><a href="./common.html?item_id=4"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
 											}
 											$(".list_content").html(html);
-											// console.log(html)
+											$("img.lazy").lazyload({ effect: "fadeIn" })
 											$(".list_content li").on("click", function () {
 												console.log($(this).index())
 											})
@@ -460,10 +458,10 @@
 							// console.log(data)
 							var html = "";
 							for (var j = 0; j < data.length; j++) {
-								html += '<li><div class="list_shop"><a href="./common.html?item_id=5"><img src="' + data[j].img + '"><p class="title">' + data[j].title + '</p></a></div></li>'
+								html += '<li><div class="list_shop"><a href="./common.html?item_id=5"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
 							}
 							$(".list_content").html(html);
-							// console.log(html)
+							$("img.lazy").lazyload({ effect: "fadeIn" })
 							$(".list_content li").on("click", function () {
 								// console.log($(this).index())
 							})
@@ -481,12 +479,12 @@
 
 											var html = "";
 											for (var j = 0; j < data.length; j++) {
-												html += '<li><div class="list_shop"><a href="./common.html?item_id=5"><img src="' + data[j].img + '"><p class="title">' + data[j].title + '</p></a></div></li>'
+												html += '<li><div class="list_shop"><a href="./common.html?item_id=5"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
 											}
 											$(".list_content").html(html);
-											// console.log(html)
+											$("img.lazy").lazyload({ effect: "fadeIn" })
 											$(".list_content li").on("click", function () {
-												console.log($(this).index())
+
 											})
 											$(".on_loading img").hide()
 										}
@@ -497,26 +495,23 @@
 					})
 				}
 			})
-			
+
 			$(".nav_list li").on("click", function () {
 				$(this).addClass("active").siblings().removeClass("active")
 				$(".on_loading img").show()
-				// console.log($(this).index())
 				if ($(this).index() == 5) {
 					$.ajax({
 						url: "../../php/tab.php",
 						type: "POST",
 						dataType: "json",
 						data: 'tab_num=6',
-						// data: 'item_id=' + item_id,
 						success: function (data) {
-							// console.log(data)
 							var html = "";
 							for (var j = 0; j < data.length; j++) {
-								html += '<li><div class="list_shop"><a href="./common.html?item_id=6"><img src="' + data[j].img + '"><p class="title">' + data[j].title + '</p></a></div></li>'
+								html += '<li><div class="list_shop"><a href="./common.html?item_id=6"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
 							}
 							$(".list_content").html(html);
-							// console.log(html)
+							$("img.lazy").lazyload({ effect: "fadeIn" })
 							$(".list_content li").on("click", function () {
 								// console.log($(this).index())
 							})
@@ -534,12 +529,12 @@
 
 											var html = "";
 											for (var j = 0; j < data.length; j++) {
-												html += '<li><div class="list_shop"><a href="./common.html?item_id=6"><img src="' + data[j].img + '"><p class="title">' + data[j].title + '</p></a></div></li>'
+												html += '<li><div class="list_shop"><a href="./common.html?item_id=6"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
 											}
 											$(".list_content").html(html);
-											// console.log(html)
+											$("img.lazy").lazyload({ effect: "fadeIn" })
 											$(".list_content li").on("click", function () {
-												console.log($(this).index())
+
 											})
 											$(".on_loading img").hide()
 										}
@@ -554,22 +549,19 @@
 			$(".nav_list li").on("click", function () {
 				$(this).addClass("active").siblings().removeClass("active")
 				$(".on_loading img").show()
-				// console.log($(this).index())
 				if ($(this).index() == 6) {
 					$.ajax({
 						url: "../../php/tab.php",
 						type: "POST",
 						dataType: "json",
 						data: 'tab_num=7',
-						// data: 'item_id=' + item_id,
 						success: function (data) {
-							// console.log(data)
 							var html = "";
 							for (var j = 0; j < data.length; j++) {
-								html += '<li><div class="list_shop"><a href="./common.html?item_id=7"><img src="' + data[j].img + '"><p class="title">' + data[j].title + '</p></a></div></li>'
+								html += '<li><div class="list_shop"><a href="./common.html?item_id=7"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
 							}
 							$(".list_content").html(html);
-							// console.log(html)
+							$("img.lazy").lazyload({ effect: "fadeIn" })
 							$(".list_content li").on("click", function () {
 								// console.log($(this).index())
 							})
@@ -587,12 +579,12 @@
 
 											var html = "";
 											for (var j = 0; j < data.length; j++) {
-												html += '<li><div class="list_shop"><a href="./common.html?item_id=7"><img src="' + data[j].img + '"><p class="title">' + data[j].title + '</p></a></div></li>'
+												html += '<li><div class="list_shop"><a href="./common.html?item_id=7"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
 											}
 											$(".list_content").html(html);
-											// console.log(html)
+											$("img.lazy").lazyload({ effect: "fadeIn" })
 											$(".list_content li").on("click", function () {
-												console.log($(this).index())
+
 											})
 											$(".on_loading img").hide()
 										}
@@ -604,35 +596,27 @@
 				}
 			})
 			//加入购物车
-				// 添加购物车数量
-				$(".addCart").on("click", function () {
-					var title = $(this).parents(".info").children(".title").text(),
-						goodsName = $(this).parents(".info").children(".txt").text(),
-						// // 声明获取数据
-						img_url = $(this).parents(".info").siblings(".img").children("img").attr('src'),
-						price = $(this).siblings(".pricrRed").text()
-					username = '15938722869';
-					console.log(this)
-
-
-					console.log(goodsName)
-					console.log(img_url)
-					console.log(price)
-					console.log(this)
-					$.ajax({
-						url: '../../php/shop-car.php',
-						type: "POST",
-						data: 'title="' + title + '&img_url=' + img_url + "&goodsName=" + goodsName + "&price=" + price + "&username=" + username,
-						success: function (data) {
-							console.log(data)
-						}
-					})
-					$("#shop_num").text() + 1
-					var num = $("#shop_num").text();
-					// console.log($("#shop_num").text())
-					num++;
-					$("#shop_num").text(num);
+			// 添加购物车数量
+			$(".addCart").on("click", function () {
+				var title = $(this).parents(".info").children(".title").text(),
+					goodsName = $(this).parents(".info").children(".txt").text(),
+					// // 声明获取数据
+					img_url = $(this).parents(".info").siblings(".img").children("img").attr('src'),
+					price = $(this).siblings(".pricrRed").text()
+				username = '15938722869';
+				$.ajax({
+					url: '../../php/shop-car.php',
+					type: "POST",
+					data: 'title="' + title + '&img_url=' + img_url + "&goodsName=" + goodsName + "&price=" + price + "&username=" + username,
+					success: function (data) {
+						console.log(data)
+					}
 				})
+				$("#shop_num").text() + 1
+				var num = $("#shop_num").text();
+				num++;
+				$("#shop_num").text(num);
+			})
 			$(".list_content li").on("click", function () {
 				$(".on_loading").css({
 					"display": "block"

@@ -57,6 +57,7 @@
 .productList .shop_info {
     padding-top: 1.36rem;
     position: relative; 
+    height: 5rem;
 }
 .shop_info{
     /* float: right; */

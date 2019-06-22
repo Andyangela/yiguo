@@ -45,7 +45,7 @@
     </div>
     <!-- 购物车 -->
     <div class="option">
-        <a class="num"><i id="shop_num">1</i></a>
+        <a class="num"><i id="shop_num">5</i></a>
         <a href="#" id="gotop" class="top"></a>
     </div>
     <!-- 没有更多了 -->
@@ -59,16 +59,39 @@
         </div>
     </div>
     <script src="../../js/jquery/jquery-1.12.1.js"></script>
+    <script src="../../js/jquery.lazyload.min.js"></script>
     <script type="text/javascript" src="../../js/mui.min.js"></script>
-    <!-- <script src="../../js/car.js"></script> -->
     <script src="../../js/grop.js"></script>
     <script>
         $(function () {
             // 截取url id
             var item_id = window.location.search.split('=')[1]
             $(".tabMain div").on("click", function () {
+                
                 $(this).addClass("active").siblings().removeClass("active")
+                
                 // 判断当点击 新品时请求新品的内容
+                $.ajax({
+                        url: "../../php/seafood.php",
+                        type: "POST",
+                        dataType: "json",
+                        data: 'item_id=' + item_id,
+                        success: function (data) {
+                            var html = "";
+                            for (var j = 0; j < data.length; j++) {
+                                html += '<div class="productList line-bottom"><a href="../details/particulars.html"><div class="shop_info"><div class="img"><img data-original="' + data[j].img + '" alt="" class="lazy"></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+                            }
+                            $(".outermost").html(html);
+                            $("img.lazy").lazyload({effect:"fadeIn"})
+                            $(".addCart").on("click", function () {
+                                $("#shop_num").text() + 1
+                                var num = $("#shop_num").text();
+                                console.log($("#shop_num").text())
+                                num++;
+                                $("#shop_num").text(num);
+                            })
+                        }
+                    })
                 if ($(this).index() == 0) {
                     $.ajax({
                         url: "../../php/seafood.php",
@@ -78,9 +101,10 @@
                         success: function (data) {
                             var html = "";
                             for (var j = 0; j < data.length; j++) {
-                                html += '<div class="productList line-bottom"><a herf="../details/particulars.html"><div class="shop_info"><div class="img"><img src="' + data[j].img + '" alt=""></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+                                html += '<div class="productList line-bottom"><a href="../details/particulars.html"><div class="shop_info"><div class="img"><img data-original="' + data[j].img + '" alt="" class="lazy"></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
                             }
                             $(".outermost").html(html);
+                            $("img.lazy").lazyload({effect:"fadeIn"})
                             $(".addCart").on("click", function () {
                                 $("#shop_num").text() + 1
                                 var num = $("#shop_num").text();
@@ -101,12 +125,10 @@
                             console.log(data)
                             var html = "";
                             for (var j = 0; j < data.length; j++) {
-                                //  html += '<li><div class="list_shop"><a href="./common.html?item_id=item_id"><img src="' + data[j].img + '"><p class="title">' + data[j].title + '</p></a></div></li>'
-                                html += '<div class="productList line-bottom"><a herf="../details/particulars.html"><div class="shop_info"><div class="img"><img src="' + data[j].img + '" alt=""></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+                                html += '<div class="productList line-bottom"><a href="../details/particulars.html"><div class="shop_info"><div class="img"><img data-original="' + data[j].img + '" alt="" class="lazy"></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
                             }
                             $(".outermost").html(html);
-                            console.log(html)
-                            console.log(data)
+                            $("img.lazy").lazyload({effect:"fadeIn"})
                             $(".addCart").on("click", function () {
                                 $("#shop_num").text() + 1
                                 var num = $("#shop_num").text();
@@ -128,10 +150,10 @@
                             console.log(data)
                             var html = "";
                             for (var j = 0; j < data.length; j++) {
-                                html += '<div class="productList line-bottom"><a herf="../details/particulars.html"><div class="shop_info"><div class="img"><img src="' + data[j].img + '" alt=""></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+                                html += '<div class="productList line-bottom"><a  href="../details/particulars.html"><div class="shop_info"><div class="img"><img data-original="' + data[j].img + '" alt="" class="lazy"></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
                             }
                             $(".outermost").html(html);
-                            console.log(html)
+                            $("img.lazy").lazyload({effect:"fadeIn"})
                             $(".addCart").on("click", function () {
                                 $("#shop_num").text() + 1
                                 var num = $("#shop_num").text();
@@ -146,22 +168,22 @@
                 if ($(this).index() == 2) {
                     function nut() {
                         $.ajax({
-                            url: "../../php/seafood.php",
+                            url: "../../php/new.php",
                             type: "POST",
                             dataType: "json",
                             data: 'test=2',
                             success: function (data) {
-                                // console.log(data)
+   
                                 var html = "";
                                 for (var j = 0; j < data.length; j++) {
-                                    html += '<div class="productList line-bottom"><a herf="../details/particulars.html"><div class="shop_info"><div class="img"><img src="' + data[j].img + '" alt=""></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+                                    html += '<div class="productList line-bottom"><a  href="../details/particulars.html"><div class="shop_info"><div class="img"><img data-original="' + data[j].img + '" alt="" class="lazy"></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
                                 }
                                 $(".outermost").html(html);
-                                // console.log(html)
+                                $("img.lazy").lazyload({effect:"fadeIn"})
                                 $(".addCart").on("click", function () {
                                     $("#shop_num").text() + 1
                                     var num = $("#shop_num").text();
-                                    console.log($("#shop_num").text())
+                                   
                                     num++;
                                     $("#shop_num").text(num);
                                 })
@@ -178,13 +200,12 @@
                             dataType: "json",
                             data: 'test=3',
                             success: function (data) {
-                                console.log(data)
                                 var html = "";
                                 for (var j = 0; j < data.length; j++) {
-                                    html += '<div class="productList line-bottom"><a herf="../details/particulars.html"><div class="shop_info"><div class="img"><img src="' + data[j].img + '" alt=""></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+                                    html += '<div class="productList line-bottom"><a  href="../details/particulars.html"><div class="shop_info"><div class="img"><img data-original="' + data[j].img + '" alt="" class="lazy"></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
                                 }
                                 $(".outermost").html(html);
-                                // console.log(html)
+                                $("img.lazy").lazyload({effect:"fadeIn"})
                                 $(".addCart").on("click", function () {
                                     $("#shop_num").text() + 1
                                     var num = $("#shop_num").text();
@@ -221,9 +242,10 @@
             success: function (data) {
                 var html = "";
                 for (var j = 0; j < data.length; j++) {
-                    html += '<div class="productList line-bottom"><a herf="../details/particulars.html"><div class="shop_info"><div class="img"><img src="' + data[j].img + '" alt=""></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+                    html += '<div class="productList line-bottom"><a  href="../details/particulars.html"><div class="shop_info"><div class="img"><img data-original="' + data[j].img + '" alt="" class="lazy"></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
                 }
                 $(".list_content").html(html);
+                $("img.lazy").lazyload({effect:"fadeIn"})
                 //加入购物车
                 // 添加购物车数量
                 $(".addCart").on("click", function () {
