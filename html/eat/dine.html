@@ -1,12 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+		<script src="../../js/rem.js"></script>
+		<link rel="stylesheet" href="../../css/reset.css">
+		<script src="../../js/jquery/jquery-1.12.1.js"></script>
+		<script src="../../js/jquery/jquery.lazyload.min.js"></script>
+		<script src="../../js/mui.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/eat/dine.css" />
+	</head>
+
+	<body>
+		<div class="hat">
+			<div class="title hat-come">
+				<ul class="classify">
+					<li>
+						<a href="#">
+							<img src="../../images/eat/586030925119660372_120x96.png" /> 做美食
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="../../images/eat/586030925119693140_120x96.png" />
+							<p>涨知识</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="../../images/eat/586030925119725908_120x96.png" /> 生活家
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="../../images/eat/586030927703745073_120x96.png" /> 爱试吃
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="zongzi">
+			<!-- <a href="#"> -->
+				<!-- <div class="zongzi-content">
+					<div class="box-img">
+						<span class="text live">生活家</span>
+						<span class="num">
+							<i class="icon right"></i>
+						</span>
+						<img src="../../images/eat/153403926162187960_900x383.jpg" />
+					</div>
+					<p class="tit1">端午送礼|带上五芳斋粽子，分享幸福的滋味！</p>
+					<p class="tit2"></p>
+					<div class="time">
+						<img src="../../images/eat/153403926162220728_640.jpg"/>
+						<span class="name">
+							易果君&nbsp;
+						</span>
+						<span class="time-new">2019年05月24日</span>
+					</div>
+				</div> -->
+			<!-- </a> -->
+		</div>
+		<script>
+		$(function(){
+			$.ajax({
+                url: "../../php/eat/din.php",
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    var html = "";
+                    for (var i = 0; i < data.length; i++) {
+                        html += '<a href="./particulars.html"><div class="zongzi-content"><div class="box-img"><span class="text live">'+data[i].hat+'</span><span class="num"><i class="icon right">'+data[i].background+'</i></span><img data-original="'+data[i].img+'" class="lazy"/></div><p class="tit1">'+data[i].con+'</p><p class="tit2"></p><div class="time"><img data-original="'+data[i].icon+'" class="lazy"/><span class="name">'+data[i].merchant+'&nbsp;</span><span class="time-new">'+data[i].data+'</span></div></div></a>'
+                    }
+					$(".zongzi").html(html)
+					$("img.lazy").lazyload({effect:"fadeIn"})
+                }
+            })
+		})
+		</script>
+	</body>
 </html>
