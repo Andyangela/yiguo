@@ -140,7 +140,7 @@
 					$('.mui-numbox-btn-plus').click(function () {
 						$index++
 						$('.mui-numbox-input').val($index)
-						console.log($('.mui-numbox-input'))
+						// console.log($('.mui-numbox-input'))
 					})
 					$('.btnipt').click(function () {
 						$index--
@@ -157,7 +157,7 @@
 						    title=$('.title').text(),
 							money=$('.pricein').text().substr(1),
 							count=$('.mui-numbox-input').val()
-						console.log(count)
+						// console.log(count)
 						$.ajax({
 							url: "../../php/adddetails.php",
 							type: "POST",
