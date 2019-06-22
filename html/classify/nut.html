@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="../../css/classify/in.css" />
 	<link rel="stylesheet" href="../../css/classify/loading.css">
+	<link rel="stylesheet" href="../../css/classify/nomall.css">
 </head>
 
 <body>
@@ -28,7 +29,7 @@
 		</div>
 	</div>
 	<!-- <div class="mui-slider"> -->
-		<!-- <div class="tabNav line-bottom mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+	<!-- <div class="tabNav line-bottom mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
 			<div class="tabMain">
 				<div class="active">
 					<a class="mui-control-item mui-active" href="#item1">销量</a>
@@ -63,15 +64,15 @@
 		</div> -->
 	<!-- </div> -->
 	<div class="outermost">
-       
-    </div>
+
+	</div>
 	<!-- 购物车 -->
 	<div class="option">
-		<a class="num"><i id="shop_num">5</i></a>
+		<a class="num"><i id="shop_num">0</i></a>
 		<a href="#" id="gotop" class="top"></a>
 	</div>
 	<!-- 没有更多了 -->
-	<div class="noMore">
+	<div class="noMore" style="display: none">
 		<p>没有更多了</p>
 	</div>
 	<!-- 弹出层 -->
@@ -90,10 +91,10 @@
 			$(".tabMain div").on("click", function () {
 				$(this).addClass("active").siblings().removeClass("active")
 				// 判断当点击 新品时请求新品的内容
-
+				$(".on_loading").show()
 				if ($(this).index() == 1) {
 					$.ajax({
-						url: "../../php/new.php",
+						url: "../../php/nomall.php",
 						type: "POST",
 						dataType: "json",
 						data: 'test=1',
@@ -101,10 +102,12 @@
 							console.log(data)
 							var html = "";
 							for (var j = 0; j < data.length; j++) {
-								html += '<div class="productList line-bottom"><a herf="../details/particulars.html"><div class="shop_info"><div class="img"><img data-original="' + data[j].img + '" alt="" class="lazy"></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+								html +='<div class="sorry"><div class="noProduct"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="hint">' + data[j].hint + '</p></div></div>'
 							}
 							$(".outermost").html(html);
-							$("img.lazy").lazyload({effect:"fadeIn"})
+							$("img.lazy").lazyload({ effect: "fadeIn" })
+							$(".on_loading").hide()
+							$(".noMore").show()
 							$(".addCart").on("click", function () {
 								$("#shop_num").text() + 1
 								var num = $("#shop_num").text();
@@ -115,7 +118,8 @@
 						}
 					})
 				}
-				// if ($(this).text() == "销量") {
+				// 价格
+				$(".on_loading").show()
 				if ($(this).index() == 2) {
 					function nut() {
 						$.ajax({
@@ -127,10 +131,12 @@
 								// console.log(data)
 								var html = "";
 								for (var j = 0; j < data.length; j++) {
-									html += '<div class="productList line-bottom"><a herf="../details/particulars.html"><div class="shop_info"><div class="img"><img data-original="' + data[j].img + '" alt="" class="lazy"></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+									html += '<div class="productList line-bottom"><div class="shop_info"><div class="img"><a href="../details/particulars.html"><img data-original="' + data[j].img + '" alt="" class="lazy"></a></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></div>';
 								}
 								$(".outermost").html(html);
-								$("img.lazy").lazyload({effect:"fadeIn"})
+								$("img.lazy").lazyload({ effect: "fadeIn" })
+								$(".on_loading").hide()
+								$(".noMore").show()
 								$(".addCart").on("click", function () {
 									$("#shop_num").text() + 1
 									var num = $("#shop_num").text();
@@ -143,6 +149,7 @@
 					}
 					nut()
 				}
+				$(".on_loading").show()
 				if ($(this).text() == "价格") {
 					function nut() {
 						$.ajax({
@@ -154,10 +161,12 @@
 								console.log(data)
 								var html = "";
 								for (var j = 0; j < data.length; j++) {
-									html += '<div class="productList line-bottom"><a herf="../details/particulars.html"><div class="shop_info"><div class="img"><img data-original="' + data[j].img + '" alt="" class="lazy"></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+									html += '<div class="productList line-bottom"><div class="shop_info"><div class="img"><a href="../details/particulars.html"><img data-original="' + data[j].img + '" alt="" class="lazy"></a></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></div>';
 								}
 								$(".outermost").html(html);
-								$("img.lazy").lazyload({effect:"fadeIn"})
+								$("img.lazy").lazyload({ effect: "fadeIn" })
+								$(".on_loading").hide()
+								$(".noMore").show()
 								$(".addCart").on("click", function () {
 									$("#shop_num").text() + 1
 									var num = $("#shop_num").text();
@@ -185,18 +194,20 @@
 			})
 			// 新品
 		})
+		$(".on_loading").show()
 		$.ajax({
 			url: "../../php/nut.php",
 			type: "POST",
 			dataType: "json",
 			success: function (data) {
-				// console.log(data)
 				var html = "";
 				for (var j = 0; j < data.length; j++) {
-					html += '<div class="productList line-bottom"><a herf="../details/particulars.html"><div class="shop_info"><div class="img"><img data-original="' + data[j].img + '" alt="" class="lazy"></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></a></div>';
+					html += '<div class="productList line-bottom"><div class="shop_info"><div class="img"><a href="../details/particulars.html"><img data-original="' + data[j].img + '" alt="" class="lazy"></a></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></div>';
 				}
 				$(".outermost").html(html);
-				$("img.lazy").lazyload({effect:"fadeIn"})
+				$("img.lazy").lazyload({ effect: "fadeIn" })
+				$(".on_loading").hide()
+				$(".noMore").show()
 				//加入购物车
 				// 添加购物车数量
 				$(".addCart").on("click", function () {
@@ -205,7 +216,7 @@
 						// // 声明获取数据
 						img_url = $(this).parents(".info").siblings(".img").children("img").attr('src'),
 						price = $(this).siblings(".pricrRed").text()
-						username = '15938722869';
+					username = '15938722869';
 					$.ajax({
 						url: '../../php/shop-car.php',
 						type: "POST",
