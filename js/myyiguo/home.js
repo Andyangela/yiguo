@@ -34,8 +34,6 @@ if (username) {
 						path: '/'
 					})
 					location.href = "SignIn.html";
-				} else {
-					console.log('不能重复签到')
 				}
 			})
 			if (sign) {
@@ -69,7 +67,6 @@ if (username) {
 			$(".orderList").attr("href", "orderList.html?username=" + username + "&page=0")
 			//点击出现下载手机版
 			$(".exchange").on("click", function () {
-				console.log('下载')
 				$('.maskHint').css({
 					display: "block"
 				});
