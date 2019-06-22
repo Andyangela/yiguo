@@ -48,22 +48,12 @@
             // 价格
             var i = 1;
             $(".tabMain i").on("click", function () {
-                // $(this).addClass("drop").siblings().removeClass("drop")
-                // $(this).toggle(function () {
-                //     $(this).attr("src", "../../images/grop/pricethree.png");
-                // }, function () {
-                //     $(this).attr("src", "图片1.jpg");
-                // }).attr("src", "../../images/grop/pricetwo.png");
                 i++;
                 if (i % 2 == 0) {
                     $(this).addClass("drop").siblings().removeClass("drop");
                     // i = 2;
-                    console.log(1)
-
                 } else {
                     $(this).addClass("litre").siblings().removeClass("litre")
-                    // i=1;
-                    console.log(2)
                 }
             })
             function nut() {
@@ -72,13 +62,11 @@
                     type: "POST",
                     dataType: "json",
                     success: function (data) {
-                        // console.log(data)
                         var html = "";
                         for (var j = 0; j < data.length; j++) {
                             html += '<div class="noProduct"><img src="' + data[j].img + '" alt=""><p class="hint">' + data[j].hint + '</p></div>'
                         }
                         $(".sorry").html(html);
-                        console.log(html)
                     }
                 })
             }

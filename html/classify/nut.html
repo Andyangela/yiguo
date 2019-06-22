@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 	<script src="../../js/rem.js" type="text/javascript" charset="utf-8"></script>
-	<link rel="stylesheet" type="text/css" href="../../mui.min.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/classify/mui.min.css" />
 	<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="../../css/classify/in.css" />
 	<link rel="stylesheet" href="../../css/classify/loading.css">
@@ -99,10 +99,10 @@
 						dataType: "json",
 						data: 'test=1',
 						success: function (data) {
-							console.log(data)
+
 							var html = "";
 							for (var j = 0; j < data.length; j++) {
-								html +='<div class="sorry"><div class="noProduct"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="hint">' + data[j].hint + '</p></div></div>'
+								html += '<div class="sorry"><div class="noProduct"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="hint">' + data[j].hint + '</p></div></div>'
 							}
 							$(".outermost").html(html);
 							$("img.lazy").lazyload({ effect: "fadeIn" })
@@ -111,7 +111,7 @@
 							$(".addCart").on("click", function () {
 								$("#shop_num").text() + 1
 								var num = $("#shop_num").text();
-								console.log($("#shop_num").text())
+
 								num++;
 								$("#shop_num").text(num);
 							})
@@ -128,7 +128,6 @@
 							dataType: "json",
 							data: 'test=2',
 							success: function (data) {
-								// console.log(data)
 								var html = "";
 								for (var j = 0; j < data.length; j++) {
 									html += '<div class="productList line-bottom"><div class="shop_info"><div class="img"><a href="../details/particulars.html"><img data-original="' + data[j].img + '" alt="" class="lazy"></a></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></div>';
@@ -140,7 +139,6 @@
 								$(".addCart").on("click", function () {
 									$("#shop_num").text() + 1
 									var num = $("#shop_num").text();
-									console.log($("#shop_num").text())
 									num++;
 									$("#shop_num").text(num);
 								})
@@ -158,7 +156,6 @@
 							dataType: "json",
 							data: 'test=3',
 							success: function (data) {
-								console.log(data)
 								var html = "";
 								for (var j = 0; j < data.length; j++) {
 									html += '<div class="productList line-bottom"><div class="shop_info"><div class="img"><a href="../details/particulars.html"><img data-original="' + data[j].img + '" alt="" class="lazy"></a></div><div class="info"><p class="title"> ' + data[j].title + '</p><p class="txt">' + data[j].txt + '</p><p class="price"><span class="pricrRed"> ' + data[j].priceRed + '</span><span class="standard">' + data[j].standard + '</span><span class="addCart"></span></p></div></div></div>';
@@ -170,7 +167,6 @@
 								$(".addCart").on("click", function () {
 									$("#shop_num").text() + 1
 									var num = $("#shop_num").text();
-									console.log($("#shop_num").text())
 									num++;
 									$("#shop_num").text(num);
 								})
@@ -214,15 +210,43 @@
 					var title = $(this).parents(".info").children(".title").text(),
 						goodsName = $(this).parents(".info").children(".txt").text(),
 						// // 声明获取数据
-						img_url = $(this).parents(".info").siblings(".img").children("img").attr('src'),
+						img_url = $(this).parents(".productList").find(".lazy").attr("src"),
 						price = $(this).siblings(".pricrRed").text()
-					username = '15938722869';
+					// $.ajax({
+					// 	url: '../../php/shop-car.php',
+					// 	type: "POST",
+					// 	data: 'title="' + title + '"&img_url=' + img_url + "&goodsName=" + goodsName + "&price=" + price + "&username=" + username,
+					// 	success: function (data) {
+					// 		console.log(data)
+					// 	}
+					// })
+					$count = 1;
 					$.ajax({
-						url: '../../php/shop-car.php',
-						type: "POST",
-						data: 'title="' + title + '&img_url=' + img_url + "&goodsName=" + goodsName + "&price=" + price + "&username=" + username,
+						url: '../../php/examnum.php',
+						type: 'get',
+						data: 'title="' + title + '"',
 						success: function (data) {
-							console.log(data)
+							if (data == "添加一整条") {
+								$.ajax({
+									url: '../../php/index_addcart.php',
+									type: 'post',
+									data: {
+										'img': img_url,
+										'title': title,
+										"money": price,
+										'count': $count,
+									},
+								})
+							} else {
+								data = JSON.parse(data)
+								$num = Number(data.count)
+								$num++;
+								$.ajax({
+									url: '../../php/updatecount.php',
+									type: 'get',
+									data: 'count=' + $num + '&title="' + title + '"',
+								})
+							}
 						}
 					})
 					$("#shop_num").text() + 1

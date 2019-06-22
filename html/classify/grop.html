@@ -56,12 +56,12 @@
 		}
 
 		.footer-in .icon1 {
-			background: url(../../images/common/home.png) 50% no-repeat;
+			background: url(../../images/grop/nav_home_selected.png) 50% no-repeat;
 			background-size: 100% 100%;
 		}
 
 		.footer-in .icon2 {
-			background: url(../../images/common/sort.png) 50% no-repeat;
+			background: url(../../images/grop/grop.png) 50% no-repeat;
 			background-size: 100% 100%;
 		}
 
@@ -138,10 +138,10 @@
 	<!-- 底部 -->
 	<div class="footer">
 		<div class="footer-in">
-			<a href="../index/index.html" class="list active">
+			<a href="../index/index.html" class="list">
 				<i class="icon icon1"></i>首页
 			</a>
-			<a href="./grop.html" class="list">
+			<a href="./grop.html" class="list active">
 				<i class="icon icon2"></i>分类
 			</a>
 			<a href="../eat/dine.html" class="list">
@@ -195,7 +195,6 @@
 							$(".list_content").html(html);
 							$("img.lazy").lazyload({ effect: "fadeIn" })
 							$(".list_content li").on("click", function () {
-								// console.log($(this).index())
 							})
 							$(".on_loading img").hide()
 							// 点击精选肉类的 商品
@@ -227,7 +226,6 @@
 			$(".nav_list li").on("click", function () {
 				$(this).addClass("active").siblings().removeClass("active")
 				$(".on_loading img").show()
-				// console.log($(this).index())
 				if ($(this).index() == 1) {
 					$.ajax({
 						url: "../../php/tab.php",
@@ -236,7 +234,6 @@
 						data: 'tab_num=2',
 						// data: 'item_id=' + item_id,
 						success: function (data) {
-							// console.log(data)
 							var html = "";
 							for (var j = 0; j < data.length; j++) {
 								html += '<li><div class="list_shop"><a href="./common.html?item_id=2"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
@@ -244,12 +241,10 @@
 							$(".list_content").html(html);
 							$("img.lazy").lazyload({ effect: "fadeIn" })
 							$(".list_content li").on("click", function () {
-								// console.log($(this).index())
 							})
 							$(".on_loading img").hide()
 							// 点击精选肉类的 商品
 							$(".list_content li").on("click", function () {
-								console.log(111)
 								if ($(this).index() == 1) {
 									$.ajax({
 										url: "../../php/seafood.php",
@@ -265,7 +260,6 @@
 											$(".list_content").html(html);
 											$("img.lazy").lazyload({ effect: "fadeIn" })
 											$(".list_content li").on("click", function () {
-												console.log($(this).index())
 											})
 											$(".on_loading img").hide()
 										}
@@ -293,12 +287,10 @@
 							$(".list_content").html(html);
 							$("img.lazy").lazyload({ effect: "fadeIn" })
 							$(".list_content li").on("click", function () {
-								// console.log($(this).index())
 							})
 							$(".on_loading img").hide()
 							// 点击精选肉类的 商品
 							$(".list_content li").on("click", function () {
-								console.log(111)
 								if ($(this).index() == 1) {
 									$.ajax({
 										url: "../../php/seafood.php",
@@ -313,7 +305,6 @@
 											$(".list_content").html(html);
 											$("img.lazy").lazyload({ effect: "fadeIn" })
 											$(".list_content li").on("click", function () {
-												// console.log($(this).index())
 											})
 											$(".on_loading img").hide()
 										}
@@ -342,12 +333,10 @@
 							$(".list_content").html(html);
 							$("img.lazy").lazyload({ effect: "fadeIn" })
 							$(".list_content li").on("click", function () {
-								// console.log($(this).index())
 							})
 							$(".on_loading img").hide()
 							// 点击精选肉类的 商品
 							$(".list_content li").on("click", function () {
-								console.log(111)
 								if ($(this).index() == 1) {
 									$.ajax({
 										url: "../../php/seafood.php",
@@ -355,7 +344,6 @@
 										dataType: "json",
 										// data: 'test=1',
 										success: function (data) {
-
 											var html = "";
 											for (var j = 0; j < data.length; j++) {
 												html += '<li><div class="list_shop"><a href="./common.html?item_id=4"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
@@ -363,7 +351,6 @@
 											$(".list_content").html(html);
 											$("img.lazy").lazyload({ effect: "fadeIn" })
 											$(".list_content li").on("click", function () {
-												console.log($(this).index())
 											})
 											$(".on_loading img").hide()
 										}
@@ -377,7 +364,6 @@
 			$(".nav_list li").on("click", function () {
 				$(this).addClass("active").siblings().removeClass("active")
 				$(".on_loading img").show()
-				// console.log($(this).index())
 				if ($(this).index() == 4) {
 					$.ajax({
 						url: "../../php/tab.php",
@@ -386,20 +372,15 @@
 						data: 'tab_num=5',
 						// data: 'item_id=' + item_id,
 						success: function (data) {
-							// console.log(data)
 							var html = "";
 							for (var j = 0; j < data.length; j++) {
 								html += '<li><div class="list_shop"><a href="./common.html?item_id=5"><img data-original="' + data[j].img + '" alt="" class="lazy"><p class="title">' + data[j].title + '</p></a></div></li>'
 							}
 							$(".list_content").html(html);
 							$("img.lazy").lazyload({ effect: "fadeIn" })
-							$(".list_content li").on("click", function () {
-								// console.log($(this).index())
-							})
 							$(".on_loading img").hide()
 							// 点击精选肉类的 商品
 							$(".list_content li").on("click", function () {
-								console.log(111)
 								if ($(this).index() == 1) {
 									$.ajax({
 										url: "../../php/seafood.php",
@@ -449,7 +430,6 @@
 							$(".on_loading img").hide()
 							// 点击精选肉类的 商品
 							$(".list_content li").on("click", function () {
-								console.log(111)
 								if ($(this).index() == 1) {
 									$.ajax({
 										url: "../../php/seafood.php",
@@ -499,7 +479,6 @@
 							$(".on_loading img").hide()
 							// 点击精选肉类的 商品
 							$(".list_content li").on("click", function () {
-								console.log(111)
 								if ($(this).index() == 1) {
 									$.ajax({
 										url: "../../php/seafood.php",
@@ -540,7 +519,6 @@
 					type: "POST",
 					data: 'title="' + title + '&img_url=' + img_url + "&goodsName=" + goodsName + "&price=" + price + "&username=" + username,
 					success: function (data) {
-						console.log(data)
 					}
 				})
 				$("#shop_num").text() + 1

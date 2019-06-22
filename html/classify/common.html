@@ -91,7 +91,6 @@
                     $(".addCart").on("click", function () {
                         $("#shop_num").text() + 1
                         var num = $("#shop_num").text();
-                        console.log($("#shop_num").text())
                         num++;
                         $("#shop_num").text(num);
                     })
@@ -119,7 +118,6 @@
                         $(".addCart").on("click", function () {
                             $("#shop_num").text() + 1
                             var num = $("#shop_num").text();
-                            console.log($("#shop_num").text())
                             num++;
                             $("#shop_num").text(num);
                         })
@@ -154,9 +152,43 @@
                 //加入购物车
                 // 添加购物车数量
                 $(".addCart").on("click", function () {
+                    var title = $(this).parents(".info").children(".title").text(),
+                        goodsName = $(this).parents(".info").children(".txt").text(),
+                        // // 声明获取数据
+                        img_url = $(this).parents(".productList").find(".lazy").attr("src"),
+                        price = $(this).siblings(".pricrRed").text()
+                        console.log(title)
+                    $count = 1;
+                    $.ajax({
+                        url: '../../php/examnum.php',
+                        type: 'get',
+                        data: 'title="' + title + '"',
+                        success: function (data) {
+                            if (data == "添加一整条") {
+                                $.ajax({
+                                    url: '../../php/index_addcart.php',
+                                    type: 'post',
+                                    data: {
+                                        'img': img_url,
+                                        'title': title,
+                                        "money": price,
+                                        'count': $count,
+                                    },
+                                })
+                            } else {
+                                data = JSON.parse(data)
+                                $num = Number(data.count)
+                                $num++;
+                                $.ajax({
+                                    url: '../../php/updatecount.php',
+                                    type: 'get',
+                                    data: 'count=' + $num + '&title="' + title + '"',
+                                })
+                            }
+                        }
+                    })
                     $("#shop_num").text() + 1
                     var num = $("#shop_num").text();
-                    console.log($("#shop_num").text())
                     num++;
                     $("#shop_num").text(num);
                 })

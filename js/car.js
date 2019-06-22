@@ -1,13 +1,12 @@
 
-console.log('添加')
 
     $(".tabMain div").on("click", function () {
-        console.log($(this).index())
+
         $(this).addClass("active").siblings().removeClass("active")
         // 判断当点击 新品时请求新品的内容
         
         if ($(this).index() == 1) {
-            console.log(11111);
+
                 $.ajax({
                     url: "../../php/new.php",
                     type: "POST",

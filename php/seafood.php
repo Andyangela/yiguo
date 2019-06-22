@@ -7,7 +7,6 @@
         die();
     }
     $sql="select * from seafood where item_id=$item_id";
-    $sql="select * from seafood where item_id=$item_id";
     $result=$mysqli->query($sql);
     while($rows=Mysqli_fetch_assoc($result)){
         $data[]=$rows;
